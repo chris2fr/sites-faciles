@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+div.card-body img {
+    margin: 1rem auto;
+}
+
+div.list-inside ul {
+    list-style-position: inside;
+}
+
+div.list-inside ul li {
+    list-style-type: disc;
+}
+
+div.home-section-3 h2 {
+    text-align: center;
+}
+
+div.home-section-blog h2 {
+    font-size: var(--text-xl);
+    line-height: var(--text-xl--line-height);
+}
+
+div.home-section-blog h3 {
+    font-size: var(--text-lg);
+    line-height: var(--text-lg--line-height);
+}

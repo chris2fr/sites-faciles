@@ -1,0 +1,98 @@
+{% extends "lesgv/base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+{% block body_class %}lesgv-home{% endblock %}
+{% block extra_css %}
+  <link rel="stylesheet"
+        type="text/css"
+        href="{% static 'css/lesgv/tailwind.css' %}" />
+{% endblock extra_css %}
+{% block content %}
+  <header class="min-w-full text-center">
+    <a href="#main"">
+      <img src="{% static 'images/lesgv/logo-lesgrandsvoisins-600-300-white.svg' %}">
+    </a>
+  </header>
+  <main class="darkmode" id="main">
+    <div class="bg-gradient-to-tr from-blue-200 to-grey-600">
+      <div class=" px-3 py-6 max-w-screen-lg mx-auto text-xl italic font-medium">{{ page.intro|richtext }}</div>
+    </div>
+    <div class="px-3 py-6 max-w-screen-lg mx-auto text-lg text-center">{{ page.section1|richtext }}</div>
+    <div class="bg-yellow-800 text-white">
+      <div class="px-3 py-6 max-w-screen-lg mx-auto text-lg list-inside list-disc">{{ page.section2|richtext }}</div>
+      <div class="aspect-w-16 aspect-h-9 px-3 py-6 max-w-screen-lg mx-auto">
+        <iframe class="mx-auto"
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/qZqErGfNF_o?si=nUTHI3lIeeKnNweZ"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="px-3 py-6 mx-auto text-lg home-section-3">{{ page.section3|richtext }}</div>
+    {% if related_agenda %}
+      <div class="bg-[url({% static 'images/lesgv/agenda.jpg' %})] bg-fixed">
+        <div class="px-3 py-6 max-w-screen-lg mx-auto">
+          <div class="agendas max-w-screen-lg">
+            <div class="card agenda max-w-screen-lg">
+              <div class="card-body max-w-screen-lg">
+                <div class="agenda-home">
+                  <h2>Agenda</h2>
+                  {% for item in related_agenda %}
+                    <div class="agenda-item">
+                      {% if item.agenda_item.redirect_url %}
+                        <h3>
+                          <a href="{{ item.agenda_item.redirect_url }}">{{ item.agenda_item.title }}</a>
+                        </h3>
+                      {% else %}
+                        <h3>
+                          <a href="{{ item.agenda_item.url }}">{{ item.agenda_item.title }}</a>
+                        </h3>
+                      {% endif %}
+                      <ul class="agenda-item-date-lieu">
+                        {% if item.agenda_item.start %}<li>{{ item.agenda_item.start }}</li>{% endif %}
+                        {% if item.agenda_item.end %}<li>{{ item.agenda_item.end }}</li>{% endif %}
+                        {% if item.agenda_item.place %}
+                          {% if item.agenda_item.place_url %}
+                            <li>
+                              <a href="{{ item.agenda_item.place_url }}">{{ item.agenda_item.place }}</a>
+                            </li>
+                          {% else %}
+                            <li>{{ item.agenda_item.place }}</li>
+                          {% endif %}
+                        {% endif %}
+                      </ul>
+                      <a href="{{ item.agenda_item.url }}"
+                         class='{% if forloop.counter|divisibleby:"2" %}left{% else %}right{% endif %}'>
+                        {% image item.agenda_item.image width-600 %}
+                      </a>
+                      {% if item.agenda_item.intro and item.agenda_item.intro != "" %}
+                        {{ item.agenda_item.intro|richtext }}
+                      {% else %}
+                        {{ item.agenda_item.body|richtext }}
+                      {% endif %}
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+              <div class="author"></div>
+            </div>
+          </div>
+        </div>
+    {% endif %}
+      <div class="bg-blue-300 py-6 ">
+        <h2 class="text-xl text-center">Blog</h2>
+        <div class="px-3 py-2 max-w-screen-xl mx-auto lg:grid-cols-3 md:grid-cols-2 gap-x-4 md:grid">
+          {% include "lesgv/fragments/blog_posts.html" with posts=posts %}
+        </div>
+      </div>
+    </main>
+    <footer class="lesgv-footer md:grid grid-cols-2 bg-yellow-900 text-white">
+      <div class="footer1">{{ footer1|richtext }} .</div>
+      <div class="footer2">{{ footer2|richtext }} .</div>
+    </div>
+    <main>
+    </main>
+  {% endblock content %}

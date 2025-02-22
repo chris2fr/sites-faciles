@@ -11,7 +11,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ("wagtail_village", "0002_remove_formpage_page_ptr_delete_formfield_and_more"),
+        ("wagtail_village", "0001_initial"),
     ]
 
     operations = [

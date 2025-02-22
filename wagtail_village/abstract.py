@@ -165,6 +165,7 @@ class SitesFacilesBasePage(Page):
         null=True,
         blank=True,
         help_text=_("Uses the French Design System colors"),
+        max_length=32,
     )
 
     header_large = models.BooleanField(_("Full width"), default=False)  # type: ignore
@@ -174,12 +175,14 @@ class SitesFacilesBasePage(Page):
         _("Call to action text"),
         null=True,
         blank=True,
+        max_length=32,
     )
 
     header_cta_label = models.CharField(
         _("Call to action label"),
         null=True,
         blank=True,
+        max_length=32,
     )
 
     header_cta_link = models.URLField(

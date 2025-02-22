@@ -333,6 +333,22 @@ class FaireMainHomePage(FaireMainPage):
         return context
 
 
+class LesgvHomePage(FaireMainHomePage):
+    section1 = RichTextField(blank=True, null=True)
+    section2 = RichTextField(blank=True, null=True)
+    section3 = RichTextField(blank=True, null=True)
+
+    content_panels = FaireMainHomePage.content_panels + [
+        FieldPanel("section1"),
+        FieldPanel("section2"),
+        FieldPanel("section3"),
+    ]
+
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+        return context
+
+
 class FaireMainAgendaItemPage(FaireMainPage):
     # home_page = ParentalKey(FaireMainHomePage, on_delete=models.CASCADE,
     #   related_name='agenda_home_item',null = True, blank = True)

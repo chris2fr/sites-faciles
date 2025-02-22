@@ -4,13 +4,13 @@ from django.urls import include, path
 from wagtail import urls as wagtail_urls
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.documents import urls as wagtaildocs_urls
-from wagtail_transfer import urls as wagtailtransfer_urls
 
 # from snotra_rss import urls as snotra_urls
 # from feedreader import urls as feedreader_urls
 # from puput import urls as puput_urls
 from lesgv import views as lesgv_views
 from search import views as search_views
+from wagtail_transfer import urls as wagtailtransfer_urls
 
 
 # from .models import FeedMeModel, RssFeedMeFeeds

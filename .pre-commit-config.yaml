@@ -14,7 +14,8 @@ repos:
           .*/migrations/.*.py|
           lesgrandsvoisins/settings/.*.py|
           lesgv/settings/.*.py|
-          lesgrandsvoisins/wsgi.py
+          lesgrandsvoisins/wsgi.py|
+          workshop/.*/.*\.py
         )
   - repo: https://github.com/pycqa/isort
     rev: 5.12.0

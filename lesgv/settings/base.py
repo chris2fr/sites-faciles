@@ -24,6 +24,8 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
+SILENCED_SYSTEM_CHECKS = ["wagtailadmin.W002"]  # https://github.com/jazzband/wagtailmenus/issues/464
+
 
 # Application definition
 

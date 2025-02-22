@@ -76,7 +76,8 @@ GRANT ALL privileges ON DATABASE wagtailvillage TO wagtailvillage;
 git clone git@github.com:chris2fr/wagtail-village.git
 python -m venv venv
 source venv/bin/activate
-pip install pre-commit django
+pip install --upgrade pip
+pip install pre-commit django poetry
 cp .env.example .env
 python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
 vi .env
@@ -84,8 +85,8 @@ pre-commit install
 pre-commit run --all-files
 poetry install
 poetry run python manage.py makemigrations
-make migrations
 make collectstatic
+poetry run python manage.py migrate
 poetry run python manage.py createsuperuser
 ```
 

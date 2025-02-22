@@ -60,9 +60,35 @@ demo:
 
 .PHONY: runserver
 runserver:
-	$(EXEC_CMD) poetry run python manage.py runserver $(HOST_URL):$(HOST_PORT)
+	$(EXEC_CMD) poetry run python manage.py runserver 
+	# $(EXEC_CMD) poetry run python manage.py runserver $(HOST_URL):$(HOST_PORT)
 
 
 .PHONY: test
 test:
 	$(EXEC_CMD) poetry run python manage.py test
+
+.PHONY: test
+# From https://tailwindcss.com/docs/installation/tailwind-cli
+tailwind-install-bin-linux:
+	wget https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-linux-x64 
+	mv tailwindcss-linux-x64 venv/bin/tailwindcss
+	chmod +x venv/bin/tailwindcss
+
+.PHONY: test
+# From https://tailwindcss.com/docs/installation/tailwind-cli
+tailwind-install:
+	npm install tailwindcss @tailwindcss/cli
+
+.PHONY: test
+# From https://tailwindcss.com/docs/installation/tailwind-cli
+tailwind-compile:
+	npx @tailwindcss/cli -i ./lesgv/src/tailwind/input.css -o ./lesgv/static/css/lesgv/tailwind.css -m
+
+.PHONY: test
+tailwind-compilemax:
+	npx @tailwindcss/cli -i ./lesgv/src/tailwind/input.css -o ./lesgv/static/css/lesgv/tailwind.css 
+
+.PHONY: test
+tailwind-watch:
+	npx @tailwindcss/cli -i ./lesgv/src/tailwind/input.css -o ./lesgv/static/css/lesgv/tailwind.css --watch
