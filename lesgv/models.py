@@ -195,7 +195,7 @@ class FaireMainPage(Page):
     )
     ghost_post_tag = models.SlugField(blank=True, null=True)
     theme = models.CharField(
-        max_length=32,
+        max_length=255,
         choices=[
             ("generique", "generique"),
             ("boule", "boule"),
@@ -299,12 +299,12 @@ class RelatedAgendaItemHomePage(Orderable):
 
 class FaireMainHomePage(FaireMainPage):
     agenda = RichTextField(blank=True, null=True)
-    ghost_tag = models.CharField(blank=True, null=True, max_length=32)
-    ghost_filter = models.CharField(blank=True, null=True, max_length=32)
-    ghost_order = models.CharField(blank=True, null=True, max_length=32)
-    # ghost_formats = models.CharField(blank=True, null=True, max_length=32)
+    ghost_tag = models.CharField(blank=True, null=True, max_length=255)
+    ghost_filter = models.CharField(blank=True, null=True, max_length=255)
+    ghost_order = models.CharField(blank=True, null=True, max_length=255)
+    # ghost_formats = models.CharField(blank=True, null=True, max_length=255)
     ghost_limit = models.CharField(blank=True, null=True, max_length=8)
-    ghost_include = models.CharField(blank=True, null=True, max_length=32)
+    ghost_include = models.CharField(blank=True, null=True, max_length=255)
     page_description = "Faire Main Home Page: Une page home "
     # parent_page_types =['wagtailcore.Page','lesgv.FaireMainHomePage']
     # subpage_types = ['lesgv.FaireMainPage','lesgv.FaireMainAgendaItemPage','lesgv.FaireMainMenu',]
