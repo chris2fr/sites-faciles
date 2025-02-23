@@ -92,3 +92,16 @@ tailwind-compilemax:
 .PHONY: test
 tailwind-watch:
 	npx @tailwindcss/cli -i ./lesgv/src/tailwind/input.css -o ./lesgv/static/css/lesgv/tailwind.css --watch
+
+fixtures-dump-test-initial:
+	rm fixtures/*.json
+	./venv/bin/python manage.py dumpdata --natural-foreign wagtailcore.Locale wagtailcore.Revision wagtailcore.Page wagtailcore.Site wagtailimages.Image  wagtaildocs.Document django_village lesgrandsvoisins lesgv search wagtail_village_blog wagtail_village_dashboard wagtail_village_forms wagtail_village_lesgrandsvoisins wagtail_village wagtaildocs wagtailembeds wagtailimages wagtailmarkdown wagtailmenus wagtailsnippets wagtailusers  > fixtures-initial.json 
+	mkdir -p fixtures/media/images
+	mkdir -p fixtures/media/original_images
+	cp -a fixtures/media/images/* media/images
+	cp -a fixtures/media/original_images/* media/original_images
+
+fixtures-load-test-initial:
+	./venv/bin/python manage.py loaddata fixtures/test-initial.json
+	cp -a fixtures/media/* media
+
