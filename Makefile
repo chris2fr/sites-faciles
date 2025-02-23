@@ -105,7 +105,11 @@ fixtures-load-test-initial:
 	./venv/bin/python manage.py loaddata fixtures/test-initial.json
 	cp -a fixtures/media/* media
 
-fixtures-building:
+fixtures-building-dump:
 	rm fixtures-initial.json
-	./venv/bin/python manage.py dumpdata --natural-foreign wagtailcore.Locale wagtailcore.Revision wagtailcore.Page wagtailcore.Site wagtailimages.Image  wagtaildocs.Document django_village lesgv wagtail_village_blog wagtail_village_forms wagtail_village_lesgrandsvoisins wagtail_village wagtailmenus wagtailsnippets wagtailusers  > fixtures-initial.json 
+	./venv/bin/python manage.py dumpdata --natural-foreign wagtailcore.Locale wagtailcore.Revision wagtailcore.Page wagtailcore.Collection wagtailcore.Site wagtailimages.Image  wagtaildocs.Document django_village lesgv wagtail_village_blog wagtail_village_forms wagtail_village_lesgrandsvoisins wagtail_village wagtailmenus  wagtailsnippets allauth auth wagtailusers > fixtures-initial.json 
 	ls -la fixtures-initial.json
+	mv fixtures-initial.json /tmp
+
+fixtures-building-load:
+	./venv/bin/python manage.py loaddata /tmp/fixtures-initial.json 
