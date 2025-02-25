@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+module.exports= {
+    theme: {
+        fontFamily: {
+            sans: ['fengardoneue', 'sans-serif'] serif: ['fengardoneue', 'sans-serif']
+        }
+    }
+
+    ,
+}
+
+
 div.card-body img {
     margin: 1rem auto;
 }
