@@ -8,7 +8,7 @@
 {% endblock extra_css %}
 {% block content %}
 <style>
-  a {
+  main.gvhome a {
     color: blue;
     text-decoration: underline;
   }
@@ -18,7 +18,7 @@
       <img class="logolgv max-w-full" src="{% static 'images/gv/logo-grandsvoisins-800-400-white.png' %}">
     </a>
   </header>
-  <main class="darkmode" id="main">
+  <main class="gvhome darkmode" id="main">
     <div class="bg-gradient-to-tr from-blue-200 to-grey-600">
       <div class=" px-3 py-6 max-w-screen-lg mx-auto text-xl italic font-medium">{{ page.intro|richtext }}</div>
     </div>
@@ -89,8 +89,14 @@
         </div>
     {% endif %}
       <div class="bg-blue-300 py-6 ">
+      <style>
+  div.gvhome-blog a {
+    color: unset;
+    text-decoration: unset;
+  }
+</style>
         <h2 class="text-xl text-center">Blog</h2>
-        <div class="px-3 py-2 max-w-screen-xl mx-auto lg:grid-cols-3 md:grid-cols-2 gap-x-4 md:grid">
+        <div class="gvhome-blog px-3 py-2 max-w-screen-xl mx-auto lg:grid-cols-3 md:grid-cols-2 gap-x-4 md:grid">
           {% include "lesgv/fragments/blog_posts.html" with posts=posts %}
         </div>
       </div>
