@@ -112,4 +112,4 @@ fixtures-building-dump:
 	mv fixtures-initial.json /tmp
 
 fixtures-building-load:
-	./venv/bin/python manage.py loaddata /tmp/fixtures-initial.json 
+	./venv/bin/python manage.py loaddata -e auth.Permission /tmp/fixtures-initial.json 

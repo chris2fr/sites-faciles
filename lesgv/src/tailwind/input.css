@@ -25,3 +25,8 @@ div.home-section-blog h3 {
     font-size: var(--text-lg);
     line-height: var(--text-lg--line-height);
 }
+
+img.logolgv {
+    width: 800px;
+    margin: 0 auto;
+}
