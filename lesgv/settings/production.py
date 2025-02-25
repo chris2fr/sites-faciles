@@ -29,11 +29,11 @@ STATIC_URL = "/static/"
 MEDIA_ROOT = "/var/www/wagtail/media/"
 MEDIA_URL = "/media/"
 
-ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
-    "wagtail.l-g-v.com",
-] + allowed_hosts()
+# ALLOWED_HOSTS = [
+#     "localhost",
+#     "127.0.0.1",
+#     "wagtail.l-g-v.com",
+# ] + allowed_hosts()
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost",
