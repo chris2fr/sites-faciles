@@ -64,3 +64,8 @@ div.agenda-item h5,
 div.agenda-item h6 {
     text-align: center;
 }
+
+div.footer1,
+div.footer2 {
+    padding: 1rem;
+}
