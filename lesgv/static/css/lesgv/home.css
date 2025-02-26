@@ -16,13 +16,29 @@ main.gvhome h2 {
     margin-top: 0.5rem;
 }
 
-div.home-section-1 h2,
 div.home-section-2 h2,
 div.home-section-3 h2 {
     text-align: center;
     font-size: var(--text-lg);
     line-height: var(--text-lg--line-height);
     margin-bottom: 0.5rem;
+}
+
+div.home-section-1 h2 {
+    text-align: left;
+    font-size: var(--text-lg);
+    line-height: var(--text-lg--line-height);
+    margin-bottom: 0.5rem;
+}
+
+div.home-section-1-inner {
+    margin-left: 30vw;
+    border-left: 1px solid black;
+    padding-left: 2rem;
+}
+
+div.home-section-1-inner hr {
+    margin-left: -2rem;
 }
 
 div.gvhome-blog a {

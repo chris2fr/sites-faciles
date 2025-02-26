@@ -20,10 +20,11 @@
     <div class="bg-gradient-to-tr from-blue-200 to-grey-600">
       <div class=" px-3 py-6 max-w-screen-lg mx-auto text-xl italic font-medium text-center">{{ page.intro|richtext }}</div>
     </div>
-    <div class="px-3 py-6 max-w-screen-lg mx-auto text-lg home-section-1"
-         id="section1">{{ page.section1|richtext }}</div>
+    <div class="px-3 py-6 max-w-screen-lg mx-auto text-lg pb-px-3 pt-px-0 home-section-1"
+         id="section1"><div class=" ml-[30vw] border-l border-solid border-black home-section-1-inner">{{ page.section1|richtext }}</div></div>
     <div class="bg-yellow-800 text-white home-section-2" id="section2">
-      <div class="px-3 py-6 max-w-screen-lg mx-auto text-lg list-inside list-disc">{{ page.section2|richtext }}</div>
+      <div class="px-3 pr-py-6 max-w-screen-lg mx-auto text-lg list-inside list-disc">
+        {{ page.section2|richtext }}</div>
       <div class="aspect-w-16 aspect-h-9 px-3 py-6 max-w-screen-lg mx-auto">
         <iframe class="mx-auto max-w-full"
                 width="560"
