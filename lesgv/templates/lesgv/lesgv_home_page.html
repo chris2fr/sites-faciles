@@ -5,33 +5,11 @@
   <link rel="stylesheet"
         type="text/css"
         href="{% static 'css/lesgv/tailwind.css' %}" />
+  <link rel="stylesheet"
+        type="text/css"
+        href="{% static 'css/lesgv/home.css' %}" />
 {% endblock extra_css %}
 {% block content %}
-  <style>
-  main.gvhome a {
-    color: blue;
-    text-decoration: underline;
-    background-color: #ffffffcc;
-    border-radius: 5px;
-    padding: 0 4px;
-  }
-  main.gvhome hr {
-    border-style: solid;
-    border-width: 1px;
-    margin-top: 0.5rem;
-  }
-  main.gvhome h2 {
-    margin-top: 0.5rem;
-  }
-  div.home-section-1 h2,
-  div.home-section-2 h2,
-  div.home-section-3 h2 {
-    text-align: center;
-    font-size: var(--text-lg);
-    line-height: var(--text-lg--line-height);
-    margin-bottom: 0.5rem;
-  }
-  </style>
   <header class="min-w-full text-center">
     <a href="#main">
       <img class="logolgv max-w-full"
@@ -42,7 +20,8 @@
     <div class="bg-gradient-to-tr from-blue-200 to-grey-600">
       <div class=" px-3 py-6 max-w-screen-lg mx-auto text-xl italic font-medium text-center">{{ page.intro|richtext }}</div>
     </div>
-    <div class="px-3 py-6 max-w-screen-lg mx-auto text-lg home-section-1" id="section1">{{ page.section1|richtext }}</div>
+    <div class="px-3 py-6 max-w-screen-lg mx-auto text-lg home-section-1"
+         id="section1">{{ page.section1|richtext }}</div>
     <div class="bg-yellow-800 text-white home-section-2" id="section2">
       <div class="px-3 py-6 max-w-screen-lg mx-auto text-lg list-inside list-disc">{{ page.section2|richtext }}</div>
       <div class="aspect-w-16 aspect-h-9 px-3 py-6 max-w-screen-lg mx-auto">
@@ -57,7 +36,8 @@
                 allowfullscreen></iframe>
       </div>
     </div>
-    <div class="px-3 py-6 max-w-screen-lg mx-auto home-section-3" id="section3">{{ page.section3|richtext }}</div>
+    <div class="px-3 py-6 max-w-screen-lg mx-auto home-section-3"
+         id="section3">{{ page.section3|richtext }}</div>
     {% if related_agenda %}
       <div class="bg-[url({% static 'img/lesgv/agenda.jpg' %})] bg-fixed">
         <div class="px-3 py-6 max-w-screen-lg mx-auto">
@@ -109,15 +89,6 @@
         </div>
       {% endif %}
       <div class="bg-blue-300 py-6 ">
-        <style>
-  div.gvhome-blog a {
-    color: unset;
-    text-decoration: unset;
-    background-color: unset;
-    border-radius: unset;
-    padding: unset;
-  }
-        </style>
         <h2 class="text-xl text-center">Blog</h2>
         <div class="gvhome-blog px-3 py-2 max-w-screen-xl mx-auto lg:grid-cols-3 md:grid-cols-2 gap-x-4 md:grid">
           {% include "lesgv/fragments/blog_posts.html" with posts=posts %}
@@ -127,7 +98,5 @@
     <footer class="lesgv-footer md:grid grid-cols-2 bg-yellow-900 text-white">
       <div class="footer1 p-5">{{ footer1|richtext }}</div>
       <div class="footer2 p-5">{{ footer2|richtext }}</div>
-    </div>
-    <main>
-    </main>
+    </footer>
   {% endblock content %}
