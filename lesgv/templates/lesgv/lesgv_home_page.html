@@ -16,12 +16,17 @@
     padding: 0 4px;
   }
   main.gvhome hr {
-    height: auto;
     border-style: solid;
+    border-width: 1px;
+    margin-top: 0.5rem;
   }
   main.gvhome h2 {
     margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+  }
+  div.home-section-1 h2
+  div.home-section-2 h2
+  div.home-section-3 h2 {
+    text-align: center;
   }
   </style>
   <header class="min-w-full text-center">
@@ -32,10 +37,10 @@
   </header>
   <main class="gvhome darkmode" id="main">
     <div class="bg-gradient-to-tr from-blue-200 to-grey-600">
-      <div class=" px-3 py-6 max-w-screen-lg mx-auto text-xl italic font-medium">{{ page.intro|richtext }}</div>
+      <div class=" px-3 py-6 max-w-screen-lg mx-auto text-xl italic font-medium text-center">{{ page.intro|richtext }}</div>
     </div>
-    <div class="px-3 py-6 max-w-screen-lg mx-auto text-lg text-center" id="section1">{{ page.section1|richtext }}</div>
-    <div class="bg-yellow-800 text-white" id="section2">
+    <div class="px-3 py-6 max-w-screen-lg mx-auto text-lg home-section-1" id="section1">{{ page.section1|richtext }}</div>
+    <div class="bg-yellow-800 text-white home-section-2" id="section2">
       <div class="px-3 py-6 max-w-screen-lg mx-auto text-lg list-inside list-disc">{{ page.section2|richtext }}</div>
       <div class="aspect-w-16 aspect-h-9 px-3 py-6 max-w-screen-lg mx-auto">
         <iframe class="mx-auto max-w-full"
