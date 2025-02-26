@@ -19,6 +19,10 @@
     height: auto;
     border-style: solid;
   }
+  main.gvhome h2 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
   </style>
   <header class="min-w-full text-center">
     <a href="#main">
@@ -30,8 +34,8 @@
     <div class="bg-gradient-to-tr from-blue-200 to-grey-600">
       <div class=" px-3 py-6 max-w-screen-lg mx-auto text-xl italic font-medium">{{ page.intro|richtext }}</div>
     </div>
-    <div class="px-3 py-6 max-w-screen-lg mx-auto text-lg text-center">{{ page.section1|richtext }}</div>
-    <div class="bg-yellow-800 text-white">
+    <div class="px-3 py-6 max-w-screen-lg mx-auto text-lg text-center" id="section1">{{ page.section1|richtext }}</div>
+    <div class="bg-yellow-800 text-white" id="section2">
       <div class="px-3 py-6 max-w-screen-lg mx-auto text-lg list-inside list-disc">{{ page.section2|richtext }}</div>
       <div class="aspect-w-16 aspect-h-9 px-3 py-6 max-w-screen-lg mx-auto">
         <iframe class="mx-auto max-w-full"
@@ -45,7 +49,7 @@
                 allowfullscreen></iframe>
       </div>
     </div>
-    <div class="px-3 py-6 max-w-screen-lg mx-auto home-section-3">{{ page.section3|richtext }}</div>
+    <div class="px-3 py-6 max-w-screen-lg mx-auto home-section-3" id="section3">{{ page.section3|richtext }}</div>
     {% if related_agenda %}
       <div class="bg-[url({% static 'img/lesgv/agenda.jpg' %})] bg-fixed">
         <div class="px-3 py-6 max-w-screen-lg mx-auto">
