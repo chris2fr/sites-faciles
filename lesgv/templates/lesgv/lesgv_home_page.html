@@ -7,15 +7,16 @@
         href="{% static 'css/lesgv/tailwind.css' %}" />
 {% endblock extra_css %}
 {% block content %}
-<style>
+  <style>
   main.gvhome a {
     color: blue;
     text-decoration: underline;
   }
-</style>
+  </style>
   <header class="min-w-full text-center">
-    <a href="#main"">
-      <img class="logolgv max-w-full" src="{% static 'images/gv/logo-grandsvoisins-800-400-white.png' %}">
+    <a href="#main">
+      <img class="logolgv max-w-full"
+           src="{% static 'img/lesgv/logo-lesgrandsvoisins-800-400-white.png' %}">
     </a>
   </header>
   <main class="gvhome darkmode" id="main">
@@ -39,7 +40,7 @@
     </div>
     <div class="px-3 py-6 max-w-screen-lg mx-auto home-section-3">{{ page.section3|richtext }}</div>
     {% if related_agenda %}
-      <div class="bg-[url({% static 'images/lesgv/agenda.jpg' %})] bg-fixed">
+      <div class="bg-[url({% static 'img/lesgv/agenda.jpg' %})] bg-fixed">
         <div class="px-3 py-6 max-w-screen-lg mx-auto">
           <div class="agendas max-w-screen-lg">
             <div class="card agenda max-w-screen-lg">
@@ -87,14 +88,14 @@
             </div>
           </div>
         </div>
-    {% endif %}
+      {% endif %}
       <div class="bg-blue-300 py-6 ">
-      <style>
+        <style>
   div.gvhome-blog a {
     color: unset;
     text-decoration: unset;
   }
-</style>
+        </style>
         <h2 class="text-xl text-center">Blog</h2>
         <div class="gvhome-blog px-3 py-2 max-w-screen-xl mx-auto lg:grid-cols-3 md:grid-cols-2 gap-x-4 md:grid">
           {% include "lesgv/fragments/blog_posts.html" with posts=posts %}
