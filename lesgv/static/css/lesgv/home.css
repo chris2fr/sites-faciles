@@ -32,13 +32,21 @@ div.home-section-1 h2 {
 }
 
 div.home-section-1-inner {
-    margin-left: 30vw;
+    margin-left: 20vw;
     border-left: 1px solid black;
     padding-left: 2rem;
 }
 
 div.home-section-1-inner hr {
     margin-left: -2rem;
+}
+
+div.home-section-1-inner h2::before {
+    content: "";
+    float: left;
+    margin: 12px -2rem -28px;
+    border: 1px solid #000;
+    width: 1.5rem;
 }
 
 div.gvhome-blog a {
