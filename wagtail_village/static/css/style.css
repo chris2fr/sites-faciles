@@ -179,3 +179,7 @@ body {
 div.village-input input {
     width: 100%;
 }
+
+div.village-fieldset__element textarea {
+    width: 100%;
+}
