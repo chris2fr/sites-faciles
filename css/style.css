@@ -1,104 +1,110 @@
 /* Prefix the classes defined here with wagtailvillage- */
 .wagtailvillage-hero {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .wagtailvillage-hero h1,
 .wagtailvillage-hero h2,
 .wagtailvillage-hero h3,
-.wagtailvillage-hero p  {
-  color: white;
+.wagtailvillage-hero p {
+    color: white;
 }
 
 .wagtailvillage-hero a.village-btn--secondary {
-  /* color: var(--village-primary-850-200); */
-  border-color: var(--village-primary-sun-625);
-  background-color: white;
-  color: black;
+    /* color: var(--village-primary-850-200); */
+    border-color: var(--village-primary-sun-625);
+    background-color: white;
+    color: black;
 }
 
 .wagtailvillage-hero a.village-btn--secondary:hover {
-  color: unset;
-  border-color: unset;
+    color: unset;
+    border-color: unset;
 }
 
 header.village-header {
-  justify-content: space-between;
+    justify-content: space-between;
 }
 
 .wagtailvillage-hero-large {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .wagtailvillage-background-dark h1,
 .wagtailvillage-background-dark p {
-  color: white;
+    color: white;
 }
 
 .village-header__service-title em {
-  font-weight: lighter;
+    font-weight: lighter;
 }
 
 .wagtailvillage-author_card__header {
-  flex: 0 0 6rem !important;
-  width: 6rem !important;
+    flex: 0 0 6rem !important;
+    width: 6rem !important;
 }
 
 .wagtailvillage-author-img {
-  border-radius: 50%;
-  height: 4.5rem !important;
-  margin: 1.5rem;
-  width: 4.5rem;
+    border-radius: 50%;
+    height: 4.5rem !important;
+    margin: 1.5rem;
+    width: 4.5rem;
 }
 
 
 
 body {
-  font-family: 'fengardoneue', 'Charter', 'Bitstream Charter', 'Sitka Text', 'Cambria', 'serif';
+    font-family: 'fengardoneue', 'Charter', 'Bitstream Charter', 'Sitka Text', 'Cambria', 'serif';
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'lack', 'system-ui', 'sans-serif';
-  font-weight: unset;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'lack', 'system-ui', 'sans-serif';
+    font-weight: unset;
 }
 
 .village-logo:after {
-  background-image: unset;
+    background-image: unset;
 }
 
 .village-logo:before {
-  background-image: unset;
+    background-image: unset;
 }
 
 div.village-footer__brand {
-  column-gap: 1rem;
+    column-gap: 1rem;
 }
 
 ul.village-nav__list {
-  padding-left: 1rem;
-  padding-right: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
-.village-nav__list  > * > .village-nav__link {
-  align-content: center;
+.village-nav__list>*>.village-nav__link {
+    align-content: center;
 }
 
 .village-artwork-major {
-  fill: var(--text-default-info);
+    fill: var(--text-default-info);
 }
 
 .village-artwork-minor {
-  fill: var(--text-default-success);
+    fill: var(--text-default-success);
 }
 
 .village-artwork-decorative {
-  fill: var(--text-default-grey);
+    fill: var(--text-default-grey);
 }
+
 /* 
 --background-action-high-village-primary-hover
 --background-action-high-village-primary-active
@@ -108,27 +114,27 @@ ul.village-nav__list {
 
 main.lesgrandsvoisins-home h1.title p,
 main.lesgrandsvoisins-home h2,
-main.lesgrandsvoisins-home h3
-{
-  color: rgb(var(--color-light) / var(--tw-text-opacity));
+main.lesgrandsvoisins-home h3 {
+    color: rgb(var(--color-light) / var(--tw-text-opacity));
 }
 
 main.lesgrandsvoisins-home h2,
 main.lesgrandsvoisins-home h3,
 main.lesgrandsvoisins-home h1.title p {
-  font-size: revert;
-  line-height: revert;
+    font-size: revert;
+    line-height: revert;
 }
+
 @media (min-width: 62em) {
-  header.lesgrandsvoisins-home div.village-header__body{
-    display: none;
-  }
+    header.lesgrandsvoisins-home div.village-header__body {
+        display: none;
+    }
 }
 
 @media (max-width: 62em) {
-  header.lesgrandsvoisins-home button.village-btn--search {
-    display: none;
-  }
+    header.lesgrandsvoisins-home button.village-btn--search {
+        display: none;
+    }
 }
 
 /* header.lesgrandsvoisins-home button.village-btn--display {
@@ -154,22 +160,26 @@ main.lesgrandsvoisins-home h1.title p {
 } */
 
 .village-header .village-header__menu .village-container {
-  column-gap: 1rem;
-  height: auto;
+    column-gap: 1rem;
+    height: auto;
 }
 
 .village-header__service {
-  display: none;
+    display: none;
 }
 
 body {
-  color: var(--text-title-grey);
+    color: var(--text-title-grey);
 }
 
 #village-menu-close-btn {
-  height: fit-content;
+    height: fit-content;
 }
 
 div.village-input input {
-  width: 100%;
+    width: 100%;
+}
+
+div.village-fieldset__element textarea {
+    width: 100%;
 }
