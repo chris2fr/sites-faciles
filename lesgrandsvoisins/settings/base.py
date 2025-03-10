@@ -40,12 +40,6 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True if os.getenv("DEBUG") == "True" else False
-DEBUG_TOOLBAR = True if os.getenv("DEBUG_TOOLBAR") == "True" else False
-
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1, localhost").replace(" ", "").split(",")
-
-HOST_URL = os.getenv("HOST_URL", "localhost")
 
 # Application definition
 
@@ -109,6 +103,10 @@ if DEBUG:
 if DEBUG_TOOLBAR:
     INSTALLED_APPS += [
         "debug_toolbar",
+    ]
+    INTERNAL_IPS = [
+        "127.0.0.1",
+        "0.0.0.0",
     ]
 
 MIDDLEWARE = [
@@ -391,15 +389,8 @@ WAGTAILTRANSFER_LOOKUP_FIELDS = {
     "auth.permission": ["codename"],
     "auth.group": ["name"],
     "auth.user": ["username"],
-    # "wagtail_village.ContentPage": ["locale", "slug", "content_type", "parent_id"],
+    # False
 }
-
-# if DEBUG and "localhost" in HOST_URL:
-if DEBUG_TOOLBAR:
-    INTERNAL_IPS = [
-        "127.0.0.1",
-        "0.0.0.0",
-    ]
 
 AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`
