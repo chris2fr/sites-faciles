@@ -21,7 +21,7 @@ gunicorn
 ipython
 isort
 libsass
-poerty
+poetry
 pre-commit
 psycopg2-binary
 python-dotenv
