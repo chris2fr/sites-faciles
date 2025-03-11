@@ -22,7 +22,7 @@ load_dotenv()
 
 # Check to see if basic variables needed are defined
 
-REQUIRED = ["DATABASE_URL", "SITE_NAME", "SECRET_KEY", "WAGTAILTRANSFER_SECRET_KEY", "HOST_URL"]
+REQUIRED = ["DATABASE_URL", "SITE_NAME", "SECRET_KEY", "WAGTAILTRANSFER_SECRET_KEY", "HOST_URL", "DEBUG"]
 
 needs_required = []
 for i in REQUIRED:
@@ -32,6 +32,10 @@ for i in REQUIRED:
 if needs_required != []:
     raise ValueError("Merci de mettre les variables suivantes dans .env: %s" % ", ".join(needs_required))
 
+DEBUG = True if os.getenv("DEBUG") == "True" else False
+DEBUG_TOOLBAR = True if os.getenv("DEBUG_TOOLBAR") == "True" else False
+
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1, localhost").replace(" ", "").split(",")
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
