@@ -39,6 +39,7 @@ ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1, localhost").replace(" ", 
 
 HOST_URL = os.getenv("HOST_URL", "localhost")
 WAGTAIL_SITE_NAME = os.getenv("SITE_NAME", "grandsvoisins.com")
+WAGTAILADMIN_BASE_URL = HOST_URL
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)

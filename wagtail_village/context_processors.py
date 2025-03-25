@@ -62,12 +62,17 @@ def urlangs(request):
 
 def sitevars(request):
     settings = WagtailVillageConfig.for_request(request)
-    return {
+    ret = {
         "langcode": settings.language,
         "home_url": "/{}/".format(settings.language),
         "data_village_mourning": "data-village-mourning" if settings.mourning else "",
         "full_site_title": settings.site_title,
     }
+    if settings.operator_logo_file:
+        ret["operator_logo_file_url"] = settings.operator_logo_file.url
+    else:
+        ret["operator_logo_file_url"] = ""
+    return ret
     #
     # context["langcode"] = settings.language
     # context["data_village_mourning"] = ""
