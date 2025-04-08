@@ -46,7 +46,8 @@
           </p>
         {% endblock footer_description %}
         <ul class="village-footer__content-list">
-            <li class="village-footer__content-item">
+            {% comment %} 
+             <li class="village-footer__content-item">
                 <a target="_blank"
                    rel="noopener external"
                    title="LesGrandsVoisins.com- {{ new_window_label }}"
@@ -69,7 +70,8 @@
                  id="footer__content-link-legifrance"
                  class="village-footer__content-link"
                  href="https://www.LesArtsVoisins.com">Les Arts Voisins</a>
-            </li>
+            </li> 
+            {% endcomment %}
             {% block footer_content_extra %}
           {% endblock footer_content_extra %}
         </ul>
