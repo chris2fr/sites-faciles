@@ -16,7 +16,8 @@ class Migration(migrations.Migration):
         ("django_village", "0002_alter_djangovillageconfig_language"),
         ("taggit", "0006_rename_taggeditem_content_type_object_id_taggit_tagg_content_8fc721_idx"),
         ("wagtailcore", "0094_alter_page_locale"),
-        ("wagtailimages", "0027_image_description"),
+        ("wagtailimages", "0026_delete_uploadedimage"),
+        # ("wagtailimages", "0027_image_description"),
         ("wagtailmenus", "0023_remove_use_specific"),
     ]
 
