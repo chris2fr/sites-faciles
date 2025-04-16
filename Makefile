@@ -157,8 +157,8 @@ fixtures-dump:
 	auth \
 	wagtailusers \
 	socialaccount > dump.json
-	grep 'revision":' dump.json | sed 's/[^0-9]//g' | uniq | sort -h - | awk '/^[0-9]+$/' ORS=',' > dump-revisions.txt 
-	./venv/bin/python manage.py dumpdata wagtailcore.Revision --pks `cat dump-revisions.txt` > dump-revisions.json
+	grep 'revision":' dump.json | sed 's/[^0-9]//g' | uniq | sort -h - | awk '/^[0-9]+$/' ORS=',' | sed 's/,$//' > dump-revisions.txt 
+	./venv/bin/python manage.py dumpdata --pks `cat dump-revisions.txt` wagtailcore.Revision > dump-revisions.json
 
 
 # 	-e postgres_search.indexentry \
