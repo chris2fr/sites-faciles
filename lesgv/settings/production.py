@@ -35,12 +35,13 @@ MEDIA_URL = "/media/"
 #     "wagtail.l-g-v.com",
 # ] + allowed_hosts()
 
-CSRF_TRUSTED_ORIGINS = [
-    "http://localhost",
-    "http://127.0.0.1",
-    "https://www.l-g-v.com",
-    "https://www.lesgrandsvoisins.com",
-] + csrf_trusted_origins()
+# Done in Base
+# CSRF_TRUSTED_ORIGINS = [
+#     "http://localhost",
+#     "http://127.0.0.1",
+#     "https://www.l-g-v.com",
+#     "https://www.lesgrandsvoisins.com",
+# ] + csrf_trusted_origins()
 
 
 LOGGING = {
