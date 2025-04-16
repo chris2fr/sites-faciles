@@ -124,3 +124,42 @@ fixtures-building-load:
 help:
 	find . -type f -name Makefile
 	grep -e "^[-A-Za-z0-9_]*:" Makefile | sed 's/:.*//g'
+
+fixtures-dump:
+	./venv/bin/python manage.py dumpdata \
+  --natural-foreign \
+	--natural-primary \
+	--indent=2 \
+	-e auth.Permission \
+	-e contenttypes \
+	-e sessions \
+	-e wagtailimages.rendition \
+	-e wagtailcore.Revision \
+	auth.group \
+	auth.user \
+	wagtailcore.collection \
+	taggit \
+	wagtailcore.Locale \
+	wagtailcore.Page \
+	wagtailcore.Collection \
+	wagtailcore.Site \
+	wagtailimages.Image \
+	wagtaildocs.Document \
+	django_village \
+	lesgv \
+	wagtail_village_blog \
+	wagtail_village_forms \
+	wagtail_village_lesgrandsvoisins \
+	wagtail_village \
+	wagtailmenus \
+	wagtailsnippets \
+	allauth \
+	auth \
+	wagtailusers \
+	socialaccount > dump.json
+	grep 'revision":' dump.json | sed 's/[^0-9]//g' | uniq | sort -h - | awk '/^[0-9]+$/' ORS=',' > dump-revisions.txt 
+	./venv/bin/python manage.py dumpdata wagtailcore.Revision --pks `cat dump-revisions.txt` > dump-revisions.json
+
+
+# 	-e postgres_search.indexentry \
+# 	-e wagtailcore.Revision \
