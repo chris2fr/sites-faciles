@@ -174,7 +174,6 @@ fixtures-dump-context:
 	wagtailcore.collection \
 	taggit \
 	wagtailcore.Locale \
-	wagtailcore.Collection \
 	wagtailimages.Image \
 	wagtaildocs.Document \
 	allauth \
