@@ -97,6 +97,10 @@ fixtures-dump-test-initial:
 	mkdir -p fixtures
 	touch fixtures/not.json
 	rm fixtures/*.json
+	./venv/bin/python manage.py dumpdata --natural-foreign auth.group > fixtures-1-auth-group.json
+	./venv/bin/python manage.py dumpdata --natural-foreign auth.user > fixtures-2-auth-user.json
+	./venv/bin/python manage.py dumpdata --natural-foreign wagtailcore.collection > fixtures-3-wagtailcore-collection.json
+	./venv/bin/python manage.py dumpdata --natural-foreign taggit > fixtures-4-taggit.json
 	./venv/bin/python manage.py dumpdata --natural-foreign wagtailcore.Locale wagtailcore.Revision wagtailcore.Page wagtailcore.Site wagtailimages.Image  wagtaildocs.Document django_village lesgv wagtail_village_blog wagtail_village_forms wagtail_village_lesgrandsvoisins wagtail_village wagtailmenus wagtailsnippets wagtailusers socialaccount > fixtures-initial.json 
 	mkdir -p fixtures/media/{original_,}images
 	mkdir -p media/{original_,}images
