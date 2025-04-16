@@ -134,7 +134,6 @@ fixtures-dump:
 	-e contenttypes \
 	-e sessions \
 	-e wagtailimages.rendition \
-	-e wagtailcore.Revision \
 	auth.group \
 	auth.user \
 	wagtailcore.collection \
@@ -156,10 +155,53 @@ fixtures-dump:
 	allauth \
 	auth \
 	wagtailusers \
-	socialaccount > dump.json
-	grep 'revision":' dump.json | sed 's/[^0-9]//g' | uniq | sort -h - | awk '/^[0-9]+$/' ORS=',' | sed 's/,$//' > dump-revisions.txt 
-	./venv/bin/python manage.py dumpdata --pks `cat dump-revisions.txt` wagtailcore.Revision > dump-revisions.json
+	socialaccount \
+	wagtailcore.revision > dump.json
+#	grep 'revision":' dump.json | sed 's/[^0-9]//g' | uniq | sort -h - | awk '/^[0-9]+$/' ORS=',' | sed 's/,$//' > dump-revisions.txt 
+#	./venv/bin/python manage.py dumpdata --pks `cat dump-revisions.txt` wagtailcore.Revision > dump-revisions.json
 
-
+fixtures-dump-context:
+./venv/bin/python manage.py dumpdata \
+  --natural-foreign \
+	--natural-primary \
+	--indent=2 \
+	-e auth.Permission \
+	-e contenttypes \
+	-e sessions \
+	-e wagtailimages.rendition \
+	auth.group \
+	auth.user \
+	wagtailcore.collection \
+	taggit \
+	wagtailcore.Locale \
+	wagtailcore.Collection \
+	wagtailimages.Image \
+	wagtaildocs.Document \
+	allauth \
+	auth \
+	wagtailusers \
+	socialaccount > dump-context.json
 # 	-e postgres_search.indexentry \
 # 	-e wagtailcore.Revision \
+
+fixtures-dump-content:
+	./venv/bin/python manage.py dumpdata \
+  --natural-foreign \
+	--natural-primary \
+	--indent=2 \
+	-e auth.Permission \
+	-e contenttypes \
+	-e sessions \
+	-e wagtailimages.rendition \
+	wagtailcore.Page \
+	wagtailcore.Site \
+	django_village \
+	lesgv \
+	wagtail_village_blog \
+	wagtail_village_forms \
+	wagtail_village_lesgrandsvoisins \
+	wagtail_village \
+	wagtailmenus \
+	wagtailsnippets \
+	socialaccount \
+	wagtailcore.revision > dump-content.json
