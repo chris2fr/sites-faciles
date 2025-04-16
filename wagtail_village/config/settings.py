@@ -250,7 +250,7 @@ else:
     STORAGES["default"] = {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
     }
-    MEDIA_URL = "/medias/"
+    MEDIA_URL = "/media/"
     MEDIA_ROOT = os.path.join(BASE_DIR, os.getenv("MEDIA_ROOT", ""))
 
 # Django Sass

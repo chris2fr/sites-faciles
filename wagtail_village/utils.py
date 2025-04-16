@@ -11,7 +11,7 @@ from wagtailmenus.models.menus import FlatMenu
 
 def import_image(full_path: str, title: str) -> Image:
     """
-    Import an image to the Wagtail medias based on its full path and return it.
+    Import an image to the Wagtail media based on its full path and return it.
     """
     with open(full_path, "rb") as image_file:
         image = Image(
