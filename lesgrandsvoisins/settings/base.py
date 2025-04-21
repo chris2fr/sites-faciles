@@ -98,7 +98,23 @@ INSTALLED_APPS = [
     "wagtailmarkdown",
     "wagtailmenus",
     "widget_tweaks",
+    "grapple",
+    "graphene_django",
 ]
+
+# Grapple config:
+GRAPHENE = {"SCHEMA": "grapple.schema.schema"}
+GRAPPLE = {
+    "APPS": [
+        "lesgv",
+        "lesgrandsvoisins",
+        "wagtail_village_blog",
+        "wagtail_village_dashboard",
+        "wagtail_village_forms",
+        "wagtail_village_lesgrandsvoisins",
+        "wagtail_village",
+    ],
+}
 
 # Only add these on a dev machine
 # if DEBUG and "localhost" in HOST_URL:

@@ -1,5 +1,6 @@
 from django import template
 from django.db import models
+from grapple.models import GraphQLString  # , GraphQLStreamfield
 
 # from django.http import HttpResponseRedirect
 from modelcluster.fields import ParentalKey
@@ -347,6 +348,38 @@ class LesgvHomePage(FaireMainHomePage):
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
         return context
+
+    # search_fields = Page.search_fields + [
+    #     index.SearchField('intro'),
+    #     index.SearchField('body'),
+    #     index.SearchField('section1'),
+    #     index.SearchField('section2'),
+    #     index.SearchField('section3'),
+    # ]
+
+    graphql_fields = [
+        # FaireMainPate
+        GraphQLString("intro"),
+        GraphQLString("body"),
+        GraphQLString("footer1"),
+        GraphQLString("footer2"),
+        # GraphQLStreamField('extramenu'),
+        GraphQLString("theme"),
+        # GraphQLString('image'),
+        GraphQLString("ghost_post_tag"),
+        # FaireMainHomePage
+        GraphQLString("agenda"),
+        GraphQLString("ghost_tag"),
+        GraphQLString("ghost_filter"),
+        GraphQLString("ghost_order"),
+        GraphQLString("ghost_limit"),
+        GraphQLString("ghost_include"),
+        GraphQLString("page_description"),
+        # LesgvHomePage
+        GraphQLString("section1"),
+        GraphQLString("section2"),
+        GraphQLString("section3"),
+    ]
 
 
 class FaireMainAgendaItemPage(FaireMainPage):

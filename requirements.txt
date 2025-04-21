@@ -36,3 +36,4 @@ wagtail>=6.2,<6.3
 wagtailmenus
 dotenv
 jwt
+graphene_django

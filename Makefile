@@ -161,7 +161,7 @@ fixtures-dump:
 #	./venv/bin/python manage.py dumpdata --pks `cat dump-revisions.txt` wagtailcore.Revision > dump-revisions.json
 
 fixtures-dump-context:
-./venv/bin/python manage.py dumpdata \
+	./venv/bin/python manage.py dumpdata \
   --natural-foreign \
 	--natural-primary \
 	--indent=2 \
@@ -204,3 +204,6 @@ fixtures-dump-content:
 	wagtailsnippets \
 	socialaccount \
 	wagtailcore.revision > dump-content.json
+
+requirements:
+	./venv/bin/pip install -r requirements.txt 
