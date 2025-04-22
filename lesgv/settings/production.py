@@ -26,8 +26,8 @@ DATABASES = {
 STATIC_ROOT = "/var/www/wagtail/static/"
 STATIC_URL = "/static/"
 
-MEDIA_ROOT = "/var/www/wagtail/media/"
-MEDIA_URL = "/media/"
+MEDIA_ROOT = "/var/www/wagtail/medias/"
+MEDIA_URL = "/medias/"
 
 # ALLOWED_HOSTS = [
 #     "localhost",

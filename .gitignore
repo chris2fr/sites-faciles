@@ -4,7 +4,7 @@
 # I put the virtual environment in a subfolder ./venv
 venv
 # Media contents are instance-specific
-media/*
+medias/*
 # stash is for temporary stuff
 stash/*
 #####################################################################################

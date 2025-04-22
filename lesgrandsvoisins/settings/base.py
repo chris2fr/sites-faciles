@@ -272,9 +272,9 @@ else:
     STORAGES["default"] = {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
     }
-    MEDIA_URL = "/media/"  # and not /media/
+    MEDIA_URL = "/medias/"  # and not /medias/
     MEDIA_ROOT = os.path.join(
-        BASE_DIR, os.getenv("MEDIA_ROOT", "/media/")
+        BASE_DIR, os.getenv("MEDIA_ROOT", "/medias/")
     )  # From defaul os.path.join(BASE_DIR, "media")
 
 STORAGES["staticfiles"] = STORAGES["default"]
@@ -429,8 +429,8 @@ SOCIALACCOUNT_PROVIDERS = {
         # 'SOCIALACCOUNT_ONLY': True,
         "APPS": [
             {
-                "provider_id": "keycloak-lesgv-org",
-                "name": "keycloak.lesgv.org",
+                "provider_id": "key.lesgrandsvoisins.com",
+                "name": "key.lesgrandsvoisins.com",
                 "client_id": os.getenv("OPENID_NAME"),
                 "secret": os.getenv("OPENID_SECRET"),
                 "settings": {

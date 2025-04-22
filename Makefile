@@ -93,7 +93,7 @@ tailwind-compilemax:
 tailwind-watch:
 	npx @tailwindcss/cli -i ./lesgv/src/tailwind/input.css -o ./lesgv/static/css/lesgv/tailwind.css --watch
 
-fixtures-dump-test-initial:
+fixtures-dump-test-init:
 	mkdir -p fixtures
 	touch fixtures/not.json
 	rm fixtures/*.json
@@ -101,25 +101,29 @@ fixtures-dump-test-initial:
 	./venv/bin/python manage.py dumpdata --natural-foreign auth.user > fixtures-2-auth-user.json
 	./venv/bin/python manage.py dumpdata --natural-foreign wagtailcore.collection > fixtures-3-wagtailcore-collection.json
 	./venv/bin/python manage.py dumpdata --natural-foreign taggit > fixtures-4-taggit.json
-	./venv/bin/python manage.py dumpdata --natural-foreign wagtailcore.Locale wagtailcore.Revision wagtailcore.Page wagtailcore.Site wagtailimages.Image  wagtaildocs.Document django_village lesgv wagtail_village_blog wagtail_village_forms wagtail_village_lesgrandsvoisins wagtail_village wagtailmenus wagtailsnippets wagtailusers socialaccount > fixtures-initial.json 
-	mkdir -p fixtures/media/{original_,}images
-	mkdir -p media/{original_,}images
-	touch fixtures/media/{original_,}images/not.txt
-	cp -a fixtures/media/images/* medias/images
-	cp -a fixtures/media/original_images/* medias/original_images
+	./venv/bin/python manage.py dumpdata --natural-foreign wagtailcore.Locale wagtailcore.Revision wagtailcore.Page wagtailcore.Site wagtailimages.Image  wagtaildocs.Document django_village lesgv wagtail_village_blog wagtail_village_forms wagtail_village_lesgrandsvoisins wagtail_village wagtailmenus wagtailsnippets wagtailusers socialaccount > fixtures-init.json 
+	mkdir -p fixtures/medias/{orpip install --upgrade pipiginal_,}images
+	mkdir -p medias/{original_,}images
+	touch fixtures/medias/{original_,}images/not.txt
+	cp -a fixtures/medias/images/* medias/images
+	cp -a fixtures/medias/original_images/* medias/original_images
 
-fixtures-load-test-initial:
-	./venv/bin/python manage.py loaddata fixtures/test-initial.json
-	cp -a fixtures/media/* medias
+fixtures-load-test-init:
+	./venv/bin/python manage.py loaddata fixtures/fixtures-1-auth-group.json
+	./venv/bin/python manage.py loaddata fixtures/fixtures-2-auth-user.json
+	./venv/bin/python manage.py loaddata fixtures/fixtures-3-wagtailcore-collection.json
+	./venv/bin/python manage.py loaddata fixtures/fixtures-4-taggit.json
+	./venv/bin/python manage.py loaddata fixtures/fixtures-init.json
+	cp -a fixtures/medias/* medias
 
 fixtures-building-dump:
-	rm fixtures-initial.json
-	./venv/bin/python manage.py dumpdata --natural-foreign wagtailcore.Locale wagtailcore.Revision wagtailcore.Page wagtailcore.Collection wagtailcore.Site wagtailimages.Image  wagtaildocs.Document django_village lesgv wagtail_village_blog wagtail_village_forms wagtail_village_lesgrandsvoisins wagtail_village wagtailmenus  wagtailsnippets allauth auth wagtailusers socialaccount > fixtures-initial.json 
-	ls -la fixtures-initial.json
-	mv fixtures-initial.json /tmp
+	rm fixtures-init.json
+	./venv/bin/python manage.py dumpdata --natural-foreign wagtailcore.Locale wagtailcore.Revision wagtailcore.Page wagtailcore.Collection wagtailcore.Site wagtailimages.Image  wagtaildocs.Document django_village lesgv wagtail_village_blog wagtail_village_forms wagtail_village_lesgrandsvoisins wagtail_village wagtailmenus  wagtailsnippets allauth auth wagtailusers socialaccount > fixtures-init.json 
+	ls -la fixtures-init.json
+	mv fixtures-init.json /tmp
 
 fixtures-building-load:
-	./venv/bin/python manage.py loaddata -e auth.Permission /tmp/fixtures-initial.json 
+	./venv/bin/python manage.py loaddata -e auth.Permission fixtures/fixtures-init.json 
 
 help:
 	find . -type f -name Makefile
