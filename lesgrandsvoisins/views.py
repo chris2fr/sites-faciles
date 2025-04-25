@@ -30,7 +30,7 @@ def signup_view(request):
             context["password"] = form.cleaned_data["password"]
             # Here you can save the data to the database, send an email, etc.
             admin = KeycloakAdmin(
-                server_url="https://key.lesgrandsvoisins.com/",
+                server_url="https://keycloak.lesgv.org/",
                 username=os.getenv("NEWUSER_USERNAME"),
                 password=os.getenv("NEWUSER_PASSWORD"),
                 realm_name="master",
@@ -40,11 +40,11 @@ def signup_view(request):
             user_id = admin.get_user_id(context["username"])
             if user_id:
                 return render(request, "registration_username.html", {"username": context["username"]})
-                # return 'https://key.lesgrandsvoisins.com/realms/master/account/applications'
+                # return 'https://keycloak.lesgv.org/realms/master/account/applications'
             email_users = admin.get_users({"email": context["email"]})
             if len(email_users) > 0:
                 formdata["username"] = email_users[0]["username"]
-                formdata["href"] = "https://key.lesgrandsvoisins.com/realms/master/account/applications"
+                formdata["href"] = "https://keycloak.lesgv.org/realms/master/account/applications"
                 return render(request, "registration_email.html", formdata)
             for i in [
                 "email",
@@ -67,7 +67,7 @@ def signup_view(request):
             newuserdata["enabled"] = True
             new_user = admin.create_user(newuserdata, exist_ok=False)
             if new_user:
-                return redirect("https://key.lesgrandsvoisins.com/realms/master/account/applications")
+                return redirect("https://keycloak.lesgv.org/realms/master/account/applications")
         else:
             context["info"] = "Erreur dans les données du formulaire (CAPTCHA ?)"
     else:
@@ -87,7 +87,7 @@ def signup_view(request):
     # response_data=response.json()
     # print(response.json())
     # token=response_data['access_token']
-    # api_url = "https://key.lesgrandsvoisins.com/admin/realms/master/users/count?username=%s" % userdata['username']
+    # api_url = "https://keycloak.lesgv.org/admin/realms/master/users/count?username=%s" % userdata['username']
     # headers = {
     #   "Authorization": "Bearer %s" %  token,
     #   "Content-Type":"application/json",

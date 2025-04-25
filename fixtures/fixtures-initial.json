@@ -111183,7 +111183,7 @@
             "header_darken": false,
             "live_revision": null,
             "show_in_menus": false,
-            "header_cta_link": "https://www.lesgrandsvoisins.com/accounts/oidc/key-lesgrandsvoisins-com/login/?process=login",
+            "header_cta_link": "https://www.lesgrandsvoisins.com/accounts/oidc/keycloak-lesgv-org/login/?process=login",
             "header_cta_text": "Inscrivez-vous ou connectez-vous",
             "latest_revision": 2309,
             "translation_key": "5cea1864-d003-4d02-bad8-314e7bb19d8f",
@@ -111237,7 +111237,7 @@
             "header_darken": true,
             "live_revision": 2310,
             "show_in_menus": true,
-            "header_cta_link": "https://www.lesgrandsvoisins.com/accounts/oidc/key-lesgrandsvoisins-com/login/?process=login",
+            "header_cta_link": "https://www.lesgrandsvoisins.com/accounts/oidc/keycloak-lesgv-org/login/?process=login",
             "header_cta_text": "Inscrivez-vous ou connectez-vous",
             "latest_revision": 2310,
             "translation_key": "5cea1864-d003-4d02-bad8-314e7bb19d8f",
@@ -111291,7 +111291,7 @@
             "header_darken": true,
             "live_revision": 2311,
             "show_in_menus": true,
-            "header_cta_link": "https://www.lesgrandsvoisins.com/accounts/oidc/key-lesgrandsvoisins-com/login/?process=login",
+            "header_cta_link": "https://www.lesgrandsvoisins.com/accounts/oidc/keycloak-lesgv-org/login/?process=login",
             "header_cta_text": "Inscrivez-vous ou connectez-vous",
             "latest_revision": 2311,
             "translation_key": "5cea1864-d003-4d02-bad8-314e7bb19d8f",
@@ -210484,7 +210484,7 @@
         "header_darken": true,
         "header_cta_text": "Inscrivez-vous ou connectez-vous",
         "header_cta_label": "sur l'extranet des Grands Voisins",
-        "header_cta_link": "https://www.lesgrandsvoisins.com/accounts/oidc/key-lesgrandsvoisins-com/login/?process=login"
+        "header_cta_link": "https://www.lesgrandsvoisins.com/accounts/oidc/keycloak-lesgv-org/login/?process=login"
     }
 }, {
     "model": "wagtail_village.contentpage",
@@ -212219,7 +212219,7 @@
     "pk": 1,
     "fields": {
         "user": ["chris"],
-        "provider": "key-lesgrandsvoisins-com",
+        "provider": "keycloak-lesgv-org",
         "uid": "a3585342-4631-4c68-8f6b-066d42691dcb",
         "last_login": "2025-04-15T15:04:16.606Z",
         "date_joined": "2024-11-02T08:17:43.303Z",
@@ -212239,7 +212239,7 @@
     "pk": 2,
     "fields": {
         "user": ["arezkisefrani"],
-        "provider": "key-lesgrandsvoisins-com",
+        "provider": "keycloak-lesgv-org",
         "uid": "b952f2ef-324c-4752-b5ba-6bc9817ead40",
         "last_login": "2024-11-03T16:07:37.002Z",
         "date_joined": "2024-11-03T16:05:14.728Z",
@@ -212259,7 +212259,7 @@
     "pk": 3,
     "fields": {
         "user": ["kas"],
-        "provider": "key-lesgrandsvoisins-com",
+        "provider": "keycloak-lesgv-org",
         "uid": "4ae30c26-66ed-4cc5-86f7-2cfd98305fcf",
         "last_login": "2024-11-04T18:28:54.156Z",
         "date_joined": "2024-11-04T18:27:17.057Z",
@@ -212279,7 +212279,7 @@
     "pk": 4,
     "fields": {
         "user": ["osissokofr"],
-        "provider": "key-lesgrandsvoisins-com",
+        "provider": "keycloak-lesgv-org",
         "uid": "905d510f-2e31-4395-a358-febefdc27391",
         "last_login": "2024-11-04T18:46:56.992Z",
         "date_joined": "2024-11-04T18:46:09.597Z",
@@ -212298,7 +212298,7 @@
     "pk": 5,
     "fields": {
         "user": ["felix"],
-        "provider": "key-lesgrandsvoisins-com",
+        "provider": "keycloak-lesgv-org",
         "uid": "9dd1946e-609d-4530-b9d7-4d39835732b7",
         "last_login": "2024-11-15T13:40:15.026Z",
         "date_joined": "2024-11-15T13:38:52.228Z",
@@ -212317,7 +212317,7 @@
     "pk": 7,
     "fields": {
         "user": ["list"],
-        "provider": "key-lesgrandsvoisins-com",
+        "provider": "keycloak-lesgv-org",
         "uid": "19e61faf-02f4-4d90-977e-1d81d6aefa51",
         "last_login": "2024-11-17T11:16:47.523Z",
         "date_joined": "2024-11-17T10:58:20.438Z",
@@ -212336,7 +212336,7 @@
     "pk": 8,
     "fields": {
         "user": ["mohamed"],
-        "provider": "key-lesgrandsvoisins-com",
+        "provider": "keycloak-lesgv-org",
         "uid": "a6ecd332-abc2-4699-8b0b-cc7929044666",
         "last_login": "2025-04-02T08:16:09.318Z",
         "date_joined": "2024-11-18T10:42:56.367Z",
@@ -212354,7 +212354,7 @@
     "pk": 9,
     "fields": {
         "user": ["lombahe"],
-        "provider": "key-lesgrandsvoisins-com",
+        "provider": "keycloak-lesgv-org",
         "uid": "8272c725-1035-4a57-a99c-262405ecb796",
         "last_login": "2024-12-02T13:37:01.178Z",
         "date_joined": "2024-11-21T15:10:29.941Z",
@@ -212373,7 +212373,7 @@
     "pk": 10,
     "fields": {
         "user": ["solkam"],
-        "provider": "key-lesgrandsvoisins-com",
+        "provider": "keycloak-lesgv-org",
         "uid": "e83eb967-81f9-49ac-a660-14bfb1a98572",
         "last_login": "2025-03-03T20:22:15.630Z",
         "date_joined": "2024-11-25T12:08:31.835Z",
@@ -212392,7 +212392,7 @@
     "pk": 11,
     "fields": {
         "user": ["abakerdarfour"],
-        "provider": "key-lesgrandsvoisins-com",
+        "provider": "keycloak-lesgv-org",
         "uid": "c2d4f3b1-2fc7-4f0a-88bb-fd08109b31d0",
         "last_login": "2025-01-29T08:33:47.072Z",
         "date_joined": "2024-11-25T12:30:49.312Z",
@@ -212412,7 +212412,7 @@
     "pk": 12,
     "fields": {
         "user": ["fernane"],
-        "provider": "key-lesgrandsvoisins-com",
+        "provider": "keycloak-lesgv-org",
         "uid": "03edf8fe-e489-41ef-b311-6c790b61d9c4",
         "last_login": "2024-11-25T15:26:14.240Z",
         "date_joined": "2024-11-25T15:26:14.240Z",
@@ -212431,7 +212431,7 @@
     "pk": 13,
     "fields": {
         "user": ["hamadache"],
-        "provider": "key-lesgrandsvoisins-com",
+        "provider": "keycloak-lesgv-org",
         "uid": "9e8a5922-4801-45f4-813a-56e4de3ae4df",
         "last_login": "2024-12-16T15:37:07.449Z",
         "date_joined": "2024-12-16T15:37:07.449Z",
@@ -212451,7 +212451,7 @@
     "pk": 14,
     "fields": {
         "user": ["mael"],
-        "provider": "key-lesgrandsvoisins-com",
+        "provider": "keycloak-lesgv-org",
         "uid": "b4a7bee6-9698-469d-a74e-0e61f595b856",
         "last_login": "2024-12-25T14:12:55.489Z",
         "date_joined": "2024-12-23T12:13:15.461Z",
@@ -212470,7 +212470,7 @@
     "pk": 15,
     "fields": {
         "user": ["berard"],
-        "provider": "key-lesgrandsvoisins-com",
+        "provider": "keycloak-lesgv-org",
         "uid": "eee73764-cb31-4345-952a-632af98eae78",
         "last_login": "2024-12-23T14:16:21.419Z",
         "date_joined": "2024-12-23T14:16:21.419Z",
@@ -212489,7 +212489,7 @@
     "pk": 16,
     "fields": {
         "user": ["yousfel"],
-        "provider": "key-lesgrandsvoisins-com",
+        "provider": "keycloak-lesgv-org",
         "uid": "5fbf3b89-8508-42ce-bcb4-ed84569c5244",
         "last_login": "2025-01-06T20:07:43.093Z",
         "date_joined": "2025-01-06T15:01:34.060Z",
@@ -212508,7 +212508,7 @@
     "pk": 17,
     "fields": {
         "user": ["nana"],
-        "provider": "key-lesgrandsvoisins-com",
+        "provider": "keycloak-lesgv-org",
         "uid": "34ef9cb4-c889-4258-8d8c-e755cacc99ae",
         "last_login": "2025-01-06T15:56:55.084Z",
         "date_joined": "2025-01-06T15:56:55.084Z",
@@ -212527,7 +212527,7 @@
     "pk": 18,
     "fields": {
         "user": ["afripartenaires"],
-        "provider": "key-lesgrandsvoisins-com",
+        "provider": "keycloak-lesgv-org",
         "uid": "fe019915-fd75-4d20-8458-8ee118aa5fc5",
         "last_login": "2025-03-27T17:10:03.594Z",
         "date_joined": "2025-03-25T15:04:25.304Z",
@@ -212547,7 +212547,7 @@
     "pk": 19,
     "fields": {
         "user": ["renel"],
-        "provider": "key-lesgrandsvoisins-com",
+        "provider": "keycloak-lesgv-org",
         "uid": "f7026c34-c8c5-44cd-8033-a3b27fb847f9",
         "last_login": "2025-03-25T16:46:32.751Z",
         "date_joined": "2025-03-25T16:08:44.237Z",
@@ -212565,7 +212565,7 @@
     "pk": 20,
     "fields": {
         "user": ["admin5"],
-        "provider": "key-lesgrandsvoisins-com",
+        "provider": "keycloak-lesgv-org",
         "uid": "230b6930-4ec4-4bcb-af5d-5d6b9f965146",
         "last_login": "2025-03-27T11:57:42.106Z",
         "date_joined": "2025-03-27T11:57:42.106Z",

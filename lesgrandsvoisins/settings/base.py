@@ -429,8 +429,8 @@ SOCIALACCOUNT_PROVIDERS = {
         # 'SOCIALACCOUNT_ONLY': True,
         "APPS": [
             {
-                "provider_id": "key-lesgrandsvoisins-com",
-                "name": "key.lesgrandsvoisins.com",
+                "provider_id": "keycloak-lesgv-org",
+                "name": "keycloak.lesgv.org",
                 "client_id": os.getenv("OPENID_NAME"),
                 "secret": os.getenv("OPENID_SECRET"),
                 "settings": {
