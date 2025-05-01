@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni0428" format="2">
+	<advance width="884"/>
+	<unicode hex="0428"/>
+	<outline>
+		<contour>
+			<point x="127" y="0" type="line"/>
+			<point x="764" y="0" type="line"/>
+			<point x="764" y="12" type="line"/>
+			<point x="127" y="12" type="line"/>
+		</contour>
+		<contour>
+			<point x="120" y="0" type="line"/>
+			<point x="132" y="0" type="line"/>
+			<point x="132" y="650" type="line"/>
+			<point x="120" y="650" type="line"/>
+		</contour>
+		<contour>
+			<point x="436" y="0" type="line"/>
+			<point x="448" y="0" type="line"/>
+			<point x="448" y="650" type="line"/>
+			<point x="436" y="650" type="line"/>
+		</contour>
+		<contour>
+			<point x="752" y="0" type="line"/>
+			<point x="764" y="0" type="line"/>
+			<point x="764" y="650" type="line"/>
+			<point x="752" y="650" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+			<string>H</string>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>H</string>
+		</dict>
+	</lib>
+</glyph>

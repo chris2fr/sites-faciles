@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni2D3C" format="2">
+	<advance width="720"/>
+	<unicode hex="2D3C"/>
+	<outline>
+		<contour>
+			<point x="60" y="529" type="line"/>
+			<point x="300" y="529" type="line"/>
+			<point x="300" y="649" type="line"/>
+			<point x="60" y="649" type="line"/>
+		</contour>
+		<contour>
+			<point x="60" y="0" type="line"/>
+			<point x="300" y="0" type="line"/>
+			<point x="300" y="120" type="line"/>
+			<point x="60" y="120" type="line"/>
+		</contour>
+		<contour>
+			<point x="240" y="264" type="line"/>
+			<point x="480" y="264" type="line"/>
+			<point x="480" y="384" type="line"/>
+			<point x="240" y="384" type="line"/>
+		</contour>
+		<contour>
+			<point x="660" y="529" type="line"/>
+			<point x="660" y="649" type="line"/>
+			<point x="420" y="649" type="line"/>
+			<point x="420" y="529" type="line"/>
+		</contour>
+		<contour>
+			<point x="660" y="0" type="line"/>
+			<point x="660" y="120" type="line"/>
+			<point x="420" y="120" type="line"/>
+			<point x="420" y="0" type="line"/>
+		</contour>
+		<contour>
+			<point x="180" y="0" type="line"/>
+			<point x="300" y="0" type="line"/>
+			<point x="300" y="650" type="line"/>
+			<point x="180" y="650" type="line"/>
+		</contour>
+		<contour>
+			<point x="540" y="0" type="line"/>
+			<point x="540" y="650" type="line"/>
+			<point x="420" y="650" type="line"/>
+			<point x="420" y="0" type="line"/>
+		</contour>
+	</outline>
+</glyph>

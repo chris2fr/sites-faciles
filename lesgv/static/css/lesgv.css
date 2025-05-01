@@ -3,7 +3,7 @@
 }
 
 body {
-    font-family: fengardoneue;
+    font-family: fengardo;
     color: var(--color-text);
     background-color: var(--color-background);
 }
@@ -18,7 +18,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: lack;
+    font-family: grotesk;
     clear: both;
 }
 

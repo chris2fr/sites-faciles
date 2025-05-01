@@ -24,9 +24,11 @@
         {% endif %}
 
         {# Global stylesheets #}
-        <link rel="stylesheet" type="text/css"  href="{% static 'css/lesgv.css' %}">
         <link rel="stylesheet" type="text/css"  href="{% static 'fonts/lack/stylesheet.css' %}" />
+        <link rel="stylesheet" type="text/css"  href="{% static 'fonts/fengardo/font.css' %}" />
+        <link rel="stylesheet" type="text/css"  href="{% static 'fonts/grotesk/fonts/_web/font.css' %}" />
         <link rel="stylesheet" type="text/css"  href="{% static 'fonts/fengardoneue/font.css' %}" />
+        <link rel="stylesheet" type="text/css"  href="{% static 'css/lesgv.css' %}">
         {% block extra_css %}
         {# Override this in templates to add extra stylesheets #}
         {% endblock %}

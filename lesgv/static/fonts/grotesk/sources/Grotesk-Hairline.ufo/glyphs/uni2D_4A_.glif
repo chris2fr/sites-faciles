@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni2D4A" format="2">
+	<advance width="500"/>
+	<unicode hex="2D4A"/>
+	<outline>
+		<contour>
+			<point x="50" y="0" type="line"/>
+			<point x="450" y="0" type="line"/>
+			<point x="450" y="12" type="line"/>
+			<point x="50" y="12" type="line"/>
+		</contour>
+		<contour>
+			<point x="50" y="637" type="line"/>
+			<point x="450" y="637" type="line"/>
+			<point x="450" y="649" type="line"/>
+			<point x="50" y="649" type="line"/>
+		</contour>
+		<contour>
+			<point x="244" y="0" type="line"/>
+			<point x="256" y="0" type="line"/>
+			<point x="256" y="650" type="line"/>
+			<point x="244" y="650" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+			<string>A</string>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>A</string>
+		</dict>
+	</lib>
+</glyph>

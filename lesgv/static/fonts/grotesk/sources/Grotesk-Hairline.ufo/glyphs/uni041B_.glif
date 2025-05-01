@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni041B" format="2">
+	<advance width="710"/>
+	<unicode hex="041B"/>
+	<anchor x="594" y="0" name="bottom"/>
+	<anchor x="593" y="0" name="ogonek"/>
+	<anchor x="594" y="649" name="top"/>
+	<anchor x="454" y="649" name="topleft"/>
+	<outline>
+		<contour>
+			<point x="208" y="649" type="line"/>
+			<point x="208" y="637" type="line"/>
+			<point x="580" y="637" type="line"/>
+			<point x="580" y="649" type="line"/>
+		</contour>
+		<contour>
+			<point x="60" y="0" type="line"/>
+			<point x="75" y="0" type="line" smooth="yes"/>
+			<point x="172" y="0"/>
+			<point x="195" y="53"/>
+			<point x="200" y="188" type="curve" smooth="yes"/>
+			<point x="216" y="649" type="line"/>
+			<point x="204" y="649" type="line"/>
+			<point x="188" y="188" type="line" smooth="yes"/>
+			<point x="183" y="51"/>
+			<point x="161" y="12"/>
+			<point x="71" y="12" type="curve" smooth="yes"/>
+			<point x="60" y="12" type="line"/>
+		</contour>
+		<contour>
+			<point x="578" y="0" type="line"/>
+			<point x="590" y="0" type="line"/>
+			<point x="590" y="650" type="line"/>
+			<point x="578" y="650" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>H</string>
+		</dict>
+	</lib>
+</glyph>

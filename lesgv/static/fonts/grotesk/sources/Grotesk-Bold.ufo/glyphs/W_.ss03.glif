@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="W.ss03" format="2">
+	<advance width="880"/>
+	<guideline x="19" y="113" angle="0"/>
+	<guideline x="324" y="457" angle="0"/>
+	<guideline x="418" y="342" angle="0"/>
+	<anchor x="440" y="0" name="bottom"/>
+	<anchor x="440" y="590" name="top"/>
+	<note>
+		W
+	</note>
+	<outline>
+		<contour>
+			<point x="50" y="650" type="line"/>
+			<point x="214" y="0" type="line"/>
+			<point x="365" y="0" type="line"/>
+			<point x="449" y="365" type="line"/>
+			<point x="421" y="365" type="line"/>
+			<point x="505" y="0" type="line"/>
+			<point x="666" y="0" type="line"/>
+			<point x="830" y="650" type="line"/>
+			<point x="709" y="650" type="line"/>
+			<point x="575" y="113" type="line"/>
+			<point x="584" y="113" type="line"/>
+			<point x="502" y="480" type="line"/>
+			<point x="368" y="480" type="line"/>
+			<point x="286" y="113" type="line"/>
+			<point x="305" y="113" type="line"/>
+			<point x="171" y="650" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+			<string>A</string>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>A</string>
+		</dict>
+	</lib>
+</glyph>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni2D3D" format="2">
+	<advance width="703"/>
+	<unicode hex="2D3D"/>
+	<guideline x="653" y="649" angle="90"/>
+	<outline>
+		<contour>
+			<point x="532" y="649" type="line"/>
+			<point x="100" y="649" type="line"/>
+			<point x="100" y="534" type="line"/>
+			<point x="532" y="534" type="line"/>
+		</contour>
+		<contour>
+			<point x="100" y="0" type="line"/>
+			<point x="237" y="0" type="line"/>
+			<point x="653" y="649" type="line"/>
+			<point x="516" y="649" type="line"/>
+		</contour>
+		<contour>
+			<point x="337" y="289" type="line"/>
+			<point x="522" y="0" type="line"/>
+			<point x="653" y="0" type="line"/>
+			<point x="406" y="385" type="line"/>
+		</contour>
+		<contour>
+			<point x="100" y="0" type="line"/>
+			<point x="220" y="0" type="line"/>
+			<point x="220" y="650" type="line"/>
+			<point x="100" y="650" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+			<string>H</string>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>A</string>
+		</dict>
+	</lib>
+</glyph>

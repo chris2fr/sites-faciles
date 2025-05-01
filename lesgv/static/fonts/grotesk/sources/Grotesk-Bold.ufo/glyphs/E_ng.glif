@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="Eng" format="2">
+	<advance width="635"/>
+	<unicode hex="014A"/>
+	<anchor x="160" y="0" name="bottom"/>
+	<anchor x="178" y="0" name="ogonek"/>
+	<anchor x="160" y="649" name="top"/>
+	<anchor x="20" y="649" name="topleft"/>
+	<outline>
+		<contour>
+			<point x="368" y="266" type="line"/>
+			<point x="463" y="266" type="line"/>
+			<point x="463" y="381" type="line"/>
+			<point x="418" y="381" type="line"/>
+			<point x="220" y="649" type="line"/>
+			<point x="145" y="649" type="line"/>
+			<point x="145" y="534" type="line"/>
+			<point x="170" y="534" type="line"/>
+		</contour>
+		<contour>
+			<point x="415" y="-200" type="line"/>
+			<point x="535" y="-200" type="line"/>
+			<point x="535" y="649" type="line"/>
+			<point x="415" y="649" type="line"/>
+		</contour>
+		<contour>
+			<point x="319" y="-90" type="line"/>
+			<point x="319" y="-200" type="line"/>
+			<point x="535" y="-200" type="line"/>
+			<point x="535" y="-90" type="line"/>
+		</contour>
+		<contour>
+			<point x="100" y="0" type="line"/>
+			<point x="220" y="0" type="line"/>
+			<point x="220" y="650" type="line"/>
+			<point x="100" y="650" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+			<string>N</string>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>N</string>
+		</dict>
+	</lib>
+</glyph>

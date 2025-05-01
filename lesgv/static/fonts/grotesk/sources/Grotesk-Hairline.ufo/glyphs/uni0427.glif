@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni0427" format="2">
+	<advance width="597"/>
+	<unicode hex="0427"/>
+	<anchor x="461" y="0" name="bottom"/>
+	<anchor x="460" y="0" name="ogonek"/>
+	<anchor x="461" y="649" name="top"/>
+	<anchor x="321" y="649" name="topleft"/>
+	<outline>
+		<contour>
+			<point x="477" y="278" type="line"/>
+			<point x="221" y="278" type="line" smooth="yes"/>
+			<point x="132" y="278"/>
+			<point x="62" y="347"/>
+			<point x="62" y="435" type="curve" smooth="yes"/>
+			<point x="62" y="649" type="line"/>
+			<point x="50" y="649" type="line"/>
+			<point x="50" y="435" type="line" smooth="yes"/>
+			<point x="50" y="340"/>
+			<point x="125" y="266"/>
+			<point x="221" y="266" type="curve" smooth="yes"/>
+			<point x="477" y="266" type="line"/>
+		</contour>
+		<contour>
+			<point x="465" y="0" type="line"/>
+			<point x="477" y="0" type="line"/>
+			<point x="477" y="650" type="line"/>
+			<point x="465" y="650" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+			<string>A</string>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>H</string>
+		</dict>
+	</lib>
+</glyph>

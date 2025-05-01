@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="T_E.dlig" format="2">
+	<advance width="945"/>
+	<outline>
+		<contour>
+			<point x="208" y="0" type="line"/>
+			<point x="328" y="0" type="line"/>
+			<point x="328" y="649" type="line"/>
+			<point x="208" y="649" type="line"/>
+		</contour>
+		<contour>
+			<point x="525" y="0" type="line"/>
+			<point x="855" y="0" type="line"/>
+			<point x="855" y="115" type="line"/>
+			<point x="525" y="115" type="line"/>
+		</contour>
+		<contour>
+			<point x="525" y="267" type="line"/>
+			<point x="805" y="267" type="line"/>
+			<point x="805" y="382" type="line"/>
+			<point x="525" y="382" type="line"/>
+		</contour>
+		<contour>
+			<point x="525" y="0" type="line"/>
+			<point x="645" y="0" type="line"/>
+			<point x="645" y="489" type="line"/>
+			<point x="525" y="489" type="line"/>
+		</contour>
+		<contour>
+			<point x="50" y="534" type="line"/>
+			<point x="855" y="534" type="line"/>
+			<point x="855" y="649" type="line"/>
+			<point x="50" y="649" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+			<string>T</string>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>E</string>
+		</dict>
+	</lib>
+</glyph>
