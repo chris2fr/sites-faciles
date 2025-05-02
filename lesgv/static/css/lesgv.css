@@ -19,7 +19,7 @@ h4,
 h5,
 h6 {
     font-family: grotesk;
-    clear: both;
+    /* clear: both; */
 }
 
 hr {

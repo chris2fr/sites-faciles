@@ -19,15 +19,15 @@ main.gvhome h2 {
 div.home-section-2 h2,
 div.home-section-3 h2 {
     text-align: center;
-    font-size: var(--text-lg);
-    line-height: var(--text-lg--line-height);
+    font-size: var(--text-2xl);
+    line-height: var(--text2xl--line-height);
     margin-bottom: 0.5rem;
 }
 
 div.home-section-1 h2 {
     text-align: left;
-    font-size: var(--text-lg);
-    line-height: var(--text-lg--line-height);
+    font-size: var(--text-2xl);
+    line-height: var(--text-2xl--line-height);
     margin-bottom: 0.5rem;
 }
 
@@ -44,6 +44,8 @@ div.home-section-1-inner hr {
 div.home-section-1-inner h2::before {
     content: "";
     float: left;
+    font-size: var(--text-2xl);
+    line-height: var(--text2xl--line-height);
     margin: 12px -2rem -28px;
     border: 1px solid #000;
     width: 1.5rem;
