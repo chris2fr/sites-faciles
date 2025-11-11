@@ -1,0 +1,439 @@
+<div class="app-menu-header-right">
+  {% comment %} 
+   <button class="l14s-theme"
+          type="button"
+          data-theme-toggle=""
+          aria-label="jour / nuit">jout / nuit</button> 
+  {% endcomment %}
+  <button class="app-menu-menu-button" id="menuBtn">
+    <div class="app-menu-menu-icon">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </button>
+  <div class="app-menu-avatar">A</div>
+</div>
+<div class="app-menu-menu-overlay" id="overlay"></div>
+<div class="app-menu" id="appMenu">
+  <div class="app-grid" id="appGrid">
+    <a href="https://www.lesgrandsvoisins.com"
+       class="app-item app-item-first">
+      <div class="app-card" id="www">
+        <div class="app-front">
+          <div class="app-icon" style="background: #345999; color:white">LGV</div>
+          <div class="app-name">Les Grands Voisins(.com)</div>
+        </div>
+        <div class="app-back">
+          <div class="app-name">Les Grands Voisins(.com)</div>
+          <div class="app-description">Portail lesgrandsvoisins.com</div>
+          <!-- <div class="group-label">Sites principaux</div> -->
+        </div>
+      </div>
+    </a><a href="https://blog.lesgrandsvoisins.com"
+   class="app-item app-item-middle">
+    <div class="app-card" id="blog">
+      <div class="app-front">
+        <div class="app-icon" style="background: #ffffffff; color:black">BL</div>
+        <div class="app-name">Blog LesGrandsVoisins.com</div>
+      </div>
+      <div class="app-back">
+        <div class="app-name">Blog LesGrandsVoisins.com</div>
+        <div class="app-description">Blog des Grands Voisins</div>
+        <!-- <div class="group-label">Sites principaux</div> -->
+      </div>
+    </div>
+  </a><a href="https://www.gdvoisins.com" class="app-item app-item-middle">
+  <div class="app-card" id="gdvoisins">
+    <div class="app-front">
+      <div class="app-icon" style="background: #1a1a70ff; color:white">GDV</div>
+      <div class="app-name">G D Voisins</div>
+    </div>
+    <div class="app-back">
+      <div class="app-name">G D Voisins</div>
+      <div class="app-description">Tableau de bord des outils libres</div>
+      <!-- <div class="group-label">Sites principaux</div> -->
+    </div>
+  </div>
+</a><a href="https://quartz.resdigita.com" class="app-item app-item-last">
+<div class="app-card" id="documentation">
+  <div class="app-front">
+    <div class="app-icon" style="background: #1b1464; color:white">D</div>
+    <div class="app-name">Documentation</div>
+  </div>
+  <div class="app-back">
+    <div class="app-name">Documentation</div>
+    <div class="app-description">Documentation sur les outils</div>
+    <!-- <div class="group-label">Sites principaux</div> -->
+  </div>
+</div>
+</a>
+<div class="app-flex-break"></div>
+<a href="https://mail.lesgrandsvoisins.com"
+   class="app-item app-item-first">
+  <div class="app-card" id="webmail">
+    <div class="app-front">
+      <div class="app-icon" style="background: #37befe; color:black">WM</div>
+      <div class="app-name">Web Mail</div>
+      <form action="https://quartz.resdigita.com/config/services/email/"
+            class="app-documentation">
+        <input type="submit" value="ℹ️">
+      </form>
+    </div>
+    <div class="app-back">
+      <div class="app-name">Web Mail</div>
+      <div class="app-description">Webmail et serveur mail des Grands Voisins</div>
+      <form action="https://quartz.resdigita.com/config/services/email/"
+            class="app-documentation">
+        <input type="submit" value="ℹ️">
+      </form>
+      <!-- <div class="group-label">Outils Libres</div> -->
+    </div>
+  </div>
+</a><a href="https://jitsi.lgv.info/lesgrandsvoisins"
+   class="app-item app-item-middle">
+<div class="app-card" id="meet">
+  <div class="app-front">
+    <div class="app-icon" style="background: #0074e0; color:white">MJ</div>
+    <div class="app-name">Meet (Jitsi)</div>
+  </div>
+  <div class="app-back">
+    <div class="app-name">Meet (Jitsi)</div>
+    <div class="app-description">Salle de réunion Jitsi en visioconférence</div>
+    <!-- <div class="group-label">Outils Libres</div> -->
+  </div>
+</div>
+</a><a href="https://vw.lgv.info/" class="app-item app-item-last">
+<div class="app-card" id="mots-de-passe">
+  <div class="app-front">
+    <div class="app-icon" style="background: #175ddc; color:white">MV</div>
+    <div class="app-name">Mots-de-passe (Vaultwarden)</div>
+  </div>
+  <div class="app-back">
+    <div class="app-name">Mots-de-passe (Vaultwarden)</div>
+    <div class="app-description">Vaultwarden pour gérer nos mots de passe</div>
+    <!-- <div class="group-label">Outils Libres</div> -->
+  </div>
+</div>
+</a>
+<div class="app-flex-break"></div>
+<a href="https://cp.roses.gdvoisins.com/"
+   class="app-item app-item-first">
+  <div class="app-card" id="drive (roses copyparty)">
+    <div class="app-front">
+      <div class="app-icon" style="background: #ffcc55; color:black">DRC</div>
+      <div class="app-name">Drive (Roses CopyParty)</div>
+    </div>
+    <div class="app-back">
+      <div class="app-name">Drive (Roses CopyParty)</div>
+      <div class="app-description">Partager des fichiers et des dossiers</div>
+      <!-- <div class="group-label">Outils Libres SSO</div> -->
+    </div>
+  </div>
+</a><a href="https://linkding.lesgrandsvoisins.com/"
+   class="app-item app-item-middle">
+<div class="app-card" id="liens (linkding)">
+  <div class="app-front">
+    <div class="app-icon" style="background: #5755d8; color:white">LL</div>
+    <div class="app-name">Liens (Linkding)</div>
+  </div>
+  <div class="app-back">
+    <div class="app-name">Liens (Linkding)</div>
+    <div class="app-description">Gérer nos liens web (favoris / marque pages)</div>
+    <!-- <div class="group-label">Outils Libres SSO</div> -->
+  </div>
+</div>
+</a><a href="https://mark.lesgrandsvoisins.com/"
+   class="app-item app-item-middle">
+<div class="app-card" id="markdown (hedgedoc)">
+  <div class="app-front">
+    <div class="app-icon" style="background: #b51f09; color:white">MH</div>
+    <div class="app-name">Markdown (Hedgedoc)</div>
+  </div>
+  <div class="app-back">
+    <div class="app-name">Markdown (Hedgedoc)</div>
+    <div class="app-description">Editer nos documents collaboratifs en format Markdown</div>
+    <!-- <div class="group-label">Outils Libres SSO</div> -->
+  </div>
+</div>
+</a><a href="https://task.lesgrandsvoisins.com/"
+   class="app-item app-item-last">
+<div class="app-card" id="tâches (vikunja)">
+  <div class="app-front">
+    <div class="app-icon" style="background: #196aff; color:white">TV</div>
+    <div class="app-name">Tâches (Vikunja)</div>
+  </div>
+  <div class="app-back">
+    <div class="app-name">Tâches (Vikunja)</div>
+    <div class="app-description">Coordonner des projets et des tâches</div>
+    <!-- <div class="group-label">Outils Libres SSO</div> -->
+  </div>
+</div>
+</a>
+<div class="app-flex-break"></div>
+<a href="https://key.lesgrandsvoisins.com/realms/master/account"
+   class="app-item app-item-first">
+  <div class="app-card" id="compte-keycloak">
+    <div class="app-front">
+      <div class="app-icon" style="background: #36c6e9; color:black">CK</div>
+      <div class="app-name">Compte Keycloak</div>
+    </div>
+    <div class="app-back">
+      <div class="app-name">Compte Keycloak</div>
+      <div class="app-description">Interface de mon administration pour moi</div>
+      <!-- <div class="group-label">Mon Compte</div> -->
+    </div>
+  </div>
+</a><a href="https://guichet.resdigita.com/user"
+   class="app-item app-item-middle">
+<div class="app-card" id="compte-guichet">
+  <div class="app-front">
+    <div class="app-icon" style="background: #1b1464; color:white">Cg</div>
+    <div class="app-name">Compte guichet</div>
+  </div>
+  <div class="app-back">
+    <div class="app-name">Compte guichet</div>
+    <div class="app-description">Ancien gestion d'utilisateur Guichet</div>
+    <!-- <div class="group-label">Mon Compte</div> -->
+  </div>
+</div>
+</a><a href="https://list.lesgrandsvoisins.com/subscription/form"
+   class="app-item app-item-last">
+<div class="app-card" id="inscription-infos">
+  <div class="app-front">
+    <div class="app-icon" style="background: #0055d4; color:white">IL</div>
+    <div class="app-name">Infolettre (Listmonk)</div>
+  </div>
+  <div class="app-back">
+    <div class="app-name">Infolettre (Listmonk)</div>
+    <div class="app-description">Inscription sur nos lettres d'information ListMonk</div>
+    <!-- <div class="group-label">Mon Compte</div> -->
+  </div>
+</div>
+</a>
+<div class="app-flex-break"></div>
+<a href="https://www.helloasso.com/associations/les-grands-voisins/adhesions/souscription-annuelle"
+   class="app-item app-item-first">
+  <div class="app-card" id="dons-helloasso">
+    <div class="app-front">
+      <div class="app-icon" style="background: #4c3fcf; color:white">DH</div>
+      <div class="app-name">Dons HelloAsso</div>
+    </div>
+    <div class="app-back">
+      <div class="app-name">Dons HelloAsso</div>
+      <div class="app-description">Dons HelloAsso pour Les Grands Voisins</div>
+      <!-- <div class="group-label">Dons</div> -->
+    </div>
+  </div>
+</a><a href="https://www.paypal.com/donate/?hosted_button_id=BPUUS6H6TP62Y"
+   class="app-item app-item-middle">
+<div class="app-card" id="dons-paypal">
+  <div class="app-front">
+    <div class="app-icon" style="background: #ffd140; color:black">DP</div>
+    <div class="app-name">Dons Paypal</div>
+  </div>
+  <div class="app-back">
+    <div class="app-name">Dons Paypal</div>
+    <div class="app-description">Dons Paypal pour Les Grands Voisins</div>
+    <!-- <div class="group-label">Dons</div> -->
+  </div>
+</div>
+</a><a href="https://donate.stripe.com/fZe7uD07z9hAg0w288"
+   class="app-item app-item-last">
+<div class="app-card" id="dons-stripe">
+  <div class="app-front">
+    <div class="app-icon" style="background: #58e5a2; color:black">DS</div>
+    <div class="app-name">Dons Stripe</div>
+  </div>
+  <div class="app-back">
+    <div class="app-name">Dons Stripe</div>
+    <div class="app-description">Dons Stripe pour Les Grands Voisins</div>
+    <!-- <div class="group-label">Dons</div> -->
+  </div>
+</div>
+</a>
+<div class="app-flex-break"></div>
+<a href="https://www.instagram.com/les_grands_voisins"
+   class="app-item app-item-first">
+  <div class="app-card" id="instagram">
+    <div class="app-front">
+      <div class="app-icon" style="background: #ff8eb5; color:black">I</div>
+      <div class="app-name">Instagram</div>
+    </div>
+    <div class="app-back">
+      <div class="app-name">Instagram</div>
+      <div class="app-description">les_grands_voisins sur Instagram</div>
+      <!-- <div class="group-label">Médias sociaux</div> -->
+    </div>
+  </div>
+</a><a href="https://www.youtube.com/@LesGrandsVoisinsCom"
+   class="app-item app-item-middle">
+<div class="app-card" id="youtube">
+  <div class="app-front">
+    <div class="app-icon" style="background: #ff0033; color:white">Y</div>
+    <div class="app-name">YouTube</div>
+  </div>
+  <div class="app-back">
+    <div class="app-name">YouTube</div>
+    <div class="app-description">@LesGrandsVoisinsCom sur Youtube</div>
+    <!-- <div class="group-label">Médias sociaux</div> -->
+  </div>
+</div>
+</a><a href="https://github.com/lesgrandsvoisins"
+   class="app-item app-item-last">
+<div class="app-card" id="github">
+  <div class="app-front">
+    <div class="app-icon" style="background: #000000; color:white">G</div>
+    <div class="app-name">GitHub</div>
+  </div>
+  <div class="app-back">
+    <div class="app-name">GitHub</div>
+    <div class="app-description">lesgrandsvoisins sur GitHub</div>
+    <!-- <div class="group-label">Médias sociaux</div> -->
+  </div>
+</div>
+</a>
+<div class="app-flex-break"></div>
+<a href="https://writefreely.lesgrandsvoisins.com/"
+   class="app-item app-item-first">
+  <div class="app-card" id="writefreely">
+    <div class="app-front">
+      <div class="app-icon" style="background: #888888; color:black">BW</div>
+      <div class="app-name">Bêta WriteFreely</div>
+    </div>
+    <div class="app-back">
+      <div class="app-name">Bêta WriteFreely</div>
+      <div class="app-description">Blog Write Freely</div>
+      <!-- <div class="group-label">Expérimentation</div> -->
+    </div>
+  </div>
+</a><a href="https://discourse.lesgrandsvoisins.com/"
+   class="app-item app-item-middle">
+<div class="app-card" id="forum">
+  <div class="app-front">
+    <div class="app-icon" style="background: #888888; color:black">BF</div>
+    <div class="app-name">Bêta Forum</div>
+  </div>
+  <div class="app-back">
+    <div class="app-name">Bêta Forum</div>
+    <div class="app-description">Forum Discourse</div>
+    <!-- <div class="group-label">Expérimentation</div> -->
+  </div>
+</div>
+</a><a href="https://mm.lgv.info/" class="app-item app-item-middle">
+<div class="app-card" id="fils-de-discussion">
+  <div class="app-front">
+    <div class="app-icon" style="background: #888888; color:black">BFdd</div>
+    <div class="app-name">Bêta Fils de discussion</div>
+  </div>
+  <div class="app-back">
+    <div class="app-name">Bêta Fils de discussion</div>
+    <div class="app-description">Fils de discussion Matter Most</div>
+    <!-- <div class="group-label">Expérimentation</div> -->
+  </div>
+</div>
+</a><a href="https://www.lgv.info" class="app-item app-item-middle">
+<div class="app-card" id="ancien-tabelau-de-bord">
+  <div class="app-front">
+    <div class="app-icon" style="background: #888888; color:black">BAT</div>
+    <div class="app-name">Bêta Ancien Tabelau-de-Bord</div>
+  </div>
+  <div class="app-back">
+    <div class="app-name">Bêta Ancien Tabelau-de-Bord</div>
+    <div class="app-description">Ancien tableau de bord Wagtail</div>
+    <!-- <div class="group-label">Expérimentation</div> -->
+  </div>
+</div>
+</a><a href="https://xandikos.lesgv.org" class="app-item app-item-last">
+<div class="app-card" id="xandikos">
+  <div class="app-front">
+    <div class="app-icon" style="background: #888888; color:black">BX</div>
+    <div class="app-name">Bêta Xandikos</div>
+  </div>
+  <div class="app-back">
+    <div class="app-name">Bêta Xandikos</div>
+    <div class="app-description">Calendriers Xandikos</div>
+    <!-- <div class="group-label">Expérimentation</div> -->
+  </div>
+</div>
+</a>
+<div class="app-flex-break"></div>
+<a href="https://www.lesgrandsvoisins.com/cms-admin/"
+   class="app-item app-item-first">
+  <div class="app-card" id="admin-wagtail">
+    <div class="app-front">
+      <div class="app-icon" style="background: #008888; color:white">AW</div>
+      <div class="app-name">Admin Wagtail</div>
+    </div>
+    <div class="app-back">
+      <div class="app-name">Admin Wagtail</div>
+      <div class="app-description">Administration du portail Wagtail</div>
+      <!-- <div class="group-label">Administration</div> -->
+    </div>
+  </div>
+</a><a href="https://key.lesgrandsvoisins.com/admin"
+   class="app-item app-item-middle">
+<div class="app-card" id="admin-keycloak">
+  <div class="app-front">
+    <div class="app-icon" style="background: #008888; color:white">AK</div>
+    <div class="app-name">Admin Keycloak</div>
+  </div>
+  <div class="app-back">
+    <div class="app-name">Admin Keycloak</div>
+    <div class="app-description">Administration du serveur Keycloak</div>
+    <!-- <div class="group-label">Administration</div> -->
+  </div>
+</div>
+</a><a href="https://blog.lesgrandsvoisins.com/ghost"
+   class="app-item app-item-middle">
+<div class="app-card" id="admin-ghost">
+  <div class="app-front">
+    <div class="app-icon" style="background: #008888; color:white">AG</div>
+    <div class="app-name">Admin Ghost</div>
+  </div>
+  <div class="app-back">
+    <div class="app-name">Admin Ghost</div>
+    <div class="app-description">Administration du blog Ghost</div>
+    <!-- <div class="group-label">Administration</div> -->
+  </div>
+</div>
+</a><a href="https://list.lesgrandsvoisins.com/"
+   class="app-item app-item-middle">
+<div class="app-card" id="admin-uptime-kuma">
+  <div class="app-front">
+    <div class="app-icon" style="background: #008888; color:white">AUK</div>
+    <div class="app-name">Admin Uptime Kuma</div>
+  </div>
+  <div class="app-back">
+    <div class="app-name">Admin Uptime Kuma</div>
+    <div class="app-description">Monitoring par notre Uptime Kuma</div>
+    <!-- <div class="group-label">Administration</div> -->
+  </div>
+</div>
+</a><a href="https://list.lesgrandsvoisins.com/"
+   class="app-item app-item-middle">
+<div class="app-card" id="admin-listmonk">
+  <div class="app-front">
+    <div class="app-icon" style="background: #008888; color:white">AL</div>
+    <div class="app-name">Admin ListMonk</div>
+  </div>
+  <div class="app-back">
+    <div class="app-name">Admin ListMonk</div>
+    <div class="app-description">Listes de diffusion par notre serveur ListMonk</div>
+    <!-- <div class="group-label">Administration</div> -->
+  </div>
+</div>
+</a><a href="https://www.configmagic.com/" class="app-item app-item-last">
+<div class="app-card" id="admin-config-magic">
+  <div class="app-front">
+    <div class="app-icon" style="background: #008888; color:white">ACM</div>
+    <div class="app-name">Admin Config Magic</div>
+  </div>
+  <div class="app-back">
+    <div class="app-name">Admin Config Magic</div>
+    <div class="app-description">Wikijs de configuration Config Magic</div>
+    <!-- <div class="group-label">Administration</div> -->
+  </div>
+</div>
+</a>
+<div class="app-flex-break"></div>
+</div>
+</div>

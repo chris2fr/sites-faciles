@@ -1,7 +1,7 @@
 {% load static wagtailcore_tags wagtailuserbar %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="utf-8" />
         <title>
@@ -29,6 +29,10 @@
         <link rel="stylesheet" type="text/css"  href="{% static 'css/lesgv.css' %}">
         <link rel="stylesheet" type="text/css"  href="{% static 'fonts/lack/stylesheet.css' %}" />
         <link rel="stylesheet" type="text/css"  href="{% static 'fonts/fengardoneue/font.css' %}" />
+        
+  <link rel="stylesheet"
+        type="text/css"
+        href="{% static 'css/lesgv/appmenu.css' %}" />
         {% block extra_css %}
         {# Override this in templates to add extra stylesheets #}
         {% endblock %}
@@ -37,6 +41,7 @@
     </head>
     <body class="{% block body_class %}{% endblock %} darkmode">
         {% wagtailuserbar %}
+        {% include "lesgv/fragments/app-menu.html" %}
 
         {% block content %}{% endblock %}
 

@@ -103,4 +103,11 @@
       <div class="footer1 p-5">{{ footer1|richtext }}</div>
       <div class="footer2 p-5">{{ footer2|richtext }}<p>(<a href="/admin">admin</a>)</div>
     </footer>
+
   {% endblock content %}
+
+        
+        
+        {% block extra_js %}
+          <script type="text/javascript" src="{% static 'js/app-menu.js' %}"></script>
+        {% endblock %}
