@@ -1,5 +1,6 @@
 from django.urls import include, path
-from django.utils.translation import gettext_lazy as _
+
+# from django.utils.translation import gettext_lazy as _
 from wagtail import urls as wagtail_urls
 
 from wagtail_village.views import SearchResultsView, TagsListView, TagView
@@ -13,7 +14,8 @@ from wagtail_village.views import SearchResultsView, TagsListView, TagView
 
 
 urlpatterns = [
-    path(_("search/"), SearchResultsView.as_view(), name="wagtail_village_search"),
+    # path(_("search/"), SearchResultsView.as_view(), name="wagtail_village_search"),
+    path("search/", SearchResultsView.as_view(), name="wagtail_village_search"),
     path("tags/<str:tag>/", TagView.as_view(), name="global_tag"),
     path("tags/", TagsListView.as_view(), name="global_tags_list"),
     path("", include(wagtail_urls)),

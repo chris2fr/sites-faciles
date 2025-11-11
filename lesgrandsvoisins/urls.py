@@ -11,7 +11,9 @@ from wagtail.documents import urls as wagtaildocs_urls
 from lesgrandsvoisins import views as lesgrandsvoisins_views
 from lesgv import views as lesgv_views
 from search import views as search_views
-from wagtail_transfer import urls as wagtailtransfer_urls  # for Wagtail-Transfer
+
+
+# from wagtail_transfer import urls as wagtailtransfer_urls  # for Wagtail-Transfer
 
 
 # Prendre les variables d'environnement
@@ -28,10 +30,12 @@ urlpatterns = [
     path("cms-admin/", include(wagtailadmin_urls)),  # Sites-Faciles préfère ceci
     path("accounts/", include("allauth.urls")),
     path("documents/", include(wagtaildocs_urls)),
-    path("search/", search_views.search, name="search"),
-    path("wagtail-transfer/", include(wagtailtransfer_urls)),  # Pour Wagtail Transfer
+    # path("wagtail-transfer/", include(wagtailtransfer_urls)),  # Pour Wagtail Transfer
     path("htmlmenu", lesgv_views.htmlmenu),  # Ajouté
     path("api/", include(grapple_urls)),  # ajouté
+    path("search/", search_views.search, name="search"),
+    path("fr/search/", search_views.search, name="search"),
+    path("en/search/", search_views.search, name="search"),
 ]
 
 if settings.DEBUG_TOOLBAR:
@@ -48,23 +52,29 @@ if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     # urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
-urlpatterns += i18n_patterns(
+urlpatterns = urlpatterns + i18n_patterns(
     path("", include(wagtail_urls)),
     # Pour l'internationalisation de Wagtail_Village et Wagtail_Village_Blog
     path("", include("wagtail_village.urls")),
     path("", include("wagtail_village_blog.urls", namespace="wagtail_village_blog")),
     path("signup/", lesgrandsvoisins_views.signup_view, name="signup_view"),
     path("signup", lesgrandsvoisins_views.signup_view, name="signup_view"),
+    # path("search/", search_views.search, name="search"),
     prefix_default_language=True,
+    # path("search/", search_views.search, name="search"),
+    # path("search/", include("search.urls")),
+    # path("recherche/", search_views.search, name="search"),
 )
 
-urlpatterns = urlpatterns + [
-    # path("", include('allauth.urls')),
-    # For anything not caught by a more specific rule above, hand over to
-    # Wagtail's page serving mechanism. This should be the last pattern in
-    # the list:
-    # path("", include(wagtail_urls)),
-    # Alternatively, if you want Wagtail pages to be served from a subpath
-    # of your site, rather than the site root:
-    #  path("pages/", include(wagtail_urls)),
-]
+
+# urlpatterns = urlpatterns + [
+#     # path("", include('allauth.urls')),
+#     # For anything not caught by a more specific rule above, hand over to
+#     # Wagtail's page serving mechanism. This should be the last pattern in
+#     # the list:
+#     # path("", include(wagtail_urls)),
+#     # Alternatively, if you want Wagtail pages to be served from a subpath
+#     # of your site, rather than the site root:
+#     #  path("pages/", include(wagtail_urls)),
+#     # path("search/", search_views.search, name="search"),
+# ]
