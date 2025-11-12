@@ -13,7 +13,7 @@ django-simple-captcha
 django-storages
 django-taggit
 django-village
-Django>=4.2,<5.1
+Django
 djlint
 faker
 flake8
