@@ -16,6 +16,7 @@ from modelcluster.fields import ParentalKey, ParentalManyToManyField
 from taggit.models import TaggedItemBase
 from wagtail.admin.panels import FieldPanel, FieldRowPanel, MultiFieldPanel, TitleFieldPanel
 from wagtail.admin.widgets.slug import SlugInput
+from wagtail.api import APIField
 from wagtail.fields import StreamField
 from wagtail.models.i18n import Locale, TranslatableMixin
 from wagtail.search import index
@@ -39,6 +40,10 @@ class BlogIndexPage(ContentPage):
 
     settings_panels = ContentPage.settings_panels + [
         FieldPanel("posts_per_page"),
+    ]
+
+    api_fields = ContentPage.api_fields + [
+        APIField("posts_per_page"),
     ]
 
     subpage_types = ["wagtail_village_blog.BlogEntryPage", "wagtail_village_blog.DirectoryEntryPage"]
@@ -216,6 +221,15 @@ class BlogEntryPage(ContentPage):
             ],
             heading=_("Tags and Categories"),
         ),
+    ]
+
+    api_fields = ContentPage.api_fields + [
+        APIField("authors"),
+        APIField("date"),
+        APIField("go_live_at"),
+        APIField("expire_at"),
+        APIField("blog_categories"),
+        APIField("tags"),
     ]
 
     def get_absolute_url(self):

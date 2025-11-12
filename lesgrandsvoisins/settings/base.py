@@ -41,6 +41,7 @@ HOST_URL = os.getenv("HOST_URL", "localhost")
 WAGTAIL_SITE_NAME = os.getenv("SITE_NAME", "grandsvoisins.com")
 WAGTAILADMIN_BASE_URL = HOST_URL
 
+
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
@@ -101,6 +102,14 @@ INSTALLED_APPS = [
     "grapple",
     "graphene_django",
 ]
+
+BOOL_WAGTAIL_API = os.getenv("WAGTAIL_API", "False").lower() in ("true", "1", "t")
+
+if BOOL_WAGTAIL_API:
+    INSTALLED_APPS += [
+        "wagtail.api.v2",
+    ]
+    WAGTAILAPI_LIMIT_MAX = None
 
 # Grapple config:
 GRAPHENE = {"SCHEMA": "grapple.schema.schema"}

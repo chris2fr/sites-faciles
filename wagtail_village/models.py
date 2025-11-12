@@ -6,6 +6,7 @@ from modelcluster.models import ClusterableModel
 from modelcluster.tags import ClusterTaggableManager
 from taggit.models import Tag as TaggitTag, TaggedItemBase
 from wagtail.admin.panels import FieldPanel, InlinePanel, MultiFieldPanel
+from wagtail.api import APIField
 from wagtail.contrib.settings.models import BaseSiteSetting, register_setting
 
 # from wagtail.images import get_image_model_string
@@ -25,6 +26,11 @@ class ContentPage(SitesFacilesBasePage):
 
     settings_panels = SitesFacilesBasePage.settings_panels + [
         FieldPanel("tags"),
+    ]
+
+    # Export fields over the API
+    api_fields = SitesFacilesBasePage.api_fields + [
+        APIField("tags"),
     ]
 
 

@@ -4,10 +4,12 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from modelcluster.fields import ParentalKey
 from wagtail.admin.panels import FieldPanel, FieldRowPanel, InlinePanel, MultiFieldPanel
+from wagtail.api import APIField
 from wagtail.contrib.forms.models import AbstractFormField, EmailFormMixin, FormMixin
 from wagtail.fields import RichTextField
 
 from wagtail_village.models import ContentPage
+from wagtail_village.utils import RichTextSerializer
 
 from .widgets import VillageRadioSelect
 
@@ -87,6 +89,14 @@ class FormPage(EmailFormMixin, FormMixin, ContentPage):
             ],
             "Email",
         ),
+    ]
+
+    api_fields = ContentPage.api_fields + [
+        APIField("form_fields"),
+        APIField("thank_you_text", serializer=RichTextSerializer()),
+        APIField("from_address"),
+        APIField("to_address"),
+        APIField("subject"),
     ]
 
     def get_form(self, *args, **kwargs):

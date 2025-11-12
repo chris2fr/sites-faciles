@@ -1,10 +1,12 @@
 from django.utils.translation import gettext_lazy as _
 from wagtail import blocks
 from wagtail.admin.panels import FieldPanel
+from wagtail.api import APIField
 from wagtail.fields import RichTextField, StreamField
 
 from wagtail_village.blocks import STREAMFIELD_COMMON_BLOCKS
 from wagtail_village.models import ContentPage
+from wagtail_village.utils import RichTextSerializer, StreamSerializer
 
 
 SECTION_CHOICES = [
@@ -57,6 +59,14 @@ class WagtailVillageLesgrandsvoisinsHome(ContentPage):
         FieldPanel("section_2_description_rich"),
         FieldPanel("section_2_body"),
         FieldPanel("section_3_body"),
+    ]
+
+    api_fields = ContentPage.api_fields + [
+        APIField("sections", serializer=StreamSerializer()),
+        APIField("section_1_body", serializer=StreamSerializer()),
+        APIField("section_2_description_rich", serializer=RichTextSerializer()),
+        APIField("section_2_body", serializer=StreamSerializer()),
+        APIField("section_3_body", serializer=StreamSerializer()),
     ]
 
     class Meta:

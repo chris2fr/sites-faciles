@@ -4,6 +4,7 @@ from django_village.constants import COLOR_CHOICES
 from django_village.models import DjangoVillageConfig
 from modelcluster.models import ClusterableModel
 from wagtail.admin.panels import FieldPanel, InlinePanel, MultiFieldPanel, ObjectList, TabbedInterface
+from wagtail.api import APIField
 from wagtail.contrib.settings.models import BaseSiteSetting, register_setting
 from wagtail.fields import RichTextField, StreamField
 from wagtail.images import get_image_model_string
@@ -12,7 +13,7 @@ from wagtail.search import index
 
 from wagtail_village.blocks import STREAMFIELD_COMMON_BLOCKS
 from wagtail_village.constants import LIMITED_RICHTEXTFIELD_FEATURES
-from wagtail_village.utils import get_streamfield_raw_text
+from wagtail_village.utils import StreamSerializer, get_streamfield_raw_text
 
 
 @register_setting(icon="cog")
@@ -214,6 +215,18 @@ class SitesFacilesBasePage(Page):
             ],
             heading=_("Header options"),
         ),
+    ]
+
+    api_fields = [
+        APIField("body", serializer=StreamSerializer()),
+        APIField("header_image"),
+        APIField("header_with_title"),
+        APIField("header_color_class"),
+        APIField("header_large"),
+        APIField("header_darken"),
+        APIField("header_cta_text"),
+        APIField("header_cta_label"),
+        APIField("header_cta_link"),
     ]
 
     search_fields = Page.search_fields + [

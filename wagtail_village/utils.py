@@ -4,9 +4,22 @@ from io import BytesIO
 
 from bs4 import BeautifulSoup
 from django.core.files.images import ImageFile
+from rest_framework.fields import CharField
 from wagtail.images.models import Image
 from wagtail.models import Site
+from wagtail.rich_text import expand_db_html
 from wagtailmenus.models.menus import FlatMenu
+
+
+class RichTextSerializer(CharField):
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+        return expand_db_html(representation)
+
+
+class StreamSerializer(CharField):
+    def to_representation(self, instance):
+        return expand_db_html(instance.render_as_block())
 
 
 def import_image(full_path: str, title: str) -> Image:

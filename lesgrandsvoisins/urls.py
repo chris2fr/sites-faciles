@@ -8,16 +8,16 @@ from wagtail import urls as wagtail_urls
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.documents import urls as wagtaildocs_urls
 
-from lesgrandsvoisins import views as lesgrandsvoisins_views
+from lesgrandsvoisins import views as lesgrandsvoisins_views  # , settings as lesgrandsvoisins_settings
 from lesgv import views as lesgv_views
 from search import views as search_views
 
 
-# from wagtail_transfer import urls as wagtailtransfer_urls  # for Wagtail-Transfer
-
-
 # Prendre les variables d'environnement
 load_dotenv()
+
+
+# from wagtail_transfer import urls as wagtailtransfer_urls  # for Wagtail-Transfer
 
 
 urlpatterns = [
@@ -37,6 +37,22 @@ urlpatterns = [
     path("fr/search/", search_views.search, name="search"),
     path("en/search/", search_views.search, name="search"),
 ]
+
+if settings.BOOL_WAGTAIL_API:
+    from wagtail.api.v2.router import WagtailAPIRouter
+    from wagtail.api.v2.views import PagesAPIViewSet
+    from wagtail.documents.api.v2.views import DocumentsAPIViewSet
+    from wagtail.images.api.v2.views import ImagesAPIViewSet
+
+    api_router = WagtailAPIRouter("wagtailapi")
+
+    api_router.register_endpoint("pages", PagesAPIViewSet)
+    api_router.register_endpoint("images", ImagesAPIViewSet)
+    api_router.register_endpoint("documents", DocumentsAPIViewSet)
+    urlpatterns += [
+        path("api/v2/", api_router.urls),
+    ]
+
 
 if settings.DEBUG_TOOLBAR:
     urlpatterns += [

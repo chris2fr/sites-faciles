@@ -6,11 +6,13 @@ from grapple.models import GraphQLString  # , GraphQLStreamfield
 from modelcluster.fields import ParentalKey
 from wagtail import blocks
 from wagtail.admin.panels import FieldPanel, InlinePanel
+from wagtail.api import APIField
 from wagtail.contrib.settings.models import BaseGenericSetting, BaseSiteSetting, register_setting
 from wagtail.fields import RichTextField, StreamField
 from wagtail.models import Orderable, Page
 
 import lesgv.services
+from wagtail_village.utils import RichTextSerializer, StreamSerializer
 
 
 # from lesgv.blocks import GhostIndexBlock
@@ -234,6 +236,18 @@ class FaireMainPage(Page):
     #         # For example, render a custom template or return a different response
     #         return super().serve(request)
 
+    api_fields = [
+        APIField("intro", serializer=RichTextSerializer()),
+        APIField("body", serializer=RichTextSerializer()),
+        APIField("ghost_post_tag"),
+        APIField("image"),
+        APIField("theme"),
+        APIField("extramenu", serializer=StreamSerializer()),
+        APIField("footer1", serializer=RichTextSerializer()),
+        APIField("footer2", serializer=RichTextSerializer()),
+        APIField("redirect_url"),
+    ]
+
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
         context["website_settings"] = WebsiteSettings.for_request(request=request)
@@ -296,6 +310,7 @@ class RelatedAgendaItemHomePage(Orderable):
     panels = [
         FieldPanel("agenda_item"),
     ]
+    api_fields = [APIField("agenda_item")]
 
 
 class FaireMainHomePage(FaireMainPage):
@@ -317,6 +332,15 @@ class FaireMainHomePage(FaireMainPage):
         FieldPanel("ghost_order"),
         FieldPanel("ghost_limit"),
         FieldPanel("ghost_include"),
+    ]
+
+    api_fields = FaireMainPage.api_fields + [
+        APIField("agenda", serializer=RichTextField()),
+        APIField("ghost_tag"),
+        APIField("ghost_filter"),
+        APIField("ghost_order"),
+        APIField("ghost_limit"),
+        APIField("ghost_include"),
     ]
 
     def get_context(self, request, *args, **kwargs):
@@ -345,6 +369,13 @@ class LesgvHomePage(FaireMainHomePage):
         FieldPanel("section3"),
     ]
 
+    # Export fields over the API
+    api_fields = FaireMainHomePage.api_fields + [
+        APIField("section1", serializer=RichTextSerializer()),
+        APIField("section2", serializer=RichTextSerializer()),
+        APIField("section3", serializer=RichTextSerializer()),
+    ]
+
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
         return context
@@ -358,7 +389,7 @@ class LesgvHomePage(FaireMainHomePage):
     # ]
 
     graphql_fields = [
-        # FaireMainPate
+        # FaireMainPage
         GraphQLString("intro"),
         GraphQLString("body"),
         GraphQLString("footer1"),
@@ -392,9 +423,17 @@ class FaireMainAgendaItemPage(FaireMainPage):
     page_description = "Faire Ma Agenda Item Page, Un évènement"
     parent_page_types = ["lesgv.FaireMainPage", "lesgv.FaireMainAgendaItemPage"]
     subpage_types = ["lesgv.FaireMainAgendaItemPage"]
+
     content_panels = FaireMainPage.content_panels + [
         FieldPanel("start"),
         FieldPanel("end"),
         FieldPanel("place"),
         FieldPanel("place_url"),
+    ]
+
+    api_fields = FaireMainPage.api_fields + [
+        APIField("start"),
+        APIField("end"),
+        APIField("place"),
+        APIField("place_url"),
     ]
