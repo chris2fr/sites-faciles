@@ -1,0 +1,159 @@
+{
+    "meta": {
+        "total_count": 15
+    },
+    "items": [
+        {
+            "id": 1,
+            "meta": {
+                "type": "wagtaildocs.Document",
+                "detail_url": "http://127.0.0.1:8000/api/v2/documents/1/",
+                "tags": [],
+                "download_url": "http://127.0.0.1:8000/documents/1/flyer-guinguette.pdf"
+            },
+            "title": "flyer-guinguette"
+        },
+        {
+            "id": 2,
+            "meta": {
+                "type": "wagtaildocs.Document",
+                "detail_url": "http://127.0.0.1:8000/api/v2/documents/2/",
+                "tags": [],
+                "download_url": "http://127.0.0.1:8000/documents/2/meet-2020-04-08-to2020-04-18-les_grands_voisins.pdf"
+            },
+            "title": "meet-2020-04-08-to2020-04-18-les_grands_voisins"
+        },
+        {
+            "id": 3,
+            "meta": {
+                "type": "wagtaildocs.Document",
+                "detail_url": "http://127.0.0.1:8000/api/v2/documents/3/",
+                "tags": [],
+                "download_url": "http://127.0.0.1:8000/documents/3/scan-2020-04-03-lesgrandsvoisinsfr.pdf"
+            },
+            "title": "scan-2020-04-03-lesgrandsvoisinsfr"
+        },
+        {
+            "id": 4,
+            "meta": {
+                "type": "wagtaildocs.Document",
+                "detail_url": "http://127.0.0.1:8000/api/v2/documents/4/",
+                "tags": [],
+                "download_url": "http://127.0.0.1:8000/documents/4/lesgrandsvoisins-villagengo-ag-2024-v20240630h18.pdf"
+            },
+            "title": "Compte-rendu AG 2024 Les Grands Voisins VillageNgo"
+        },
+        {
+            "id": 5,
+            "meta": {
+                "type": "wagtaildocs.Document",
+                "detail_url": "http://127.0.0.1:8000/api/v2/documents/5/",
+                "tags": [],
+                "download_url": "http://127.0.0.1:8000/documents/5/24econseil.ics"
+            },
+            "title": "24e Conseil dans votre agenda (.ics)"
+        },
+        {
+            "id": 6,
+            "meta": {
+                "type": "wagtaildocs.Document",
+                "detail_url": "http://127.0.0.1:8000/api/v2/documents/6/",
+                "tags": [],
+                "download_url": "http://127.0.0.1:8000/documents/6/document1.pdf"
+            },
+            "title": "Yanloms Prod Présentation"
+        },
+        {
+            "id": 7,
+            "meta": {
+                "type": "wagtaildocs.Document",
+                "detail_url": "http://127.0.0.1:8000/api/v2/documents/7/",
+                "tags": [],
+                "download_url": "http://127.0.0.1:8000/documents/7/document3.pdf"
+            },
+            "title": "Yanloms Prod Doc Préfecture"
+        },
+        {
+            "id": 8,
+            "meta": {
+                "type": "wagtaildocs.Document",
+                "detail_url": "http://127.0.0.1:8000/api/v2/documents/8/",
+                "tags": [],
+                "download_url": "http://127.0.0.1:8000/documents/8/flyer-nana-20250101.pdf"
+            },
+            "title": "flyer-nana-20250101"
+        },
+        {
+            "id": 9,
+            "meta": {
+                "type": "wagtaildocs.Document",
+                "detail_url": "http://127.0.0.1:8000/api/v2/documents/9/",
+                "tags": [],
+                "download_url": "http://127.0.0.1:8000/documents/9/flyer-nana-20250101-4fois.pdf"
+            },
+            "title": "flyer-nana-20250101-4fois"
+        },
+        {
+            "id": 10,
+            "meta": {
+                "type": "wagtaildocs.Document",
+                "detail_url": "http://127.0.0.1:8000/api/v2/documents/10/",
+                "tags": [],
+                "download_url": "http://127.0.0.1:8000/documents/10/profession-empathie-nationale-ed2025-v2.pdf"
+            },
+            "title": "profession-empathie-nationale-avec-mission-les-grands-voisins"
+        },
+        {
+            "id": 11,
+            "meta": {
+                "type": "wagtaildocs.Document",
+                "detail_url": "http://127.0.0.1:8000/api/v2/documents/11/",
+                "tags": [],
+                "download_url": "http://127.0.0.1:8000/documents/11/profession-empathie-nationale-ed2025.pdf"
+            },
+            "title": "profession-empathie-nationale-ed2025"
+        },
+        {
+            "id": 12,
+            "meta": {
+                "type": "wagtaildocs.Document",
+                "detail_url": "http://127.0.0.1:8000/api/v2/documents/12/",
+                "tags": [],
+                "download_url": "http://127.0.0.1:8000/documents/12/flyer-lesgrandsvoisins-com.pdf"
+            },
+            "title": "plaquette-lesgrandsvoisins-2025-a4"
+        },
+        {
+            "id": 13,
+            "meta": {
+                "type": "wagtaildocs.Document",
+                "detail_url": "http://127.0.0.1:8000/api/v2/documents/13/",
+                "tags": [],
+                "download_url": "http://127.0.0.1:8000/documents/13/plaquette-lesgrandsvoisins-2025.pdf"
+            },
+            "title": "plaquette-lesgrandsvoisins-2025"
+        },
+        {
+            "id": 14,
+            "meta": {
+                "type": "wagtaildocs.Document",
+                "detail_url": "http://127.0.0.1:8000/api/v2/documents/14/",
+                "tags": [],
+                "download_url": "http://127.0.0.1:8000/documents/14/plaquette-lesgrandsvoisins-2025-a5-sur-a4.pdf"
+            },
+            "title": "plaquette-lesgrandsvoisins-2025-a5-sur-a4"
+        },
+        {
+            "id": 15,
+            "meta": {
+                "type": "wagtaildocs.Document",
+                "detail_url": "http://127.0.0.1:8000/api/v2/documents/15/",
+                "tags": [
+                    "lgv"
+                ],
+                "download_url": "http://127.0.0.1:8000/documents/15/gv_statuts_2022.pdf"
+            },
+            "title": "Statuts des Grands Voisins (version 2022)"
+        }
+    ]
+}
