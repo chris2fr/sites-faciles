@@ -57,10 +57,10 @@ def html_DirectoryEntryPage(page):
         "header_cta_label": None,
         "header_cta_link": None,
         "header_cta_text": None,
-        "header_darken": None,
+        "header_darken": False,
         "header_image": None,
-        "header_large": None,
-        "header_with_title": None,
+        "header_large": False,
+        "header_with_title": False,
         "id": None,
         "image": None,
         "intro": None,
@@ -72,6 +72,7 @@ def html_DirectoryEntryPage(page):
         "section_2_body": None,
         "section_2_description_rich": None,
         "section_3_body": None,
+        "section_3_description_rich": None,
         "section1": None,
         "section2": None,
         "section3": None,
@@ -87,7 +88,7 @@ def html_DirectoryEntryPage(page):
     meta_fields = {
         "type": None,
         "seo_title": None,
-        "show_in_menus": None,
+        "show_in_menus": False,
         "detail_url": None,
         "html_url": None,
         "search_description": None,
@@ -247,8 +248,13 @@ def html_DirectoryEntryPage(page):
 <main>
 {body_html}
 {html_render(page_fields["section1"])}
+{html_render(page_fields["section_1_body"])}
 {html_render(page_fields["section2"])}
+{html_render(page_fields["section_2_body"])}
+{html_render(page_fields["section_2_description_rich"])}
 {html_render(page_fields["section3"])}
+{html_render(page_fields["section_3_body"])}
+{html_render(page_fields["section_3_description_rich"])}
 {html_render(page_fields["sections"])}
 {html_render(page_fields["agenda_item"])}
 {html_render(page_fields["agenda"])}
@@ -290,6 +296,7 @@ tree = {}
 # Check the type of data
 print(f"Loaded {len(data)} items and {len(pages)} pages")
 
+os.makedirs(f"{output_dir}/pages", 0o777, True)
 
 # Loop over each entry
 for page in pages:
@@ -305,7 +312,8 @@ for page in pages:
 
     if response.status_code == 200:
         page_detail = response.json()
-        with open(f"{output_dir}/page_{id}_{slug}.json", "w", encoding="utf-8") as d:
+
+        with open(f"{output_dir}/pages/page_{id}_{slug}.json", "w", encoding="utf-8") as d:
             json.dump(page_detail, d, ensure_ascii=False, indent=2)
         get_image(page_detail, "header_image", output_dir)
         get_image(page_detail, "image", output_dir)
@@ -326,7 +334,7 @@ for page in pages:
             tree[parent_id] = []
         tree[parent_id].append(page_detail_id)
 
-        page_path = output_dir + "/" + re.sub(r"http.?://", "", page_detail_meta_html_url)
+        page_path = output_dir + "/sites/" + re.sub(r"http.?://", "", page_detail_meta_html_url)
         print(page_path)
         os.makedirs(os.path.dirname(page_path), 0o777, True)
         with open(f"{page_path}/index.html", "w", encoding="utf-8") as pout:

@@ -125,6 +125,8 @@ class BlogIndexPage(ContentPage):
         if year:
             posts = posts.filter(date__year=year)
 
+        posts = posts.filter(show_in_menus=True)
+
         # Pagination
         page = request.GET.get("page")
         page_size = self.posts_per_page
