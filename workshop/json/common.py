@@ -1,3 +1,4 @@
+import argparse
 import os
 
 import requests
@@ -5,6 +6,7 @@ import requests
 
 output_dir = "./output"
 host_url = "http://127.0.0.1:8000"
+locale = "fr"
 
 
 def download_image(url, save_path):
@@ -19,7 +21,7 @@ def download_image(url, save_path):
 
 
 def get_image(data, image_field_name, output_dir):
-    header_image = page_detail.get(image_field_name)
+    header_image = data.get(image_field_name)
     if header_image:
         header_image_meta = header_image.get("meta")
         if header_image_meta:
@@ -28,3 +30,24 @@ def get_image(data, image_field_name, output_dir):
                 download_image(
                     f"{host_url}{header_image_meta_download_url}", f"{output_dir}{header_image_meta_download_url}"
                 )
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(
+        prog="PagesParserAPIv2Wagtail",
+        description="Parses Pages from Wagtail",
+    )
+    parser.add_argument(
+        "host_url",
+        # required=False,
+        type=str,
+        help=f"Root HOST URL without trailing / (https://127.0.0.1:8000)",
+    )
+    parser.add_argument(
+        "--locale", required=False, type=str, help=f"Locale (en ou fr)", default="fr", choices=["en", "fr"]
+    )
+    args = parser.parse_args()
+    return {
+        "host_url": args.host_url,
+        "locale": args.locale,
+    }

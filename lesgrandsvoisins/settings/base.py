@@ -110,6 +110,7 @@ if BOOL_WAGTAIL_API:
         "wagtail.api.v2",
     ]
     WAGTAILAPI_LIMIT_MAX = None
+    WAGTAILAPI_BASE_URL = "http://127.0.0.1:8000"
 
 # Grapple config:
 GRAPHENE = {"SCHEMA": "grapple.schema.schema"}
