@@ -37,9 +37,9 @@
 } */
 
 .app-menu-header-right {
-    /* display: flex;
+    display: flex;
     align-items: center;
-    gap: 8px;
+    /* gap: 8px;
     justify-content: end;
     justify-self: end;
     position: fixed; */

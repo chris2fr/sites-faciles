@@ -1,4 +1,4 @@
-{% load static wagtailcore_tags wagtailuserbar %}
+{% load static wagtailcore_tags wagtailuserbar i18n %}
 <!DOCTYPE html>
 <html class="no-js" lang="{{ page.locale.language_code }}">
     <head>
@@ -39,6 +39,9 @@
         <link rel="stylesheet"
               type="text/css"
               href="{% static 'css/lesgv/appmenu.css' %}" />
+        <link rel="stylesheet"
+              type="text/css"
+              href="{% static 'css/village-django-overrides.css' %}" />
         <meta http-equiv="Cache-Control"
               content="no-cache, must-revalidate, post-check=0, pre-check=0, max-age=0">
         <meta http-equiv="Expires" content="0">
@@ -49,6 +52,7 @@
     </head>
     <body class="{% block body_class %}{% endblock %} darkmode">
         {% wagtailuserbar %}
+
         {% include "lesgv/fragments/app-menu.html" %}
         {% block content %}{% endblock %}
         {# Global javascript #}

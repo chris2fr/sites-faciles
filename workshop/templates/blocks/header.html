@@ -1,6 +1,5 @@
 {% extends "django_village/header.html" %}
 {% load i18n static wagtailcore_tags wagtailimages_tags menu_tags l10n %}
-
 {% block brand %}
   {% translate "Home page" as home_page %}
   <a href="/"
@@ -8,12 +7,10 @@
     <p class="gv-logo">{{ settings.wagtail_village.WagtailVillageConfig.header_brand_html|safe }}</p>
   </a>
 {% endblock brand %}
-
 {% block service_title %}
   {% translate "Home page" as home_page %}
   <a href="/"
      title="{{ home_page }} — {{ settings.wagtail_village.WagtailVillageConfig.site_title }}">
-
     <p class="village-header__service-title">
       {% if settings.wagtail_village.WagtailVillageConfig.site_title|slice:"-2:" == "fr" %}
         {{ settings.wagtail_village.WagtailVillageConfig.site_title|slice:":-2" }}<em>fr</em>
@@ -23,19 +20,15 @@
       {% if settings.wagtail_village.WagtailVillageConfig.beta_tag %}
         <span class="village-badge village-badge--sm village-badge--green-emeraude">BETA</span>
       {% endif %}
-
     </p>
   </a>
 {% endblock service_title %}
-
 {% block service_tagline %}
   {{ settings.wagtail_village.WagtailVillageConfig.site_tagline }}
 {% endblock service_tagline %}
-
 {% block operator_logo %}
   {% if settings.wagtail_village.WagtailVillageConfig.operator_logo_file and settings.wagtail_village.WagtailVillageConfig.operator_logo_alt %}
     {% image settings.wagtail_village.WagtailVillageConfig.operator_logo_file original as logo_img %}
-
     <div class="village-header__operator">
       <img class="village-responsive-img"
            src="{{ logo_img.url }}"
@@ -44,14 +37,10 @@
     </div>
   {% endif %}
 {% endblock operator_logo %}
-
 {% block header_tools %}
-<li>
-  {% include "django_village/language_selector.html" %}
-</li>
+  <li>{% include "django_village/language_selector.html" %}</li>
   {% flat_menu handle="header_tools" template="menus/custom_flat_menu.html" %}
 {% endblock header_tools %}
-
 {% block header_search %}
   {% translate "Search" as search_label %}
   {% if settings.wagtail_village.WagtailVillageConfig.search_bar %}
@@ -61,7 +50,6 @@
         <button class="village-btn--close village-btn"
                 aria-controls="modal-search"
                 title="{{ close_label }}">{{ close_label }}</button>
-            
         <form action="{% url 'wagtail_village_search' %}" method="get">
           <div class="village-search-bar" id="search-bar" role="search">
             <label class="village-label" for="search-bar-input">{{ search_label }}</label>
@@ -77,30 +65,24 @@
     </div>
   {% endif %}
 {% endblock header_search %}
-
 {# Leave burger_menu and main_menu blocks empty if the main menu is not used #}
 {# block burger_menu #}
 {# endblock burger_menu #}
-
 {% block main_menu %}
-<div class="village-header__menu village-modal"
-id="village-menu-mobile"
-aria-labelledby="village-btn-menu-mobile">
-<div class="village-container">
-<button class="village-btn--close village-btn"
-       aria-controls="village-menu-mobile">
-{% translate "Close" %}
-</button>
-<div class="village-header__menu-links">
-</div>
-{% translate "Main menu" as main_menu_label %}
-<nav role="navigation"
-class="village-nav"
-id="village-navigation"
-aria-label="{{ main_menu_label }}">
-{% main_menu max_levels=2 template="menus/custom_main_menu.html" sub_menu_template="menus/custom_sub_menu.html" %}
-</nav>
-</div>
-</div>
-
+  <div class="village-header__menu village-modal"
+       id="village-menu-mobile"
+       aria-labelledby="village-btn-menu-mobile">
+    <div class="village-container">
+      <button class="village-btn--close village-btn"
+              aria-controls="village-menu-mobile">{% translate "Close" %}</button>
+      <div class="village-header__menu-links"></div>
+      {% translate "Main menu" as main_menu_label %}
+      <nav role="navigation"
+           class="village-nav"
+           id="village-navigation"
+           aria-label="{{ main_menu_label }}">
+        {% main_menu max_levels=2 template="menus/custom_main_menu.html" sub_menu_template="menus/custom_sub_menu.html" %}
+      </nav>
+    </div>
+  </div>
 {% endblock main_menu %}

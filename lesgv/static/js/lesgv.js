@@ -7,28 +7,28 @@ const moon = '<svg viewBox="0 0 16 16"><g fill="currentColor"><path d="M6 .278a.
 
 
 function lesgvGoDark(toggle) {
-  localStorage.removeItem('lightmode');
-  localStorage.setItem('darkmode', true);
-  // toggle.innerText = 'Nuit';
-  toggle.innerHTML = moon;
-  document.body.classList.add('darkmode');
+    localStorage.removeItem('lightmode');
+    localStorage.setItem('darkmode', true);
+    // toggle.innerText = 'Nuit';
+    toggle.innerHTML = moon;
+    document.body.classList.add('darkmode');
 }
 
 function lesgvGoLight(toggle) {
-  localStorage.removeItem('darkmode');
-  localStorage.setItem('lightmode', true);
-  // toggle.innerText = 'Jour';
-  toggle.innerHTML = sun;
-  document.body.classList.remove('darkmode');
+    localStorage.removeItem('darkmode');
+    localStorage.setItem('lightmode', true);
+    // toggle.innerText = 'Jour';
+    toggle.innerHTML = sun;
+    document.body.classList.remove('darkmode');
 }
 
 function toggleDarkmode() {
-  let toggle = document.querySelector('#jour-nuit');
-  if (document.body.classList.contains('darkmode')) {
-    lesgvGoLight(toggle);
-  } else {
-    lesgvGoDark(toggle);
-  }
+    let toggle = document.querySelector('#jour-nuit');
+    if (document.body.classList.contains('darkmode')) {
+        lesgvGoLight(toggle);
+    } else {
+        lesgvGoDark(toggle);
+    }
 }
 
 
@@ -50,38 +50,38 @@ function toggleDarkmode() {
 //   });
 // }
 
-toggle.addEventListener('click', function(e) {
-  if (document.body.classList.contains('darkmode')) {
-    lesgvGoLight(toggle);
-  } else {
-    lesgvGoDark(toggle);
-  }
-});
+// toggle.addEventListener('click', function(e) {
+//     if (document.body.classList.contains('darkmode')) {
+//         lesgvGoLight(toggle);
+//     } else {
+//         lesgvGoDark(toggle);
+//     }
+// });
 
 
 // Turn the theme off if the 'darkmode' key exists in localStorage
 if (localStorage.getItem('darkmode')) {
-  lesgvGoDark(toggle);
-}  else if (localStorage.getItem('lightmode')) {
-  lesgvGoLight(toggle);
+    lesgvGoDark(toggle);
+} else if (localStorage.getItem('lightmode')) {
+    lesgvGoLight(toggle);
 } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  lesgvGoDark(toggle);
+    lesgvGoDark(toggle);
 }
 
 
-window.addEventListener(
-  "pagehide",
-  (event) => {
-    if (toggle) {
-      if (document.body.classList.contains('darkmode')) {
-        lesgvGoDark(toggle);
-      } else {
-        lesgvGoLight(toggle);
-      }
-    }
-  },
-  false,
-);
+// window.addEventListener(
+//   "pagehide",
+//   (event) => {
+//     if (toggle) {
+//       if (document.body.classList.contains('darkmode')) {
+//         lesgvGoDark(toggle);
+//       } else {
+//         lesgvGoLight(toggle);
+//       }
+//     }
+//   },
+//   false,
+// );
 
 // let menuCheckbox = document.querySelector('#menuToggle');
 // menuCheckbox.addEventListener('click', function(e) {
@@ -102,5 +102,3 @@ window.addEventListener(
 //     menu.style.display = "none";
 //   }
 // }
-
-
