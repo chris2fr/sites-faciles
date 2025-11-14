@@ -238,6 +238,11 @@
     position: absolute;
     top: -1rem;
     right: 0;
+    font-size: 1.2rem;
+    font-family: 'grotesk';
+    font-weight: bold;
+    font-style: italic;
+    cursor: help;
 }
 
 
@@ -248,7 +253,6 @@
     width: 2rem;
     border-bottom: none;
     border-width: 2px;
-    font-weight: bold;
     background-color: var(--reverse-bg-color);
     border-color: var(--main-bg-color);
 }
