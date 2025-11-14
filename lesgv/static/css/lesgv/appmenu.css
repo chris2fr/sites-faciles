@@ -255,6 +255,7 @@
     border-width: 2px;
     background-color: var(--reverse-bg-color);
     border-color: var(--main-bg-color);
+    cursor: help;
 }
 
 .app-front>.app-documentation>input {
