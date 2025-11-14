@@ -302,6 +302,12 @@ class FaireMainMenu(FaireMainPage):
         context = super().get_context(request, *args, **kwargs)
         context["menuitems"] = lesgvGetMenuItems(self.get_parent())
         context["breadcrumbs"] = lesgvGetBreadcrumbs(self.get_parent())
+        if "image" in self and self.image:
+            context["page_image_url"] = self.image.meta.download_url
+            context["page_image_alt"] = self.image.title
+        if "header_image" in self and self.header_image:
+            context["page_image_url"] = self.header_image.meta.download_url
+            context["page_image_alt"] = self.header_image.title
         return context
 
 
