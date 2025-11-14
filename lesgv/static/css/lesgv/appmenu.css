@@ -260,12 +260,13 @@
 .app-front>.app-documentation>input {
     border-radius: 100%;
     border-width: 2px;
-    font-weight: bold;
-    font-size: large;
+    /* font-weight: bold; */
+    /* font-size: large; */
     height: 3rem;
     width: 3rem;
     background-color: var(--reverse-bg-color);
     border-color: var(--main-bg-color);
+    cursor: help;
 }
 
 .app-icon {
