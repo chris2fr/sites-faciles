@@ -12,7 +12,8 @@ from wagtail.models import Page
 
 
 def search(request):
-    search_query = request.GET.get("query", None)
+    search_query = request.GET.get("q", None)
+    search_query = request.GET.get("query", search_query)
     page = request.GET.get("page", 1)
 
     # Search
