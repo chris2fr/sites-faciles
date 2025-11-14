@@ -11,6 +11,7 @@ from wagtail.contrib.settings.models import BaseSiteSetting, register_setting
 
 # from wagtail.images import get_image_model_string
 from wagtail.models import Orderable
+from wagtail.search import index
 from wagtail.snippets.models import register_snippet
 
 from wagtail_village.abstract import SitesFacilesBasePage, WagtailVillageConfig
@@ -31,6 +32,10 @@ class ContentPage(SitesFacilesBasePage):
     # Export fields over the API
     api_fields = SitesFacilesBasePage.api_fields + [
         APIField("tags"),
+    ]
+
+    search_fields = SitesFacilesBasePage.search_fields + [
+        index.SearchField("tags"),
     ]
 
 

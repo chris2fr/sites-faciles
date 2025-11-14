@@ -10,6 +10,7 @@ from wagtail.api import APIField
 from wagtail.contrib.settings.models import BaseGenericSetting, BaseSiteSetting, register_setting
 from wagtail.fields import RichTextField, StreamField
 from wagtail.models import Orderable, Page
+from wagtail.search import index
 
 import lesgv.services
 from wagtail_village.utils import RichTextSerializer, StreamSerializer
@@ -227,6 +228,13 @@ class FaireMainPage(Page):
         FieldPanel("footer2"),
         FieldPanel("redirect_url"),
     ]
+    search_fields = Page.search_fields + [
+        index.SearchField("body"),
+        index.SearchField("intro"),
+        index.SearchField("ghost_post_tag"),
+        index.SearchField("footer1"),
+        index.SearchField("footer2"),
+    ]
     # def serve(self, request):
     #     if self.redirect_url and not notanytest(self.redirect_url):
     #         # Perform the redirect
@@ -334,6 +342,10 @@ class FaireMainHomePage(FaireMainPage):
         FieldPanel("ghost_include"),
     ]
 
+    search_fields = FaireMainPage.search_fields + [
+        index.SearchField("agenda"),
+    ]
+
     api_fields = FaireMainPage.api_fields + [
         APIField("agenda", serializer=RichTextField()),
         APIField("ghost_tag"),
@@ -367,6 +379,12 @@ class LesgvHomePage(FaireMainHomePage):
         FieldPanel("section1"),
         FieldPanel("section2"),
         FieldPanel("section3"),
+    ]
+
+    search_fields = FaireMainHomePage.search_fields + [
+        index.SearchField("section1"),
+        index.SearchField("section2"),
+        index.SearchField("section3"),
     ]
 
     # Export fields over the API
@@ -429,6 +447,10 @@ class FaireMainAgendaItemPage(FaireMainPage):
         FieldPanel("end"),
         FieldPanel("place"),
         FieldPanel("place_url"),
+    ]
+
+    search_fields = FaireMainPage.search_fields + [
+        index.SearchField("place"),
     ]
 
     api_fields = FaireMainPage.api_fields + [

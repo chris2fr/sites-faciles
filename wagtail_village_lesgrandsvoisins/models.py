@@ -3,6 +3,7 @@ from wagtail import blocks
 from wagtail.admin.panels import FieldPanel
 from wagtail.api import APIField
 from wagtail.fields import RichTextField, StreamField
+from wagtail.search import index
 
 from wagtail_village.blocks import STREAMFIELD_COMMON_BLOCKS
 from wagtail_village.models import ContentPage
@@ -59,6 +60,13 @@ class WagtailVillageLesgrandsvoisinsHome(ContentPage):
         FieldPanel("section_2_description_rich"),
         FieldPanel("section_2_body"),
         FieldPanel("section_3_body"),
+    ]
+    search_fields = ContentPage.search_fields + [
+        index.SearchField("sections"),
+        index.SearchField("section_1_body"),
+        index.SearchField("section_2_description_rich"),
+        index.SearchField("section_2_body"),
+        index.SearchField("section_3_body"),
     ]
 
     api_fields = ContentPage.api_fields + [
