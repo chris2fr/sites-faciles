@@ -10,7 +10,7 @@
 
 <form action="{% url 'search' %}" method="get">
     <input type="text" name="query"{% if search_query %} value="{{ search_query }}"{% endif %}>
-    <input type="submit" value="Search" class="button">
+    <input type="submit" value="{% translate "Search" %}" class="button">
 </form>
 
 {% if search_results %}
