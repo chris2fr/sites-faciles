@@ -15,7 +15,8 @@ repos:
           lesgrandsvoisins/settings/.*.py|
           lesgv/settings/.*.py|
           lesgrandsvoisins/wsgi.py|
-          workshop/.*/.*\.py
+          workshop/.*/.*\.py|
+          django_village/.*/.*\.py
         )
   - repo: https://github.com/pycqa/isort
     rev: 5.12.0
