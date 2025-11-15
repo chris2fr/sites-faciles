@@ -1,6 +1,8 @@
 {% extends "lesgv/base.html" %}
 {% load static wagtailcore_tags wagtailimages_tags %}
-{% block body_class %}lesgv-home{% endblock %}
+{% block body_class %}
+  lesgv-home
+{% endblock body_class %}
 {% block extra_css %}
   <link rel="stylesheet"
         type="text/css"
@@ -101,13 +103,14 @@
     </main>
     <footer class="lesgv-footer md:grid grid-cols-2 bg-yellow-900 text-white">
       <div class="footer1 p-5">{{ footer1|richtext }}</div>
-      <div class="footer2 p-5">{{ footer2|richtext }}<p>(<a href="/admin">admin</a>)</div>
-    </footer>
-
-  {% endblock content %}l10n
-
-        
-        
-        {% block extra_js %}
-          <script type="text/javascript" src="{% static 'js/app-menu.js' %}"></script>
-        {% endblock %}
+      <div class="footer2 p-5">
+        {{ footer2|richtext }}
+        <p>
+          (<a href="/admin">admin</a>)
+        </div>
+      </footer>
+    {% endblock content %}
+    l10n
+    {% block extra_js %}
+      <script type="text/javascript" src="{% static 'js/app-menu.js' %}"></script>
+    {% endblock extra_js %}

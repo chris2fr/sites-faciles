@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% load static wagtailcore_tags i18n %}
 
-{% block body_class %}template-searchresults{% endblock %}
+{% block body_class %}template-searchresults{% endblock body_class %}
 
-{% block title %}Search{% endblock %}
+{% block title %}Search{% endblock title %}
 
 {% block content %}
 <h1>{% translate "Search" %}</h1>
@@ -35,4 +35,4 @@
 {% elif search_query %}
 {% translate "Pas de résultat" %}
 {% endif %}
-{% endblock %}
+{% endblock content %}

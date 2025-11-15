@@ -47,16 +47,21 @@
         <meta http-equiv="Expires" content="0">
         <meta http-equiv="Pragma" content="no-cache">
         {% comment %} <meta name="theme-color" content="#fafafa"> {% endcomment %}
-        {% block extra_css %}{# Override this in templates to add extra stylesheets #}{% endblock %}
-        {% block extra_head %}{% endblock %}
+        {% block extra_css %}
+            {# Override this in templates to add extra stylesheets #}
+        {% endblock extra_css %}
+        {% block extra_head %}
+        {% endblock extra_head %}
     </head>
-    <body class="{% block body_class %}{% endblock %} darkmode">
+    <body class="{% block body_class %}{% endblock body_class %} darkmode">
         {% wagtailuserbar %}
-
         {% include "lesgv/fragments/app-menu.html" %}
-        {% block content %}{% endblock %}
+        {% block content %}
+        {% endblock content %}
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/lesgv.js' %}"></script>
-        {% block extra_js %}{# Override this in templates to add extra javascript #}{% endblock %}
+        {% block extra_js %}
+            {# Override this in templates to add extra javascript #}
+        {% endblock extra_js %}
     </body>
 </html>
