@@ -23,7 +23,12 @@ def search(request):
         # ContentPage.objects.filter(locale=locale).exclude(exclude_from_search=True).live().search(search_query)
         # search_results2 = FaireMainPage.objects.filter(locale=locale).live().search(search_query)
         # search_results = search_results1 | search_results2
-        search_results = Page.objects.filter(locale=locale).live().exclude(title__endswith=" *").search(search_query)
+        if search_query[-2:] == " *":
+            search_results = Page.objects.filter(locale=locale).live().search(search_query[:-2])
+        else:
+            search_results = (
+                Page.objects.filter(locale=locale).live().exclude(title__endswith=" *").search(search_query)
+            )
 
         # To log this query for use with the "Promoted search results" module:
 
