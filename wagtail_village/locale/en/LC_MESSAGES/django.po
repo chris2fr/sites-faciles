@@ -3,524 +3,511 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-15 06:43+0100\n"
-"PO-Revision-Date: 2024-04-26 12:08+0200\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: fr\n"
+"POT-Creation-Date: 2025-11-15 06:45+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.4\n"
-
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 #: abstract.py:22
 msgid "Site configuration"
-msgstr "Configuration du site"
+msgstr ""
 
 #: abstract.py:23
 msgid "Site configurations"
-msgstr "Configurations du site"
+msgstr ""
 
 #: abstract.py:35 models.py:138
 msgid "Description"
-msgstr "Description"
+msgstr ""
 
 #: abstract.py:75
 msgid "Operator logo"
-msgstr "Logo opérateur"
+msgstr ""
 
 #: abstract.py:84
 msgid "Advanced settings"
-msgstr "Paramètres avancés"
+msgstr ""
 
 #: abstract.py:94
 msgid "Header"
-msgstr "En-tête"
+msgstr ""
 
 #: abstract.py:101
 msgid "Footer"
-msgstr "Pied de page"
+msgstr ""
 
 #: abstract.py:111
 msgid "Newsletter"
-msgstr "Lettre d’information"
+msgstr ""
 
 #: abstract.py:113 models.py:119
 msgid "Social media items"
-msgstr "Liens de réseaux sociaux"
+msgstr ""
 
 #: abstract.py:117
 msgid "Generic"
-msgstr "Génériques"
+msgstr ""
 
 #: abstract.py:118
 msgid "Brand block"
-msgstr "Bloc-marque"
+msgstr ""
 
 #: abstract.py:119
 msgid "Newsletter and social media"
-msgstr "Lettre d’information et réseaux sociaux"
+msgstr ""
 
 #: abstract.py:152
 msgid "Show title in header image?"
-msgstr "Afficher le titre sur l’image d’en-tête ?"
+msgstr ""
 
 #: abstract.py:160
 msgid "Header image"
-msgstr "Image d’en-tête"
+msgstr ""
 
 #: abstract.py:164 blocks.py:369 blocks.py:405
 msgid "Background color"
-msgstr "Couleur de fond"
+msgstr ""
 
 #: abstract.py:168 blocks.py:371 blocks.py:407
 msgid "Uses the French Design System colors"
-msgstr "Utilise les couleurs du système de design de l'État"
+msgstr ""
 
 #: abstract.py:172
 msgid "Full width"
-msgstr "Pleine largeur"
+msgstr ""
 
 #: abstract.py:173
 msgid "Darken background image"
-msgstr "Assombrir l’image de fond"
+msgstr ""
 
 #: abstract.py:176
 msgid "Call to action text"
-msgstr "Texte de l’appel à action"
+msgstr ""
 
 #: abstract.py:183 blocks.py:322
 msgid "Call to action label"
-msgstr "Libellé de l’appel à action"
+msgstr ""
 
 #: abstract.py:190
 msgid "Call to action link"
-msgstr "Lien de l’appel à action"
+msgstr ""
 
 #: abstract.py:196 abstract.py:200
 msgid "Body"
-msgstr "Corps"
+msgstr ""
 
 #: abstract.py:204
 msgid "Common page configuration"
-msgstr "Configuration commune"
+msgstr ""
 
 #: abstract.py:216
 msgid "Header options"
-msgstr "Options d’en-tête"
+msgstr ""
 
 #: abstract.py:263
 msgid "Base page"
-msgstr "Page de base"
+msgstr ""
 
 #: abstract.py:264
 msgid "Base pages"
-msgstr "Pages de base"
+msgstr ""
 
 #: blocks.py:35
 msgid "Page"
-msgstr "Page"
+msgstr ""
 
 #: blocks.py:37
 msgid ""
 "Link to a page of this site. Use either this or the external URL parameter."
 msgstr ""
-"Lien vers une page du site. Utilisez soit ce champ soit le champ URL externe."
 
 #: blocks.py:40
 msgid "External URL"
-msgstr "URL externe"
+msgstr ""
 
 #: blocks.py:42
 msgid "Use either this or the Page parameter."
-msgstr "Utilisez soit ce champ soit le champ Page."
+msgstr ""
 
 #: blocks.py:51
 msgid "Link label"
-msgstr "Libellé du lien"
+msgstr ""
 
 #: blocks.py:83
 msgid "New"
-msgstr "Nouveau"
+msgstr ""
 
 #: blocks.py:84
 msgid "Grey"
-msgstr "Gris"
+msgstr ""
 
 #: blocks.py:91
 msgid "Badge label"
-msgstr "Texte du badge"
+msgstr ""
 
 #: blocks.py:92
 msgid "Badge color"
-msgstr "Couleur du badge"
+msgstr ""
 
 #: blocks.py:93
 msgid "Hide badge icon"
-msgstr "Masquer l’icône du badge"
+msgstr ""
 
 #: blocks.py:100
 msgid "Badge"
-msgstr "Badge"
+msgstr ""
 
 #: blocks.py:108 blocks.py:133 blocks.py:138 blocks.py:166 blocks.py:191
 #: blocks.py:261 blocks.py:304 blocks.py:313 blocks.py:334 blocks.py:380
 #: models.py:102
 msgid "Title"
-msgstr "Titre"
+msgstr ""
 
 #: blocks.py:109
 msgid "Small tag"
-msgstr "Petit tag"
+msgstr ""
 
 #: blocks.py:111
 msgid "Tag color"
-msgstr "Couleur du tag"
+msgstr ""
 
 #: blocks.py:114
 msgid "Only for clickable tags"
-msgstr "Uniquement pour les tags cliquables"
+msgstr ""
 
 #: blocks.py:116
 msgid "Icon"
-msgstr "Icône"
+msgstr ""
 
 #: blocks.py:124
-#, fuzzy
-#| msgctxt "village Tag"
-#| msgid "Tag"
 msgctxt "DSFR Tag"
 msgid "Tag"
-msgstr "Tag"
+msgstr ""
 
 #: blocks.py:134 blocks.py:167 blocks.py:183 blocks.py:409
 msgid "Content"
-msgstr "Contenu"
+msgstr ""
 
 #: blocks.py:139
 msgid "Accordion"
-msgstr "Accordéon"
+msgstr ""
 
 #: blocks.py:143
 msgid "Message title"
-msgstr "Titre du message"
+msgstr ""
 
 #: blocks.py:144
 msgid "Message text"
-msgstr "Texte du message"
+msgstr ""
 
 #: blocks.py:145
 msgid "Message type"
-msgstr "Type de message"
+msgstr ""
 
 #: blocks.py:147 blocks.py:158 blocks.py:263 blocks.py:382
 msgid "Heading level"
-msgstr "Niveau de titre"
+msgstr ""
 
 #: blocks.py:150 blocks.py:161 blocks.py:267
 msgid "Adapt to the page layout. Defaults to heading 3."
-msgstr "À adapter à la structure de la page. Par défaut en-tête 3."
+msgstr ""
 
 #: blocks.py:155
 msgid "Callout title"
-msgstr "Titre de l’appel à action"
+msgstr ""
 
 #: blocks.py:156
 msgid "Callout text"
-msgstr "Texte de l’appel à action"
+msgstr ""
 
 #: blocks.py:168 blocks.py:206 blocks.py:269 blocks.py:283 blocks.py:349
 msgid "Image"
-msgstr "Image"
+msgstr ""
 
 #: blocks.py:169 blocks.py:226 blocks.py:275 blocks.py:326
 msgid "Link"
-msgstr "Lien"
+msgstr ""
 
 #: blocks.py:171
 msgid "or Document"
-msgstr "ou Document"
+msgstr ""
 
 #: blocks.py:172
 msgid ""
 "Select a document to make the card link to it (if the 'Link' field is not "
 "populated.)"
 msgstr ""
-"Sélectionnez un document pour faire pointer la carte dessus (si le champ "
-"« Lien » est vide.)"
 
 #: blocks.py:192
 msgid ""
 "Accessibility: The title should describe, in a clear and concise manner, the "
 "embedded content."
 msgstr ""
-"Accessibilité : Le titre doit décrire, de façon claire et concise, le "
-"contenu embarqué."
 
 #: blocks.py:195
 msgid "URL of the iframe"
-msgstr "URL de l‘iframe"
+msgstr ""
 
 #: blocks.py:196
 msgid "Example for Tally: https://tally.so/embed/w2jMRa"
-msgstr "Exemple pour Tally : https://tally.so/embed/w2jMRa"
+msgstr ""
 
 #: blocks.py:198
 msgid "Height (in pixels)"
-msgstr "Hauteur (en pixels)"
+msgstr ""
 
 #: blocks.py:208
 msgid "Side where the image is displayed"
-msgstr "Côté où afficher l’image"
+msgstr ""
 
 #: blocks.py:210
 msgid "Left"
-msgstr "Gauche"
+msgstr ""
 
 #: blocks.py:211
 msgid "Right"
-msgstr "Droite"
+msgstr ""
 
 #: blocks.py:216
 msgid "Image width"
-msgstr "Largeur de l’image"
+msgstr ""
 
 #: blocks.py:224 blocks.py:320 blocks.py:348 blocks.py:417
 msgid "Rich text"
-msgstr "Texte avec mise en forme"
+msgstr ""
 
 #: blocks.py:228
 msgid "The link is shown at the bottom of the text block, with an arrow"
-msgstr "Le lien est affiché en bas du bloc de texte, avec une flèche"
+msgstr ""
 
 #: blocks.py:231
 msgid "Link label (obsolete)"
-msgstr "Libellé du lien (obsolète)"
+msgstr ""
 
 #: blocks.py:234 blocks.py:242 blocks.py:250
 msgid ""
 "This field is obsolete and will be removed in the near future. Please "
 "replace with the Link field above."
 msgstr ""
-"Ce champ est obsolète et sera prochainement supprimé. Merci de le remplacer "
-"avec le champ Lien ci-dessus."
 
 #: blocks.py:239
 msgid "Internal link (obsolete)"
-msgstr "Lien interne (obsolète)"
+msgstr ""
 
 #: blocks.py:247
 msgid "Link URL (obsolete)"
-msgstr "URL du lien (obsolète)"
+msgstr ""
 
 #: blocks.py:271
 msgid "Alternative text (textual description of the image)"
-msgstr "Alternative textuelle (description textuelle de l’image)"
+msgstr ""
 
 #: blocks.py:274 blocks.py:335
 msgid "Caption"
-msgstr "Légende"
+msgstr ""
 
 #: blocks.py:284 blocks.py:351 blocks.py:426
 msgid "Quote"
-msgstr "Citation"
+msgstr ""
 
 #: blocks.py:285
 msgid "Author name"
-msgstr "Nom de l’auteur"
+msgstr ""
 
 #: blocks.py:286
 msgid "Author title"
-msgstr "Titre de l’auteur"
+msgstr ""
 
 #: blocks.py:288
 msgid "Color"
-msgstr "Couleur"
+msgstr ""
 
 #: blocks.py:299
 msgid "Top margin"
-msgstr "Espacement au dessus"
+msgstr ""
 
 #: blocks.py:300
 msgid "Bottom margin"
-msgstr "Espacement en dessous"
+msgstr ""
 
 #: blocks.py:305
 msgid "Detail"
-msgstr "Détail"
+msgstr ""
 
 #: blocks.py:309
 msgid "Step"
-msgstr "Étape"
+msgstr ""
 
 #: blocks.py:314
 msgid "Number of steps"
-msgstr "Nombre d’étapes"
+msgstr ""
 
 #: blocks.py:315
 msgid "Current step"
-msgstr "Étape actuelle"
+msgstr ""
 
 #: blocks.py:316
 msgid "Steps"
-msgstr "Étapes"
+msgstr ""
 
 #: blocks.py:323
 msgid "The link appears as a button under the text block"
-msgstr "Le lien apparaît comme un bouton sous le bloc de texte"
+msgstr ""
 
 #: blocks.py:337
 msgid "Video URL"
-msgstr "URL de la vidéo"
+msgstr ""
 
 #: blocks.py:350 blocks.py:428
 msgid "Video"
-msgstr "Vidéo"
+msgstr ""
 
 #: blocks.py:352
 msgid "Text and call to action"
-msgstr "Texte et appel à action"
+msgstr ""
 
 #: blocks.py:353
 msgid "Iframe"
-msgstr "Iframe"
+msgstr ""
 
 #: blocks.py:360
 msgid "Vertical card"
-msgstr "Carte verticale"
+msgstr ""
 
 #: blocks.py:367 blocks.py:403
 msgid "Background image"
-msgstr "Image de fond"
+msgstr ""
 
 #: blocks.py:374
 msgid "Background color, hexadecimal format (obsolete)"
-msgstr "Couleur de fond, format hexadécimal (obsolète)"
+msgstr ""
 
 #: blocks.py:377
 msgid "Incorrect color format, must be #fff or #f5f5f5"
-msgstr "Format de couleur incorrect, doit être #fff ou #f5f5f5"
+msgstr ""
 
 #: blocks.py:386
 msgid "Adapt to the page layout. Defaults to heading 2."
-msgstr "À adapter à la structure de la page. Par défaut en-tête 2."
+msgstr ""
 
 #: blocks.py:388
 msgid "Columns"
-msgstr "Colonnes"
+msgstr ""
 
 #: blocks.py:396 blocks.py:422
 msgid "Image and text"
-msgstr "Image et texte"
+msgstr ""
 
 #: blocks.py:418
 msgid "Badge list"
-msgstr "Liste de badges"
+msgstr ""
 
 #: blocks.py:424
 msgid "Alert message"
-msgstr "Message d’alerte"
+msgstr ""
 
 #: blocks.py:425
 msgid "Callout"
-msgstr "Texte mis en avant"
+msgstr ""
 
 #: blocks.py:429
 msgid "Accordions"
-msgstr "Accordéons"
+msgstr ""
 
 #: blocks.py:430
 msgid "Stepper"
-msgstr "Étapier"
+msgstr ""
 
 #: blocks.py:431
 msgid "Tag list"
-msgstr "Liste de tags"
+msgstr ""
 
 #: blocks.py:432
 msgid "Markdown"
-msgstr "Markdown"
+msgstr ""
 
 #: blocks.py:433
 msgid "Separator"
-msgstr "Séparateur"
+msgstr ""
 
 #: blocks.py:434
 msgid "Multiple columns"
-msgstr "Multi-colonnes"
+msgstr ""
 
 #: blocks.py:434 blocks.py:435
 msgid "Page structure"
-msgstr "Structure de la page"
+msgstr ""
 
 #: blocks.py:435
 msgid "Full width background"
-msgstr "Fond pleine largeur"
+msgstr ""
 
 #: blocks.py:449
 msgid ""
 "Warning: Use HTML block with caution. Malicious code can compromise the "
 "security of the site."
 msgstr ""
-"Avertissement : Utilisez le bloc HTML avec précaution. Un code malveillant "
-"peut compromettre la sécurité du site."
 
 #: models.py:26
 msgid "Content page"
-msgstr "Page de contenu"
+msgstr ""
 
 #: models.py:105
 msgid "URL"
-msgstr "URL"
+msgstr ""
 
 #: models.py:109
 msgid "Icon class"
-msgstr "Classe d’icône"
+msgstr ""
 
 #: models.py:118
 msgid "Social media item"
-msgstr "Lien de réseau social"
+msgstr ""
 
 #: models.py:125
 msgid "Category"
-msgstr "Catégorie"
+msgstr ""
 
 #: models.py:128
 msgid "Mega menu category"
-msgstr "Catégorie de méga menu"
+msgstr ""
 
 #: models.py:129
 msgid "Mega menu categories"
-msgstr "Catégories de méga menu"
+msgstr ""
 
 #: models.py:134
 msgid "Name"
-msgstr "Nom"
+msgstr ""
 
 #: models.py:139
 msgid "Main link"
-msgstr "Lien principal"
+msgstr ""
 
 #: models.py:149
 msgid "Categories"
-msgstr "Catégories"
+msgstr ""
 
 #: models.py:150
 msgid "Maximum 4 categories, each with maximum 8 links."
-msgstr "Maximum 4 catégories, chacune contenant maximum 8 liens."
+msgstr ""
 
 #: models.py:161
 msgid "Mega menu"
-msgstr "Méga menu"
+msgstr ""
 
 #: templates/wagtail_village/blocks/image.html:9
 msgid "Go to page"
-msgstr "Aller à la page"
+msgstr ""
 
 #: templates/wagtail_village/follow.html:9
 msgctxt "Section title"
@@ -537,50 +524,38 @@ msgid "Subscribe"
 msgstr ""
 
 #: templates/wagtail_village/follow.html:30
-#, fuzzy
-#| msgid "Newsletter and social media"
 msgid "Follow us <br /> on social media"
-msgstr "Lettre d’information et réseaux sociaux"
+msgstr ""
 
 #: templates/wagtail_village/footer.html:5
-#, fuzzy
-#| msgid "Base page"
 msgid "Back to home page"
-msgstr "Page de base"
+msgstr ""
 
 #: templates/wagtail_village/footer.html:50
 #: templates/wagtail_village/home_header_orig.html:32
-#, fuzzy
-#| msgid "Advanced settings"
 msgid "Display settings"
-msgstr "Paramètres avancés"
+msgstr ""
 
 #: templates/wagtail_village/header.html:25
 #: templates/wagtail_village/home_header.html:19
 #: templates/wagtail_village/home_header_orig.html:11
 #: templates/wagtail_village/home_header_orig.html:46
 msgid "Close"
-msgstr "Fermer"
+msgstr ""
 
 #: templates/wagtail_village/header.html:30
 #: templates/wagtail_village/home_header.html:24
-#, fuzzy
-#| msgid "Mega menu"
 msgid "Main menu"
-msgstr "Méga menu"
+msgstr ""
 
 #: templates/wagtail_village/home_header_orig.html:45
 #: templates/wagtail_village/home_header_orig.html:92
-#, fuzzy
-#| msgid "search/"
 msgid "Search"
-msgstr "recherche/"
+msgstr ""
 
 #: templates/wagtail_village/home_header_orig.html:67
-#, fuzzy
-#| msgid "Base page"
 msgid "Home page"
-msgstr "Page de base"
+msgstr ""
 
 #: templates/wagtail_village/home_header_orig.html:98
 msgid "Menu"
@@ -592,94 +567,18 @@ msgstr ""
 
 #: templates/wagtail_village/tags_list_page.html:31 views.py:52 views.py:83
 msgid "Tags"
-msgstr "Étiquettes"
+msgstr ""
 
 #: views.py:58
 msgid "List of all the tags."
-msgstr "Liste de toutes les étiquettes."
+msgstr ""
 
 #: views.py:79
 #, python-brace-format
 msgid "Pages tagged with {tag}"
-msgstr "Pages avec l’étiquette {tag}"
+msgstr ""
 
 #: views.py:88
 #, python-brace-format
 msgid "List of pages tagged with {tag}"
-msgstr "Liste de pages avec l’étiquette {tag}"
-
-#~ msgid "Institution (header)"
-#~ msgstr "Institution (en-tête)"
-
-#~ msgid ""
-#~ "Institution brand as defined on page https://www.info.gouv.fr/marque-de-"
-#~ "letat/le-bloc-marque"
-#~ msgstr ""
-#~ "Nom de l’institution tel que défini sur la page  https://www.info.gouv.fr/"
-#~ "marque-de-letat/le-bloc-marque"
-
-#~ msgid "Institution with line break (header)"
-#~ msgstr "Institution avec césure (en-tête)"
-
-#~ msgid "Institution brand with <br /> tags for line breaks"
-#~ msgstr "Nom de l’institution avec des <br /> pour les retours à la ligne"
-
-#~ msgid "Institution (footer)"
-#~ msgstr "Institution (pied)"
-
-#~ msgid "Institution with line break (footer)"
-#~ msgstr "Institution avec césure (pied)"
-
-#~ msgid "Site title"
-#~ msgstr "Titre du site"
-
-#~ msgid "Site tagline"
-#~ msgstr "Sous-titre du site"
-
-#~ msgid "Important notice"
-#~ msgstr "Bandeau d’information importante"
-
-#~ msgid ""
-#~ "The important notice banner should only be used for essential and "
-#~ "temporary information.             (Excessive or continuous use risks "
-#~ "“drowning” the message.)"
-#~ msgstr ""
-#~ "Le bandeau d’information importante doit être utilisé uniquement pour une "
-#~ "information primordiale et temporaire.  (Une utilisation excessive ou "
-#~ "continue risque de “noyer” le message)"
-
-#~ msgid "Show the BETA tag next to the title"
-#~ msgstr "Afficher la mention BETA à côté du titre"
-
-#~ msgid "Logo alt text"
-#~ msgstr "Alternative textuelle du logo"
-
-#~ msgid "Must contain the text present in the image."
-#~ msgstr "Doit impérativement contenir le texte présent dans l’image."
-
-#~ msgid "Width (em)"
-#~ msgstr "Largeur (em)"
-
-#~ msgid ""
-#~ "To be adjusted according to the width of the logo.            Example for "
-#~ "a vertical logo: 3.5, Example for a horizontal logo: 8."
-#~ msgstr ""
-#~ "À ajuster en fonction de la largeur du logo.  Exemple pour un logo "
-#~ "vertical: 3.5, Exemple pour un logo horizontal: 8."
-
-#~ msgid "Newsletter description"
-#~ msgstr "Description de la lettre d’information"
-
-#~ msgid "Newsletter registration URL"
-#~ msgstr "URL d‘inscription à la lettre d’information"
-
-#~ msgid "Card"
-#~ msgstr "Carte"
-
-#~ msgid "Link to a page, use this or the external URL parameter"
-#~ msgstr ""
-#~ "Lien vers une page du site. Utilisez soit ce champ soit le champ URL "
-#~ "externe."
-
-#~ msgid "Use this or the Page parameter"
-#~ msgstr "Utilisez soit ce champ soit le champ Page."
+msgstr ""

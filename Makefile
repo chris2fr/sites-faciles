@@ -25,7 +25,20 @@ collectstatic:
 
 .PHONY: messages
 messages:
-	$(EXEC_CMD) poetry run django-admin makemessages -l fr --ignore=manage.py --ignore=medias --ignore=setup.py --ignore=staticfiles --ignore=workshop
+	$(MAKE) -C lesgv messages
+	$(MAKE) -C wagtail_village messages
+	$(MAKE) -C wagtail_village_blog messages
+	$(MAKE) -C search messages
+# 	$(EXEC_CMD) poetry run django-admin makemessages -l fr -l en --ignore=manage.py --ignore=medias --ignore=setup.py --ignore=staticfiles --ignore=workshop
+
+.PHONY: compilemessages
+compilemessages:
+	$(MAKE) -C lesgv compilemessages
+	$(MAKE) -C wagtail_village compilemessages
+	$(MAKE) -C wagtail_village_blog compilemessages
+	$(MAKE) -C search compilemessages
+# 	$(EXEC_CMD) poetry run django-admin makemessages -l fr -l en --ignore=manage.py --ignore=medias --ignore=setup.py --ignore=staticfiles --ignore=workshop
+
 
 .PHONY: sass
 sass:
