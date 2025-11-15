@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="m_p.dlig" format="2">
+	<advance width="1046"/>
+	<outline>
+		<contour>
+			<point x="334" y="0" type="line"/>
+			<point x="345" y="0" type="line"/>
+			<point x="345" y="520" type="line"/>
+			<point x="334" y="520" type="line"/>
+		</contour>
+		<contour>
+			<point x="90" y="0" type="line"/>
+			<point x="102" y="0" type="line"/>
+			<point x="102" y="520" type="line"/>
+			<point x="90" y="520" type="line"/>
+		</contour>
+		<contour>
+			<point x="582" y="520" type="line"/>
+			<point x="90" y="520" type="line"/>
+			<point x="90" y="508" type="line"/>
+			<point x="582" y="508" type="line"/>
+		</contour>
+		<component base="p" xOffset="486"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+			<string>m</string>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>p</string>
+		</dict>
+	</lib>
+</glyph>

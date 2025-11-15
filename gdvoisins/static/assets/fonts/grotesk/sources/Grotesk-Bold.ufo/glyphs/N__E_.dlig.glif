@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="N_E.dlig" format="2">
+	<advance width="835"/>
+	<guideline x="314" y="266" angle="0"/>
+	<outline>
+		<contour>
+			<point x="415" y="529" type="line"/>
+			<point x="745" y="529" type="line"/>
+			<point x="745" y="649" type="line"/>
+			<point x="415" y="649" type="line"/>
+		</contour>
+		<contour>
+			<point x="415" y="0" type="line"/>
+			<point x="745" y="0" type="line"/>
+			<point x="745" y="120" type="line"/>
+			<point x="415" y="120" type="line"/>
+		</contour>
+		<contour>
+			<point x="415" y="266" type="line"/>
+			<point x="695" y="266" type="line"/>
+			<point x="695" y="384" type="line"/>
+			<point x="415" y="384" type="line"/>
+		</contour>
+		<contour>
+			<point x="365" y="267" type="line"/>
+			<point x="460" y="267" type="line"/>
+			<point x="460" y="382" type="line"/>
+			<point x="415" y="382" type="line"/>
+			<point x="220" y="650" type="line"/>
+			<point x="145" y="650" type="line"/>
+			<point x="145" y="535" type="line"/>
+			<point x="170" y="535" type="line"/>
+		</contour>
+		<contour>
+			<point x="100" y="0" type="line"/>
+			<point x="220" y="0" type="line"/>
+			<point x="220" y="650" type="line"/>
+			<point x="100" y="650" type="line"/>
+		</contour>
+		<contour>
+			<point x="415" y="0" type="line"/>
+			<point x="535" y="0" type="line"/>
+			<point x="535" y="650" type="line"/>
+			<point x="415" y="650" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+			<string>N</string>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>E</string>
+		</dict>
+	</lib>
+</glyph>

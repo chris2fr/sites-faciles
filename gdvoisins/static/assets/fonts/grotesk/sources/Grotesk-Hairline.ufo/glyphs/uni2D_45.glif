@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni2D45" format="2">
+	<advance width="707"/>
+	<unicode hex="2D45"/>
+	<outline>
+		<contour>
+			<point x="360" y="649" type="line"/>
+			<point x="348" y="649" type="line"/>
+			<point x="348" y="301" type="line"/>
+			<point x="360" y="301" type="line"/>
+		</contour>
+		<contour>
+			<point x="600" y="0" type="line"/>
+			<point x="617" y="0" type="line"/>
+			<point x="67" y="649" type="line"/>
+			<point x="50" y="649" type="line"/>
+		</contour>
+		<contour>
+			<point x="90" y="0" type="line"/>
+			<point x="106" y="0" type="line"/>
+			<point x="657" y="649" type="line"/>
+			<point x="641" y="649" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+			<string>A</string>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>A</string>
+		</dict>
+	</lib>
+</glyph>

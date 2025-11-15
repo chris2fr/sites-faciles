@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="seven" format="2">
+	<advance width="524"/>
+	<unicode hex="0037"/>
+	<note>
+		seven
+	</note>
+	<outline>
+		<contour>
+			<point x="100" y="0" type="line"/>
+			<point x="228" y="0" type="line"/>
+			<point x="474" y="649" type="line"/>
+			<point x="346" y="649" type="line"/>
+		</contour>
+		<contour>
+			<point x="50" y="534" type="line"/>
+			<point x="360" y="534" type="line"/>
+			<point x="360" y="649" type="line"/>
+			<point x="50" y="649" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+			<string>A</string>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>A</string>
+		</dict>
+	</lib>
+</glyph>

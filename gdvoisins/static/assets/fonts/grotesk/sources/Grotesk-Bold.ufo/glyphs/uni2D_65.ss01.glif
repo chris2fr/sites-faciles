@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni2D65.ss01" format="2">
+	<advance width="770"/>
+	<outline>
+		<contour>
+			<point x="640" y="360" type="line"/>
+			<point x="130" y="360" type="line"/>
+			<point x="130" y="290" type="line"/>
+			<point x="640" y="290" type="line"/>
+		</contour>
+		<contour>
+			<point x="100" y="109" type="line"/>
+			<point x="670" y="109" type="line"/>
+			<point x="670" y="229" type="line"/>
+			<point x="100" y="229" type="line"/>
+		</contour>
+		<contour>
+			<point x="100" y="419" type="line"/>
+			<point x="670" y="419" type="line"/>
+			<point x="670" y="539" type="line"/>
+			<point x="100" y="539" type="line"/>
+		</contour>
+		<contour>
+			<point x="100" y="210" type="line"/>
+			<point x="100" y="0" type="line"/>
+			<point x="220" y="0" type="line"/>
+			<point x="220" y="210" type="line"/>
+		</contour>
+		<contour>
+			<point x="670" y="210" type="line"/>
+			<point x="550" y="210" type="line"/>
+			<point x="550" y="0" type="line"/>
+			<point x="670" y="0" type="line"/>
+		</contour>
+		<contour>
+			<point x="100" y="439" type="line"/>
+			<point x="220" y="439" type="line"/>
+			<point x="220" y="649" type="line"/>
+			<point x="100" y="649" type="line"/>
+		</contour>
+		<contour>
+			<point x="670" y="439" type="line"/>
+			<point x="670" y="649" type="line"/>
+			<point x="550" y="649" type="line"/>
+			<point x="550" y="439" type="line"/>
+		</contour>
+		<contour>
+			<point x="325" y="0" type="line"/>
+			<point x="445" y="0" type="line"/>
+			<point x="445" y="650" type="line"/>
+			<point x="325" y="650" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+			<string>H</string>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>H</string>
+		</dict>
+	</lib>
+</glyph>

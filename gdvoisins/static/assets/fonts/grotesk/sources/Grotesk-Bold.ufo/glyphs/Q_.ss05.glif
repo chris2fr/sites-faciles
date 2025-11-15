@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="Q.ss05" format="2">
+	<advance width="1008"/>
+	<anchor x="499" y="0" name="bottom"/>
+	<anchor x="499" y="325" name="center"/>
+	<anchor x="906" y="10" name="ogonek"/>
+	<anchor x="499" y="649" name="top"/>
+	<anchor x="10" y="649" name="topleft"/>
+	<anchor x="988" y="649" name="topright"/>
+	<note>
+		Q
+	</note>
+	<outline>
+		<contour>
+			<point x="777" y="0" type="line"/>
+			<point x="928" y="0" type="line"/>
+			<point x="775" y="161" type="line"/>
+			<point x="699" y="80" type="line"/>
+		</contour>
+		<contour>
+			<point x="409" y="0" type="curve" smooth="yes"/>
+			<point x="589" y="0" type="line" smooth="yes"/>
+			<point x="773" y="0"/>
+			<point x="918" y="146"/>
+			<point x="918" y="329" type="curve" smooth="yes"/>
+			<point x="918" y="504"/>
+			<point x="765" y="649"/>
+			<point x="589" y="649" type="curve" smooth="yes"/>
+			<point x="409" y="649" type="line" smooth="yes"/>
+			<point x="231" y="649"/>
+			<point x="80" y="501"/>
+			<point x="80" y="329" type="curve" smooth="yes"/>
+			<point x="80" y="148"/>
+			<point x="222" y="0"/>
+		</contour>
+		<contour>
+			<point x="589" y="125" type="curve" smooth="yes"/>
+			<point x="409" y="125" type="line"/>
+			<point x="294" y="125"/>
+			<point x="205" y="214"/>
+			<point x="205" y="329" type="curve" smooth="yes"/>
+			<point x="205" y="433"/>
+			<point x="300" y="524"/>
+			<point x="409" y="524" type="curve" smooth="yes"/>
+			<point x="589" y="524" type="line" smooth="yes"/>
+			<point x="698" y="524"/>
+			<point x="793" y="433"/>
+			<point x="793" y="329" type="curve" smooth="yes"/>
+			<point x="793" y="214"/>
+			<point x="704" y="125"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+			<string>O</string>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>O</string>
+		</dict>
+	</lib>
+</glyph>

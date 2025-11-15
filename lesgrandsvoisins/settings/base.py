@@ -101,6 +101,7 @@ INSTALLED_APPS = [
     "widget_tweaks",
     "grapple",
     "graphene_django",
+    "gdvoisins",
 ]
 
 BOOL_WAGTAIL_API = os.getenv("WAGTAIL_API", "False").lower() in ("true", "1", "t")

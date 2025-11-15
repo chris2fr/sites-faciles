@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni2D64" format="2">
+	<advance width="508"/>
+	<unicode hex="2D64"/>
+	<outline>
+		<contour>
+			<point x="120" y="0" type="line"/>
+			<point x="132" y="0" type="line"/>
+			<point x="132" y="642" type="line"/>
+			<point x="125" y="641" type="line"/>
+			<point x="391" y="296" type="line"/>
+			<point x="405" y="296" type="line"/>
+			<point x="134" y="649" type="line"/>
+			<point x="120" y="649" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+			<string>H</string>
+		</dict>
+	</lib>
+</glyph>

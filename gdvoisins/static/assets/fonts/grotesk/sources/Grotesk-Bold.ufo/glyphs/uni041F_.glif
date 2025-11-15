@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni041F" format="2">
+	<advance width="630"/>
+	<unicode hex="041F"/>
+	<anchor x="610" y="0" name="bottomright"/>
+	<outline>
+		<contour>
+			<point x="154" y="535" type="line"/>
+			<point x="456" y="535" type="line"/>
+			<point x="456" y="650" type="line"/>
+			<point x="154" y="650" type="line"/>
+		</contour>
+		<contour>
+			<point x="100" y="0" type="line"/>
+			<point x="220" y="0" type="line"/>
+			<point x="220" y="650" type="line"/>
+			<point x="100" y="650" type="line"/>
+		</contour>
+		<contour>
+			<point x="410" y="0" type="line"/>
+			<point x="530" y="0" type="line"/>
+			<point x="530" y="650" type="line"/>
+			<point x="410" y="650" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+			<string>H</string>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>H</string>
+		</dict>
+	</lib>
+</glyph>

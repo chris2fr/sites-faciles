@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni2D37" format="2">
+	<advance width="680"/>
+	<unicode hex="2D37"/>
+	<outline>
+		<contour>
+			<point x="50" y="0" type="line"/>
+			<point x="165" y="0" type="line"/>
+			<point x="355" y="536" type="line"/>
+			<point x="312" y="536" type="line"/>
+			<point x="509" y="0" type="line"/>
+			<point x="630" y="0" type="line"/>
+			<point x="396" y="649" type="line"/>
+			<point x="275" y="649" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+			<string>A</string>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>A</string>
+		</dict>
+	</lib>
+</glyph>

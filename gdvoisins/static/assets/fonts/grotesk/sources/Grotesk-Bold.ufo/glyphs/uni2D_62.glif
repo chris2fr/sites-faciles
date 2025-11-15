@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni2D62" format="2">
+	<advance width="600"/>
+	<unicode hex="2D62"/>
+	<outline>
+		<contour>
+			<point x="100" y="-40" type="line"/>
+			<point x="500" y="228" type="line"/>
+			<point x="500" y="400" type="line"/>
+			<point x="235" y="493" type="line"/>
+			<point x="235" y="490" type="line"/>
+			<point x="500" y="569" type="line"/>
+			<point x="500" y="689" type="line"/>
+			<point x="100" y="569" type="line"/>
+			<point x="100" y="423" type="line"/>
+			<point x="424" y="309" type="line"/>
+			<point x="423" y="314" type="line"/>
+			<point x="100" y="98" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+			<string>H</string>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>H</string>
+		</dict>
+	</lib>
+</glyph>

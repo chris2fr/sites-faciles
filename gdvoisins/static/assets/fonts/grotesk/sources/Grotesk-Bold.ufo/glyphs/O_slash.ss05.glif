@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="Oslash.ss05" format="2">
+	<advance width="1018"/>
+	<guideline x="768" y="-15" angle="0"/>
+	<guideline x="502" y="665" angle="0"/>
+	<outline>
+		<contour>
+			<point x="126" y="0" type="line"/>
+			<point x="272" y="0" type="line"/>
+			<point x="893" y="649" type="line"/>
+			<point x="747" y="649" type="line"/>
+		</contour>
+		<component base="O.ss05"/>
+	</outline>
+</glyph>

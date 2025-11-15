@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="Eacute_E.dlig" format="2">
+	<advance width="720"/>
+	<guideline x="209" y="442" angle="90"/>
+	<anchor x="360" y="650" name="_top"/>
+	<anchor x="360" y="810" name="top"/>
+	<outline>
+		<contour>
+			<point x="90" y="529" type="line"/>
+			<point x="630" y="529" type="line"/>
+			<point x="630" y="649" type="line"/>
+			<point x="90" y="649" type="line"/>
+		</contour>
+		<contour>
+			<point x="90" y="0" type="line"/>
+			<point x="630" y="0" type="line"/>
+			<point x="630" y="120" type="line"/>
+			<point x="90" y="120" type="line"/>
+		</contour>
+		<contour>
+			<point x="140" y="264" type="line"/>
+			<point x="580" y="264" type="line"/>
+			<point x="580" y="384" type="line"/>
+			<point x="140" y="384" type="line"/>
+		</contour>
+		<contour>
+			<point x="300" y="0" type="line"/>
+			<point x="420" y="0" type="line"/>
+			<point x="420" y="649" type="line"/>
+			<point x="300" y="649" type="line"/>
+		</contour>
+		<contour>
+			<point x="305" y="710" type="line"/>
+			<point x="420" y="710" type="line"/>
+			<point x="475" y="810" type="line"/>
+			<point x="360" y="810" type="line"/>
+		</contour>
+	</outline>
+</glyph>

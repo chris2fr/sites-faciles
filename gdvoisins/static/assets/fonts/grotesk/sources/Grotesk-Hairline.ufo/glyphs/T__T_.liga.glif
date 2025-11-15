@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="T_T.liga" format="2">
+	<advance width="940"/>
+	<outline>
+		<contour>
+			<point x="50" y="637" type="line"/>
+			<point x="485" y="637" type="line"/>
+			<point x="485" y="649" type="line"/>
+			<point x="50" y="649" type="line"/>
+		</contour>
+		<contour>
+			<point x="262" y="0" type="line"/>
+			<point x="274" y="0" type="line"/>
+			<point x="274" y="649" type="line"/>
+			<point x="262" y="649" type="line"/>
+		</contour>
+		<contour>
+			<point x="445" y="637" type="line"/>
+			<point x="890" y="637" type="line"/>
+			<point x="890" y="649" type="line"/>
+			<point x="445" y="649" type="line"/>
+		</contour>
+		<contour>
+			<point x="667" y="0" type="line"/>
+			<point x="679" y="0" type="line"/>
+			<point x="679" y="649" type="line"/>
+			<point x="667" y="649" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+			<string>T</string>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>T</string>
+		</dict>
+	</lib>
+</glyph>
