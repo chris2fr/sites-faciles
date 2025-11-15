@@ -37,3 +37,4 @@ wagtailmenus
 dotenv
 jwt
 graphene_django
+telepath
