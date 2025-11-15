@@ -125,7 +125,7 @@ class BlogIndexPage(ContentPage):
         if year:
             posts = posts.filter(date__year=year)
 
-        posts = posts.exclude(title__endswith=" PROPOSITION")
+        posts = posts.exclude(title__endswith=" *")
 
         # Pagination
         page = request.GET.get("page")
