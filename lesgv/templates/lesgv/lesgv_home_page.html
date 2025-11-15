@@ -12,14 +12,14 @@
         href="{% static 'css/lesgv/home.css' %}" />
 {% endblock extra_css %}
 {% block content %}
-  <header class="min-w-full text-center" style="justify-content: center">
+  <div class="min-w-full text-center" style="justify-content: center">
     <a href="https://www.gdvoisins.com">
       <img class="logolgv max-w-full"
            src="{% static 'img/lesgv/logo-lesgrandsvoisins-800-400-white.png' %}"
            onmouseover="this.src='{% static 'img/lesgv/logo-gdvoisins-800-400.png' %}'"
            onmouseout="this.src='{% static 'img/lesgv/logo-lesgrandsvoisins-800-400-white.png' %}'">
     </a>
-  </header>
+  </div>
   <main class="gvhome darkmode" id="main">
     <div class="bg-gradient-to-tr from-blue-200 to-grey-600">
       <div class=" px-3 py-6 max-w-screen-lg mx-auto text-xl italic font-medium text-center">{{ page.intro|richtext }}</div>

@@ -1,17 +1,26 @@
-{% extends "wagtail_village/base.html" %}
+{% extends "wagtail_village/content_page.html" %}
 {% load static wagtailcore_tags i18n %}
 
 {% block body_class %}template-searchresults{% endblock body_class %}
 
-{% block title %}Search{% endblock title %}
+{% block title %}{% translate "Search" %}{% endblock title %}
 
 {% block content %}
 <h1>{% translate "Search" %}</h1>
 
-<form action="{% url 'search' %}" method="get">
-    <input type="text" name="query"{% if search_query %} value="{{ search_query }}"{% endif %}>
-    <input type="submit" value="{% translate "Search" %}" class="button">
-</form>
+
+                <form name="search_form" class="search_form" method="get" action="{% url 'search' %}">
+                    <div class="input-group">
+                         <input type="search" name="query" class="village-input" 
+                         placeholder="{% translate "votre recherche ici" %}" 
+                         {% if search_query %} value="{{ search_query }}"{% endif %}>
+                         <span class="input-group-btn">
+                            <button class="btn btn-default village-btn" 
+                            type="submit"><i class="fa fa-search">{% translate "Search" %}</i></button>
+                         </span>
+                    </div>
+                </form>
+
 
 {% if search_results %}
 <ul>

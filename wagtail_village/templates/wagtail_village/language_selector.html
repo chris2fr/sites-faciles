@@ -14,8 +14,8 @@
     </button>
     <div class="village-collapse village-translate__menu village-menu" id="translate-menu">
       <ul class="village-menu__list">
-        {% for translation in page.get_translations.live %}
         {% if page %}
+        {% for translation in page.get_translations.live %}
           <li>
             <a class="village-translate__language village-nav__link"
                hreflang="{{ translation.locale.language_code|lower }}"
@@ -23,16 +23,24 @@
                href="{% pageurl translation %}"
                {% if translation.locale.language_code == LANGUAGE_CODE %}aria-current="true"{% endif %}>{{ translation.locale.language_code|upper }} - {{ translation.locale.language_name_local }}</a>
           </li>
-          {% else %}
+          {% endfor %}
+        {% else %}
           <li>
             <a class="village-translate__language village-nav__link"
-               hreflang="{{ translation.locale.language_code|lower }}"
-               lang="{{ translation.locale.language_code|lower }}"
-               href="/{{ translation.locale.language_code|lower }}/"
-               {% if translation.locale.language_code == LANGUAGE_CODE %}aria-current="true"{% endif %}>{{ translation.locale.language_code|upper }} - {{ translation.locale.language_name_local }}</a>
+               hreflang="fr"
+               lang="Français"
+               href="/fr/"
+               {% if translation.locale.language_code == "FR" %}aria-current="true"{% endif %}>FR - Français</a>
+          </li>
+          <li>
+            <a class="village-translate__language village-nav__link"
+               hreflang="en"
+               lang="English"
+               href="/en/"
+               {% if translation.locale.language_code == "EN" %}aria-current="true"{% endif %}>EN - English</a>
           </li>
           {% endif %}
-        {% endfor %}
+        
       </ul>
     </div>
   </div>

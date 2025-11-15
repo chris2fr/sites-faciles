@@ -47,7 +47,7 @@
               <button class="village-btn--close village-btn"
                       aria-controls="modal-search"
                       title="{{ close_label }}">{{ close_label }}</button>
-              <form action="{% url 'wagtail_village_search' %}" method="get">
+              <form action="{% url 'wagtail_village_search' %}" method="get" class="search_form">
                 <div class="village-search-bar" id="search-bar" role="search">
                   <label class="village-label" for="search-bar-input">{{ search_label }}</label>
                   <input class="village-input"

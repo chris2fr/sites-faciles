@@ -1,5 +1,5 @@
 {% extends "django_village/base.html" %}
-{% load  static village_tags wagtailcore_tags wagtailimages_tags i18n wagtailuserbar wagtailsettings_tags sass_tags %}
+{% load static village_tags wagtailcore_tags wagtailimages_tags i18n wagtailuserbar wagtailsettings_tags sass_tags %}
 {% get_settings use_default_site=True %}
 {% block description %}
     {% if search_description %}<meta name="description" content="{{ search_description }}" />{% endif %}
@@ -54,8 +54,8 @@ type="text/css" />
 {% block breadcrumb %}
 {% endblock breadcrumb %}
 
-{% block topbody%}
-{% endblock topbody%}
+{% block topbody %}
+{% endblock topbody %}
 
 {% block header %}
   {% include "wagtail_village/header.html" %}
@@ -77,7 +77,6 @@ type="text/css" />
 {% block footer %}
   {% include "wagtail_village/footer.html" %}
 {% endblock footer %}
-
 
 {% block body_tracking_scripts %}
   {% if settings.wagtail_village.AnalyticsSettings.body_scripts %}

@@ -22,9 +22,9 @@
     {% block extra_css %}
     {% endblock extra_css %}
 
-    {% block title %}
-      <title>{{ full_title }}</title>
-    {% endblock title %}
+    
+      <title>{% block title %}{{ full_title }}{% endblock title %}</title>
+    
     <meta name="format-detection"
           content="telephone=no,date=no,address=no,email=no,url=no">
 
