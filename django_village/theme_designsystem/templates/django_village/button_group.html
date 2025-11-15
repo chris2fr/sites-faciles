@@ -1,0 +1,8 @@
+{% load village_tags %}
+<ul class="village-btns-group{% if self.extra_classes %} {{ self.extra_classes }}{% endif %}">
+  {% for item in self.items %}
+    <li>
+      {% village_button item %}
+    </li>
+  {% endfor %}
+</ul>

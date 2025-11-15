@@ -1,0 +1,76 @@
+{% load static i18n static %}
+<dialog id="village-theme-modal"
+        class="village-modal"
+        aria-labelledby="village-theme-modal-title">
+  <div class="village-container village-container--fluid facile-container-md">
+    <div class="village-grid-row village-grid-row--center">
+      <div class="village-col-12 village-col-md-6 village-col-lg-4">
+        <div class="village-modal__body">
+          <div class="village-modal__header">
+            <button class="village-btn--close village-btn"
+                    aria-describedby="village-theme-modal-title"
+                    aria-controls="village-theme-modal">
+              {% translate "Close" %}
+            </button>
+          </div>
+          <div class="village-modal__content">
+            <h1 id="village-theme-modal-title" class="village-modal__title">
+              {% translate "Display settings" %}
+            </h1>
+            <div id="village-display" class="village-form-group village-display">
+              <div class="village-form-group">
+                <fieldset class="village-fieldset">
+                  <legend class="village-fieldset__legend facile-text--regular" id="-legend">
+                    {% translate "Choose a theme to customize the appearance of the site." %}
+                  </legend>
+                  <div class="village-fieldset__content">
+                    <div class="village-radio-group village-radio-rich">
+                      <input value="light"
+                             type="radio"
+                             id="village-radios-theme-light"
+                             name="village-radios-theme" />
+                      <label class="village-label" for="village-radios-theme-light">
+                        {% translate "Light theme" %}
+                      </label>
+                      <div class="village-radio-rich__img" data-village-inject-svg>
+                        <img src="{% static 'django_village/dist/artwork/light.svg' %}" alt="" />
+                        {# L’alternative de l’image (attribut alt) doit rester vide car l’image est illustrative et ne doit pas être restituée aux technologies d’assistance #}
+                      </div>
+                    </div>
+                    <div class="village-radio-group village-radio-rich">
+                      <input value="dark"
+                             type="radio"
+                             id="village-radios-theme-dark"
+                             name="village-radios-theme" />
+                      <label class="village-label" for="village-radios-theme-dark">
+                        {% translate "Dark theme" %}
+                      </label>
+                      <div class="village-radio-rich__img" data-village-inject-svg>
+                        <img src="{% static 'django_village/dist/artwork/dark.svg' %}" alt="" />
+                        {# L’alternative de l’image (attribut alt) doit rester vide car l’image est illustrative et ne doit pas être restituée aux technologies d’assistance #}
+                      </div>
+                    </div>
+                    <div class="village-radio-group village-radio-rich">
+                      <input value="system"
+                             type="radio"
+                             id="village-radios-theme-system"
+                             name="village-radios-theme" />
+                      <label class="village-label" for="village-radios-theme-system">
+                        {% translate "System" %}
+                        <span class="village-hint-text">{% translate "Uses system settings." %}</span>
+                      </label>
+                      <div class="village-radio-rich__img" data-village-inject-svg>
+                        <img src="{% static 'django_village/dist/artwork/system.svg' %}" alt="" />
+                        {# L’alternative de l’image (attribut alt) doit rester vide car l’image est illustrative et ne doit pas être restituée aux technologies d’assistance #}
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>

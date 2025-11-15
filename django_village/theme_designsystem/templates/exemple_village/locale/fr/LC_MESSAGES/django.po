@@ -1,0 +1,109 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-10 16:17+0200\n"
+"PO-Revision-Date: 2024-04-10 16:20+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.4\n"
+
+#: example_village/apps.py:9
+msgid "Example app"
+msgstr "Application d’exemple"
+
+#: example_village/models.py:10
+msgid "First name"
+msgstr "Prénom"
+
+#: example_village/models.py:13
+msgid "Last name"
+msgstr "Nom"
+
+#: example_village/models.py:15
+msgid "Birth date"
+msgstr "Date de naissance"
+
+#: example_village/models.py:18
+msgid "Author"
+msgstr "Auteur"
+
+#: example_village/models.py:22
+msgid "Code"
+msgstr "Code"
+
+#: example_village/models.py:24
+msgid "Designation"
+msgstr "Désignation"
+
+#: example_village/models.py:26
+msgid "Help text"
+msgstr "Texte d’aide"
+
+#: example_village/models.py:32
+msgid "Genre"
+msgstr "Genre"
+
+#: example_village/models.py:36
+msgid "Paper"
+msgstr "Papier"
+
+#: example_village/models.py:37
+msgid "Digital"
+msgstr "Numérique"
+
+#: example_village/models.py:45
+msgid "Title"
+msgstr "Titre"
+
+#: example_village/models.py:46
+msgid "Number of pages"
+msgstr "Nombre de pages"
+
+#: example_village/models.py:48
+msgid "Format"
+msgstr "Format"
+
+#: example_village/models.py:53
+msgid "Book"
+msgstr "Livre"
+
+#: example_village/templates/example_village/blocks/footer.html:12
+#: example_village/templates/example_village/blocks/header.html:31
+msgid "Display settings"
+msgstr "Paramètres d’affichage"
+
+#: example_village/templates/example_village/blocks/footer.html:18
+msgid "Back to home page"
+msgstr "Retour à l’accueil du site"
+
+#: example_village/templates/example_village/blocks/header.html:6
+msgid "Home page"
+msgstr "Accueil"
+
+#: example_village/templates/example_village/blocks/header.html:43
+#: example_village/templates/example_village/blocks/header.html:68
+msgid "Search"
+msgstr "Rechercher"
+
+#: example_village/templates/example_village/blocks/header.html:52
+msgid "Menu"
+msgstr "Menu"
+
+#: example_village/templates/example_village/blocks/header.html:71
+msgid "Close"
+msgstr "Fermer"
+
+#: example_village/templates/example_village/blocks/language_selector.html:10
+msgid "Select language"
+msgstr "Sélectionner une langue"

@@ -1,0 +1,371 @@
+.village-code .hll {
+  background-color: var(--background-contrast-grey)
+}
+
+.village-code pre,
+pre.village-code {
+  background: var(--background-alt-grey);
+  border: 1px solid var(--border-default-grey);
+  color: var(--text-default-grey);
+  padding: 1rem;
+  margin: 2rem 0;
+  white-space: pre-wrap;
+}
+
+/* Comment */
+.village-code .c {
+  color: var(--green-emeraude-sun-425);
+  font-style: italic
+}
+
+/* Error */
+.village-code .err {
+  border: 1px solid var(--red-marianne-main-472)
+}
+
+/* Keyword */
+.village-code .k {
+  color: var(--green-bourgeon-main-640);
+  font-weight: bold
+}
+
+/* Operator */
+.village-code .o {
+  color: var(--beige-gris-galet-sun-407)
+}
+
+/* Comment.Hashbang */
+.village-code .ch {
+  color: var(--green-emeraude-sun-425);
+  font-style: italic
+}
+
+/* Comment.Multiline */
+.village-code .cm {
+  color: var(--green-emeraude-sun-425);
+  font-style: italic
+}
+
+/* Comment.Preproc */
+.village-code .cp {
+  color: var(--warning-main-525)
+}
+
+/* Comment.PreprocFile */
+.village-code .cpf {
+  color: var(--green-emeraude-sun-425);
+  font-style: italic
+}
+
+/* Comment.Single */
+.village-code .c1 {
+  color: var(--green-emeraude-sun-425);
+  font-style: italic
+}
+
+/* Comment.Special */
+.village-code .cs {
+  color: var(--green-emeraude-sun-425);
+  font-style: italic
+}
+
+/* Generic.Deleted */
+.village-code .gd {
+  color: var(--red-marianne-200)
+}
+
+/* Generic.Emph */
+.village-code .ge {
+  font-style: italic
+}
+
+/* Generic.Error */
+.village-code .gr {
+  color: var(--red-marianne-main-472)
+}
+
+/* Generic.Heading */
+.village-code .gh {
+  color: var(--village-primary-125);
+  font-weight: bold
+}
+
+/* Generic.Inserted */
+.village-code .gi {
+  color: var(--green-bourgeon-850)
+}
+
+/* Generic.Output */
+.village-code .go {
+  color: var(--grey-main-525)
+}
+
+/* Generic.Prompt */
+.village-code .gp {
+  color: var(--village-primary-125);
+  font-weight: bold
+}
+
+/* Generic.Strong */
+.village-code .gs {
+  font-weight: bold
+}
+
+/* Generic.Subheading */
+.village-code .gu {
+  color: var(--purple-glycine-sun-319);
+  font-weight: bold
+}
+
+/* Generic.Traceback */
+.village-code .gt {
+  color: var(--blue-cumulus-main-526)
+}
+
+/* Keyword.Constant */
+.village-code .kc {
+  color: var(--green-bourgeon-main-640);
+  font-weight: bold
+}
+
+/* Keyword.Declaration */
+.village-code .kd {
+  color: var(--green-bourgeon-main-640);
+  font-weight: bold
+}
+
+/* Keyword.Namespace */
+.village-code .kn {
+  color: var(--green-bourgeon-main-640);
+  font-weight: bold
+}
+
+/* Keyword.Pseudo */
+.village-code .kp {
+  color: var(--green-bourgeon-main-640)
+}
+
+/* Keyword.Reserved */
+.village-code .kr {
+  color: var(--green-bourgeon-main-640);
+  font-weight: bold
+}
+
+/* Keyword.Type */
+.village-code .kt {
+  color: var(--pink-tuile-200)
+}
+
+/* Literal.Number */
+.village-code .m {
+  color: var(--beige-gris-galet-sun-407)
+}
+
+/* Literal.String */
+.village-code .s {
+  color: var(--pink-tuile-main-556)
+}
+
+/* Name.Attribute */
+.village-code .na {
+  color: var(--green-tilleul-verveine-main-707)
+}
+
+/* Name.Builtin */
+.village-code .nb {
+  color: var(--green-bourgeon-main-640)
+}
+
+/* Name.Class */
+.village-code .nc {
+  color: var(--blue-ecume-main-400);
+  font-weight: bold
+}
+
+/* Name.Constant */
+.village-code .no {
+  color: var(--warning-200)
+}
+
+/* Name.Decorator */
+.village-code .nd {
+  color: var(--purple-glycine-main-494)
+}
+
+/* Name.Entity */
+.village-code .ni {
+  color: var(--grey-625);
+  font-weight: bold
+}
+
+/* Name.Exception */
+.village-code .ne {
+  color: var(--pink-tuile-sun-425);
+  font-weight: bold
+}
+
+/* Name.Function */
+.village-code .nf {
+  color: var(--blue-ecume-main-400)
+}
+
+/* Name.Label */
+.village-code .nl {
+  color: var(--green-tilleul-verveine-main-707)
+}
+
+/* Name.Namespace */
+.village-code .nn {
+  color: var(--blue-ecume-main-400);
+  font-weight: bold
+}
+
+/* Name.Tag */
+.village-code .nt {
+  color: var(--green-bourgeon-main-640);
+  font-weight: bold
+}
+
+/* Name.Variable */
+.village-code .nv {
+  color: var(--blue-cumulus-200)
+}
+
+/* Operator.Word */
+.village-code .ow {
+  color: var(--purple-glycine-main-494);
+  font-weight: bold
+}
+
+/* Text.Whitespace */
+.village-code .w {
+  color: var(--beige-gris-galet-main-702)
+}
+
+/* Literal.Number.Bin */
+.village-code .mb {
+  color: var(--beige-gris-galet-sun-407)
+}
+
+/* Literal.Number.Float */
+.village-code .mf {
+  color: var(--beige-gris-galet-sun-407)
+}
+
+/* Literal.Number.Hex */
+.village-code .mh {
+  color: var(--beige-gris-galet-sun-407)
+}
+
+/* Literal.Number.Integer */
+.village-code .mi {
+  color: var(--beige-gris-galet-sun-407)
+}
+
+/* Literal.Number.Oct */
+.village-code .mo {
+  color: var(--beige-gris-galet-sun-407)
+}
+
+/* Literal.String.Affix */
+.village-code .sa {
+  color: var(--pink-tuile-main-556)
+}
+
+/* Literal.String.Backtick */
+.village-code .sb {
+  color: var(--pink-tuile-main-556)
+}
+
+/* Literal.String.Char */
+.village-code .sc {
+  color: var(--pink-tuile-main-556)
+}
+
+/* Literal.String.Delimiter */
+.village-code .dl {
+  color: var(--pink-tuile-main-556)
+}
+
+/* Literal.String.Doc */
+.village-code .sd {
+  color: var(--pink-tuile-main-556);
+  font-style: italic
+}
+
+/* Literal.String.Double */
+.village-code .s2 {
+  color: var(--pink-tuile-main-556)
+}
+
+/* Literal.String.Escape */
+.village-code .se {
+  color: var(--brown-caramel-main-648);
+  font-weight: bold
+}
+
+/* Literal.String.Heredoc */
+.village-code .sh {
+  color: var(--pink-tuile-main-556)
+}
+
+/* Literal.String.Interpol */
+.village-code .si {
+  color: var(--purple-glycine-main-494);
+  font-weight: bold
+}
+
+/* Literal.String.Other */
+.village-code .sx {
+  color: var(--green-bourgeon-main-640)
+}
+
+/* Literal.String.Regex */
+.village-code .sr {
+  color: var(--purple-glycine-main-494)
+}
+
+/* Literal.String.Single */
+.village-code .s1 {
+  color: var(--pink-tuile-main-556)
+}
+
+/* Literal.String.Symbol */
+.village-code .ss {
+  color: var(--blue-cumulus-200)
+}
+
+/* Name.Builtin.Pseudo */
+.village-code .bp {
+  color: var(--green-bourgeon-main-640)
+}
+
+/* Name.Function.Magic */
+.village-code .fm {
+  color: var(--blue-ecume-main-400)
+}
+
+/* Name.Variable.Class */
+.village-code .vc {
+  color: var(--blue-cumulus-200)
+}
+
+/* Name.Variable.Global */
+.village-code .vg {
+  color: var(--blue-cumulus-200)
+}
+
+/* Name.Variable.Instance */
+.village-code .vi {
+  color: var(--blue-cumulus-200)
+}
+
+/* Name.Variable.Magic */
+.village-code .vm {
+  color: var(--blue-cumulus-200)
+}
+
+/* Literal.Number.Integer.Long */
+.village-code .il {
+  color: var(--beige-gris-galet-sun-407)
+}

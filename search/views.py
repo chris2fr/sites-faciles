@@ -1,6 +1,6 @@
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.template.response import TemplateResponse
-from wagtail.models import Page
+from wagtail.models import Locale, Page
 
 
 # To enable logging of search queries for use with the "Promoted search results" module
@@ -15,10 +15,11 @@ def search(request):
     search_query = request.GET.get("q", None)
     search_query = request.GET.get("query", search_query)
     page = request.GET.get("page", 1)
+    locale = Locale.get_active()
 
     # Search
     if search_query:
-        search_results = Page.objects.live().search(search_query)
+        search_results = Page.objects.filter(locale=locale).live().search(search_query)
 
         # To log this query for use with the "Promoted search results" module:
 

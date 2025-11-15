@@ -1,0 +1,21 @@
+{% load widget_tweaks village_tags %}
+<div class="village-checkbox-group{% if field.errors %} village-checkbox-group--error{% endif %}{% if field.field.disabled %} village-input-group--disabled{% endif %} village-mb-2w">
+  {% if field.errors %}
+    {% with aria_describedby="aria-describedby:"|add:field.auto_id|add:"-desc-error" %}
+      {{ field|village_input_class_attr|attr:"type:checkbox"|attr:aria_describedby }}
+    {% endwith %}
+  {% else %}
+    {{ field|village_input_class_attr|attr:"type:checkbox" }}
+  {% endif %}
+  <label for="{{ field.id_for_label }}" class="village-label">
+    {{ field.label_tag }}
+    {% if field.help_text %}
+      <span class="village-hint-text">{{ field.help_text }}</span>
+    {% endif %}
+  </label>
+  {% if field.errors %}
+    <div id="{{ field.auto_id }}-desc-error">
+      {{ field.errors }}
+    </div>
+  {% endif %}
+</div>

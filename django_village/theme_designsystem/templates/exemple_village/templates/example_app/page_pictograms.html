@@ -1,0 +1,62 @@
+{% extends "django_village/base.html" %}
+{% load static village_tags %}
+{% block content %}
+  <h1>
+    Pictogrammes
+  </h1>
+  <div class="village-mb-4w">
+    {% village_summary summary %}
+  </div>
+  <ul>
+    <li>
+      <a class="village-link village-icon-external-link-line village-link--icon-right village-link--lg"
+         href="https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-techniques/pictogramme"
+         target="_blank"
+         rel="noopener noreferrer">
+        Voir la page de documentation du composant sur le Système de Design de l’État <span class="village-sr-only">Ouvre une nouvelle fenêtre</span>
+      </a>
+    </li>
+    <li>
+      <a class="village-link village-icon-external-link-line village-link--icon-right village-link--lg"
+         href="https://main--ds-gouv.netlify.app/example/utility/pictograms/"
+         target="_blank"
+         rel="noopener noreferrer">
+        Voir la page sur le site d’exemples du Système de Design de l’État <span class="village-sr-only">Ouvre une nouvelle fenêtre</span>
+      </a>
+    </li>
+  </ul>
+  {% for folder, files in pictograms.items %}
+    <h2 id="{{ folder|slugify }}" tabindex="-1">
+      {{ folder|title }}
+    </h2>
+    <div class="village-grid-row village-grid-row--gutters">
+      {% for file in files %}
+        <div class="village-col-12 village-col-md-3 village-mb-4w">
+          <div class="village-tile village-enlarge-link">
+            <div class="village-tile__body">
+              <div class="village-tile__content">
+                <h3 class="village-tile__title">
+                  <a class="village-tile__link"
+                     href="/static/village/dist/artwork/pictograms/{{ folder }}/{{ file }}">{{ file }}</a>
+                </h3>
+              </div>
+            </div>
+            <div class="village-tile__header">
+              <div class="village-tile__pictogram">
+                <svg aria-hidden="true"
+                     class="village-artwork"
+                     viewBox="0 0 80 80"
+                     width="80px"
+                     height="80px">
+                  <use class="village-artwork-decorative" href="/static/village/dist/artwork/pictograms/{{ folder }}/{{ file }}#artwork-decorative"></use>
+                  <use class="village-artwork-minor" href="/static/village/dist/artwork/pictograms/{{ folder }}/{{ file }}#artwork-minor"></use>
+                  <use class="village-artwork-major" href="/static/village/dist/artwork/pictograms/{{ folder }}/{{ file }}#artwork-major"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+{% endblock content %}

@@ -1,0 +1,13 @@
+{% load i18n %}
+<nav role="navigation"
+     class="village-summary"
+     aria-labelledby="village-summary-title">
+  <{{ self.heading_tag | default:"p" }} class="village-summary__title" id="village-summary-title">
+  {% translate "Summary" %}
+  </{{ self.heading_tag | default:"p" }}>
+  <ol class="village-summary__list">
+    {% for item in self.items %}
+      {% include "django_village/summary_list.html" with item=item %}
+    {% endfor %}
+  </ol>
+</nav>

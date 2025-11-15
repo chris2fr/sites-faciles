@@ -1,0 +1,166 @@
+
+      <ul class="village-nav__list">
+        <li class="village-nav__item">
+          {% url 'index' as home_url %}
+          <a class="village-nav__link"
+             href="{{ home_url }}"
+             target="_self"
+             {% if request.path == home_url %}aria-current="true"{% endif %}>Accueil</a>
+        </li>
+        <li class="village-nav__item">
+          <button class="village-nav__btn"
+                  aria-expanded="false"
+                  aria-controls="menu-doc"
+                  {% if '/doc-' in request.path %}aria-current="true"{% endif %}>
+            Documentation
+          </button>
+          <div class="village-collapse village-menu" id="menu-doc">
+            <ul class="village-menu__list">
+              <li>
+                {% url 'doc_install' as doc_install_url %}
+                <a class="village-nav__link"
+                   href="{{ doc_install_url }}"
+                   target="_self"
+                   {% if request.path == doc_install_url %}aria-current="true"{% endif %}>Installation</a>
+              </li>
+              <li>
+                {% url 'doc_usage' as doc_usage_url %}
+                <a class="village-nav__link"
+                   href="{{ doc_usage_url }}"
+                   target="_self"
+                   {% if request.path == doc_usage_url %}aria-current="true"{% endif %}>Utilisation</a>
+              </li>
+              <li>
+                {% url 'doc_contributing' as doc_contributing_url %}
+                <a class="village-nav__link"
+                   href="{{ doc_contributing_url }}"
+                   target="_self"
+                   {% if request.path == doc_contributing_url %}aria-current="true"{% endif %}>Contribuer</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="village-nav__item">
+          <button class="village-nav__btn"
+                  aria-expanded="false"
+                  aria-controls="mega-menu-components"
+                  {% if '/components/' in request.path %}aria-current="true"{% endif %}>
+            Composants
+          </button>
+          <div class="village-collapse village-mega-menu"
+               id="mega-menu-components"
+               tabindex="-1">
+            <div class="village-container village-container--fluid village-container-lg">
+              <button class="village-link--close village-link" aria-controls="mega-menu-components">
+                Fermer
+              </button>
+              {% url 'components_index' as components_index_url %}
+              <div class="village-grid-row village-grid-row-lg--gutters">
+                <div class="village-col-12 village-col-lg-8 village-col-offset-lg-4--right">
+                  <div class="village-mega-menu__leader">
+                    <h2 class="village-h4 village-mb-2v">
+                      Composants
+                    </h2>
+                    <a class="village-link village-fi-arrow-right-line village-link--icon-right village-link--align-on-content"
+                       href="{{ components_index_url }}">Voir la documentation</a>
+                  </div>
+                </div>
+                {% for category in mega_menu_categories %}
+                  <div class="village-col-12 village-col-lg-3">
+                    <h5 class="village-mega-menu__category">
+                      <a class="village-nav__link" href="#" target="_self">Composants implémentés</a>
+                    </h5>
+                    <ul class="village-mega-menu__list">
+                      {% for key, entry in category.items %}
+                        {% if key == "see_all" %}
+                          <li>
+                            <a class="village-nav__link"
+                               href="{{ components_index_url }}#tabpanel-implemented-panel"
+                               {% if request.path == components_index_url %}aria-current="true"{% endif %}
+                               target="_self"><strong>{{ entry.title }}</strong></a>
+                          </li>
+                        {% else %}
+                          <li>
+                            {% url 'page_component' key as entry_url %}
+                            <a class="village-nav__link"
+                               href="{{ entry_url }}"
+                               {% if request.path == entry_url %}aria-current="true"{% endif %}
+                               target="_self">{{ entry.title }}</a>
+                          </li>
+                        {% endif %}
+                      {% endfor %}
+                    </ul>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="village-nav__item">
+          <button class="village-nav__btn"
+                  aria-expanded="false"
+                  aria-controls="menu-forms"
+                  {% if 'django_village/form' in request.path %}aria-current="true"{% endif %}>
+            Formulaires
+          </button>
+          <div class="village-collapse village-menu" id="menu-forms">
+            <ul class="village-menu__list">
+              <li>
+                {% url 'doc_form' as doc_form_url %}
+                <a class="village-nav__link"
+                   href="{{ doc_form_url }}"
+                   target="_self"
+                   {% if request.path == doc_form_url %}aria-current="true"{% endif %}>Documentation</a>
+              </li>
+              <li>
+                {% url 'page_form' as page_form_url %}
+                <a class="village-nav__link"
+                   href="{{ page_form_url }}"
+                   target="_self"
+                   {% if request.path == page_form_url %}aria-current="true"{% endif %}>Exemple basique</a>
+              </li>
+              <li>
+                {% url 'form_formset' as form_formset_url %}
+                <a class="village-nav__link"
+                   href="{{ form_formset_url }}"
+                   target="_self"
+                   {% if request.path == form_formset_url %}aria-current="true"{% endif %}>Exemple avec formset</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="village-nav__item">
+          <button class="village-nav__btn"
+                  aria-expanded="false"
+                  aria-controls="menu-resources"
+                  {% if '/resources' in request.path %}aria-current="true"{% endif %}>
+            Ressources
+          </button>
+          <div class="village-collapse village-menu" id="menu-resources">
+            <ul class="village-menu__list">
+              <li>
+                {% url 'resource_colors' as resource_colors_url %}
+                <a class="village-nav__link"
+                   href="{{ resource_colors_url }}"
+                   target="_self"
+                   {% if request.path == resource_colors_url %}aria-current="true"{% endif %}>Couleurs</a>
+              </li>
+              <li>
+                {% url 'resource_icons' as resource_icons_url %}
+                <a class="village-nav__link"
+                   href="{{ resource_icons_url }}"
+                   target="_self"
+                   {% if request.path == resource_icons_url %}aria-current="true"{% endif %}>Icônes</a>
+              </li>
+              <li>
+                {% url 'resource_pictograms' as resource_pictograms_url %}
+                <a class="village-nav__link"
+                   href="{{ resource_pictograms_url }}"
+                   target="_self"
+                   {% if request.path == resource_pictograms_url %}aria-current="true"{% endif %}>Pictogrammes</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+

@@ -1,0 +1,97 @@
+{% load static village_tags i18n %}
+<!DOCTYPE html>
+<html lang="{{ langcode }}"
+      data-village-scheme="system"
+      {{ data_village_mourning }}>
+
+  <head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    {% village_css %}
+
+    {% village_favicon %}
+
+    <link href="{% static 'django_village/dist/utility/utility.min.css' %}"
+          rel="stylesheet"
+          type="text/css" />
+
+    {% block extra_css %}
+    {% endblock extra_css %}
+
+    {% block title %}
+      <title>{{ full_title }}</title>
+    {% endblock title %}
+    <meta name="format-detection"
+          content="telephone=no,date=no,address=no,email=no,url=no">
+
+    {% block opengraph %}
+    {% endblock opengraph %}
+
+    {% block social_media %}
+    {% endblock social_media %}
+
+    {% block description %}
+    {% endblock description %}
+
+    {% block tracking %}
+    {% endblock tracking %}
+
+  </head>
+
+  <body class="{% block bodyclass %}{% endblock bodyclass %}">
+    {% block topbody %}
+    {% endblock topbody %}
+
+    {% block skiplinks %}
+      {% village_skiplinks skiplinks %}
+    {% endblock skiplinks %}
+
+    {% block header %}
+      {% include "django_village/blocks/header.html" %}
+    {% endblock header %}
+
+    {% block header_after %}
+    {% endblock header_after %}
+
+    {% village_theme_modale %}
+
+    {% if SITE_CONFIG.notice %}
+      {% village_notice title=SITE_CONFIG.notice %}
+    {% endif %}
+
+    {% comment %} <div class="village-container village-mt-4w village-mb-6w"> {% endcomment %}
+      <div class="village-container village-mb-6w"> 
+      {% block breadcrumb %}
+        {% village_breadcrumb %}
+      {% endblock breadcrumb %}
+      <main id="{% block mainid %}content{% endblock mainid %}" role="main" class="{% block mainclass %}{% endblock mainclass %}">
+        {% block content %}
+        {% endblock content %}
+      </main>
+    </div>
+
+    {% block follow_newsletter_social_media %}
+    {% endblock follow_newsletter_social_media %}
+
+    {% block footer %}
+      {% include "django_village/footer.html" %}
+    {% endblock footer %}
+
+    {% village_js nonce=request.csp_nonce %}
+
+    <script src="{% static 'js/common.js' %}">
+    </script>
+
+    {% block extra_js %}
+    {% endblock extra_js %}
+    {# djlint:off #}
+    {% block lang %}{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}{% endblock lang %}
+    {# djlint:on #}
+
+  </body>
+
+</html>

@@ -174,6 +174,7 @@ class FaireMainPage(Page):
     footer1 = RichTextField(blank=True, null=True)
     footer2 = RichTextField(blank=True, null=True)
     redirect_url = models.URLField(blank=True, null=True)
+    exclude_from_search = models.BooleanField(default=False)
     extramenu = StreamField(
         [
             (
@@ -221,12 +222,13 @@ class FaireMainPage(Page):
         FieldPanel("ghost_post_tag"),
         FieldPanel("image"),
     ]
-    settings_panels = [
+    settings_panels = Page.settings_panels + [
         FieldPanel("theme"),
         FieldPanel("extramenu"),
         FieldPanel("footer1"),
         FieldPanel("footer2"),
         FieldPanel("redirect_url"),
+        FieldPanel("exclude_from_search"),
     ]
     search_fields = Page.search_fields + [
         index.SearchField("body"),
@@ -234,6 +236,7 @@ class FaireMainPage(Page):
         index.SearchField("ghost_post_tag"),
         index.SearchField("footer1"),
         index.SearchField("footer2"),
+        # index.FilterField("exclude_from_search"),
     ]
     # def serve(self, request):
     #     if self.redirect_url and not notanytest(self.redirect_url):
@@ -291,6 +294,11 @@ class FaireMainPage(Page):
                 lesgv.services.ProcessGhostParams({"ghost_tag": self.ghost_post_tag, "ghost_limit": 8})
             )
         return context
+
+    def get_indexed_instance(self):
+        if self.exclude_from_search:
+            return None  # not added to index
+        return self
 
 
 class FaireMainMenu(FaireMainPage):

@@ -1,0 +1,15 @@
+{% load i18n %}
+{% translate "Skip links" as skiplinks_label %}
+<div class="village-skiplinks">
+  <nav role="navigation"
+       class="village-container"
+       aria-label="{{ skiplinks_label }}">
+    <ul class="village-skiplinks__list">
+      {% for item in self.items %}
+        <li>
+          <a class="village-link" href="{{ item.link }}">{{ item.label }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</div>

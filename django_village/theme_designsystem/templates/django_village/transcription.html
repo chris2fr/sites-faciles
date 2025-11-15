@@ -1,0 +1,51 @@
+{% load i18n %}
+{% translate "Transcript" as transcript_label %}
+<div class="village-transcription">
+  <button class="village-transcription__btn"
+          aria-expanded="false"
+          aria-controls="village-transcription__collapse-{{ self.id }}">
+    {{ transcript_label }}
+  </button>
+  <div class="village-collapse"
+       id="village-transcription__collapse-{{ self.id }}">
+    <div class="village-transcription__footer">
+      <div class="village-transcription__actions-group">
+        {% translate "Enlarge" as enlarge_label %}
+        <button class="village-btn village-btn--fullscreen"
+                aria-controls="village-transcription-modal-{{ self.id }}"
+                data-village-opened="false"
+                title="{{ enlarge_label }}">
+          {{ enlarge_label }}
+        </button>
+      </div>
+    </div>
+    <dialog id="village-transcription-modal-{{ self.id }}"
+            class="village-modal"
+            role="dialog"
+            aria-labelledby="village-transcription-modal-{{ self.id }}-title">
+      <div class="village-container village-container--fluid facile-container-md">
+        <div class="village-grid-row village-grid-row--center">
+          <div class="village-col-12 village-col-md-10 village-col-lg-8">
+            <div class="village-modal__body">
+              <div class="village-modal__header">
+                {% translate "Close" as close_label %}
+                <button class="village-btn--close village-btn"
+                        aria-controls="village-transcription-modal-{{ self.id }}"
+                        title="{{ close_label }}">
+                  {{ close_label }}
+                </button>
+              </div>
+              <div class="village-modal__content">
+                <h1 id="village-transcription-modal-{{ self.id }}-title"
+                    class="village-modal__title">
+                  {{ self.title|default:transcript_label }}
+                </h1>
+                {{ self.content|safe }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+  </div>
+</div>

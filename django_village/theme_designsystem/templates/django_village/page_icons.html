@@ -1,0 +1,99 @@
+{% extends "django_village/base.html" %}
+{% load static village_tags %}
+{% block content %}
+  <h1>
+    Icônes
+  </h1>
+  <ul>
+    <li>
+      <a class="village-link village-icon-external-link-line village-link--icon-right village-link--lg"
+         href="https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-techniques/icone/"
+         target="_blank"
+         rel="noopener noreferrer">
+        Voir la page de documentation du composant sur le Système de Design de l’État <span class="village-sr-only">Ouvre une nouvelle fenêtre</span>
+      </a>
+    </li>
+    <li>
+      <a class="village-link village-icon-external-link-line village-link--icon-right village-link--lg"
+         href="https://main--ds-gouv.netlify.app/example/utility/icons/"
+         target="_blank"
+         rel="noopener noreferrer">
+        Voir la page sur le site d’exemples du Système de Design de l’État <span class="village-sr-only">Ouvre une nouvelle fenêtre</span>
+      </a>
+    </li>
+  </ul>
+
+  <div class="village-mt-4w">
+    <h2 id="search-icon-by-name">
+      Chercher une icône par son nom
+    </h2>
+
+    <div class="village-search-bar" id="icon-filter" role="search">
+      <label class="village-label" for="uip-select-input">
+        Chercher une icône
+      </label>
+      <input class="village-input"
+             type="text"
+             name="uip-select-input"
+             id="uip-select-input"
+             value=""
+             placeholder="Chercher une icône" />
+    </div>
+
+    <div id="output-icon">
+    </div>
+  </div>
+
+  <div class="village-mt-4w">
+    <h2 id="full-icon-list">
+      Liste complète
+    </h2>
+    {% village_summary summary %}
+
+    <p>
+      Cliquer sur une icône ci-dessous pour copier le nom de sa classe.
+    </p>
+    {% for folder, items in icons.items %}
+      <h3 id="{{ folder|slugify }}" tabindex="-1">
+        {{ folder|title }}
+      </h3>
+      <div class="village-mb-4w">
+        {% for item in items %}
+          <span class="village-icon-{{ item }} click-to-copy"
+                title="village-icon-{{ item }}"
+                aria-hidden="true"></span>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+{% endblock content %}
+{% block extra_js %}
+  <script src="{% static 'django_village/icon-picker/assets/js/universal-icon-picker.js' %}"></script>
+
+  <script>
+    const options = {
+      iconLibraries: ['village-buildings.json', 'village-business.json', 'village-communication.json', 'village-design.json', 'village-development.json', 'village-device.json', 'village-document.json', 'village-editor.json', 'village-finance.json', 'village-health.json', 'village-logo.json', 'village-map.json', 'village-media.json', 'village-others.json', 'village-system.json', 'village-user.json', 'village-weather.json'],
+      allowEmpty: true,
+      onSelect: function (jsonIconData) {
+        document.getElementById('output-icon').innerHTML = "Copié dans le presse-papier : '" +jsonIconData.iconClass + "'";
+        document.getElementById('uip-select-input').value = jsonIconData.iconClass;
+        navigator.clipboard.writeText(jsonIconData.iconClass);
+        },
+        onReset: function () {
+          document.getElementById('output-icon').innerHTML = '';
+        }
+    }
+    document.addEventListener('DOMContentLoaded', function (event) {
+        let _uip = new UniversalIconPicker('#uip-select-input', options);
+    });
+  </script>
+  <script type="text/javascript">
+    let iconSpans = document.getElementsByClassName("click-to-copy");
+    for (let iconSpan of iconSpans) {
+      iconSpan.addEventListener("click", function(){
+        navigator.clipboard.writeText(this.title);
+        alert("Copié dans le presse-papier : '" + this.title + "'")
+      })
+    }
+  </script>
+{% endblock extra_js %}

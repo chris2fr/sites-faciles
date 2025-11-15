@@ -1,0 +1,11 @@
+{% if form.non_field_errors %}
+  <section class="village-my-4v village-input-group village-input-group--error">
+    {{ form.non_field_errors }}
+  </section>
+{% endif %}
+{% for hidden in form.hidden_fields %}
+  {{ hidden }}
+{% endfor %}
+{% for field in form.visible_fields %}
+  {% include "django_village/form_field_snippets/field_snippet.html" %}
+{% endfor %}

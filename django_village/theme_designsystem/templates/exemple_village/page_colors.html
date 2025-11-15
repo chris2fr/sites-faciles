@@ -1,0 +1,156 @@
+{% extends "django_village/base.html" %}
+{% load static village_tags %}
+{% block content %}
+  <h1>
+    Couleurs
+  </h1>
+  <ul class="village-mb-4w">
+    <li>
+      <a class="village-link village-icon-external-link-line village-link--icon-right village-link--lg"
+         href="https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-de-l-identite-de-l-etat/couleurs-palette/"
+         target="_blank"
+         rel="noopener noreferrer">
+        Voir la page de présentation de la palette de couleurs sur le Système de Design de l’État <span class="village-sr-only">Ouvre une nouvelle fenêtre</span>
+      </a>
+    </li>
+    <li>
+      <a class="village-link village-icon-external-link-line village-link--icon-right village-link--lg"
+         href="https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-de-l-identite-de-l-etat/couleurs-utilisation-dans-le-village"
+         target="_blank"
+         rel="noopener noreferrer">
+        Voir la page de règles d’utilisation de la palette de couleurs sur le Système de Design de l’État <span class="village-sr-only">Ouvre une nouvelle fenêtre</span>
+      </a>
+    </li>
+  </ul>
+  <h2>
+    Cartes et tuiles
+  </h2>
+  <p>
+    Les cartes et tuiles peuvent prendre un fond gris à la place de la couleur par défaut.
+  </p>
+  <div class="village-grid-row village-grid-row--gutters village-mb-4w">
+    <div class="village-col-12 village-col-md-6">
+      {% village_card components_data.card.sample_data.0 %}
+    </div>
+    <div class="village-col-12 village-col-md-6">
+      {% village_card components_data.card.sample_data.0 extra_classes="village-card--grey" %}
+    </div>
+  </div>
+  <div class="village-grid-row village-grid-row--gutters village-mb-4w">
+    <div class="village-col-12 village-col-md-3">
+      {% village_tile components_data.tile.sample_data.0 %}
+    </div>
+    <div class="village-col-12 village-col-md-3">
+      {% village_tile components_data.tile.sample_data.0 extra_classes="village-tile--grey" %}
+    </div>
+    <div class="village-col-12 village-col-md-3">
+      {% village_tile components_data.tile.sample_data.0 %}
+    </div>
+    <div class="village-col-12 village-col-md-3">
+      {% village_tile components_data.tile.sample_data.0 extra_classes="village-tile--grey" %}
+    </div>
+  </div>
+  <h2>
+    Couleurs d’accentuation
+  </h2>
+  <p>
+    Certains composants prennent une couleur d’accentuation comme paramètre. Seules les couleurs illustratives sont prises en compte.
+  </p>
+  <form class="village-mb-4w">
+    {% village_form %}
+  </form>
+  <div class="example-use">
+    <h3>
+      Citation
+    </h3>
+    <p>
+      Personnalise la couleur de l’icône.
+    </p>
+    {% village_quote components_data.quote.sample_data.0 %}
+    <h3>
+      Mise en avant
+    </h3>
+    <p>
+      Personnalise la couleur du fond et de la bordure.
+    </p>
+    {% village_callout components_data.callout.sample_data.0 %}
+    <h3>
+      Mise en exergue
+    </h3>
+    <p>
+      Personnalise la couleur de la bordure.
+    </p>
+    {% village_highlight components_data.highlight.sample_data.0 %}
+    <h3>
+      Tableau
+    </h3>
+    <p>
+      Personnalise la couleur de la bordure et du fond.
+    </p>
+    {% village_table components_data.table.sample_data.0 %}
+    <h3>
+      Tag
+    </h3>
+    <p>
+      Personnalise la couleur de la bordure, du fond et de l’icône. Seuls les tags cliquables sont pris en compte.
+    </p>
+    <ul class="village-tags-group">
+      <li>
+        {% village_tag components_data.tag.sample_data.1 %}
+      </li>
+      <li>
+        {% village_tag components_data.tag.sample_data.3 %}
+      </li>
+    </ul>
+  </div>
+{% endblock content %}
+{% block extra_js %}
+  <script>
+    const colors_list = [
+      "green-tilleul-verveine",
+      "green-bourgeon",
+      "green-emeraude",
+      "green-menthe",
+      "green-archipel",
+      "blue-ecume",
+      "blue-cumulus",
+      "purple-glycine",
+      "pink-macaron",
+      "pink-tuile",
+      "yellow-tournesol",
+      "yellow-moutarde",
+      "orange-terre-battue",
+      "brown-cafe-creme",
+      "brown-caramel",
+      "brown-opera",
+      "beige-gris-galet",
+    ];
+
+
+    function manageColorClasses(base_class, color) {
+      const items = document.getElementsByClassName(base_class);
+
+      let item_color_classes = [];
+      for (let c of colors_list) {
+        item_color_classes.push(base_class + "--" + c);
+      }
+
+      for (const item of items) {
+        item.classList.remove(...item_color_classes)
+
+        if (color !== "") {
+          item.classList.add(base_class + "--" + color);
+        }
+      }
+    }
+
+
+    document.getElementById('id_color').addEventListener('input', function (event) {
+      manageColorClasses("village-quote", event.target.value);
+      manageColorClasses("village-callout", event.target.value);
+      manageColorClasses("village-highlight", event.target.value);
+      manageColorClasses("village-table", event.target.value);
+      manageColorClasses("village-tag", event.target.value);
+    }, false);
+  </script>
+{% endblock extra_js %}

@@ -1,0 +1,6 @@
+{% load village_tags %}
+<div class="village-accordions-group">
+  {% for item in self.items %}
+    {% village_accordion item %}
+  {% endfor %}
+</div>

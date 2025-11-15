@@ -1,0 +1,13 @@
+<section class="village-accordion">
+  <{{ self.heading_tag | default:"h3" }} class="village-accordion__title">
+  <button type="button"
+          class="village-accordion__btn"
+          aria-expanded="false"
+          aria-controls="{{ self.id }}">
+    {{ self.title }}
+  </button>
+  </{{ self.heading_tag | default:"h3" }}>
+  <div class="village-collapse" id="{{ self.id }}">
+    {{ self.content | safe }}
+  </div>
+</section>

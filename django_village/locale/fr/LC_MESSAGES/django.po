@@ -1,0 +1,440 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-10 16:17+0200\n"
+"PO-Revision-Date: 2024-04-10 16:19+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.4\n"
+
+#: village/admin.py:59
+msgid "Newsletter"
+msgstr "Lettre d’information"
+
+#: village/constants.py:5
+msgid "English"
+msgstr "Anglais"
+
+#: village/constants.py:6
+msgid "French"
+msgstr "Français"
+
+#: village/constants.py:12
+msgid "Blue France"
+msgstr "Bleu France"
+
+#: village/constants.py:13
+msgid "Red Marianne"
+msgstr "Rouge Marianne"
+
+#: village/constants.py:17
+msgid "Grey"
+msgstr "Gris"
+
+#: village/constants.py:21
+msgid "Info"
+msgstr "Info"
+
+#: village/constants.py:22
+msgid "Success"
+msgstr "Succès"
+
+#: village/constants.py:23
+msgid "Warning"
+msgstr "Avertissement"
+
+#: village/constants.py:24
+msgid "Error"
+msgstr "Erreur"
+
+#: village/constants.py:48 village/constants.py:54
+msgid "Primary colors"
+msgstr "Couleurs primaires"
+
+#: village/constants.py:49 village/constants.py:55
+msgid "Neutral colors"
+msgstr "Couleurs neutres"
+
+#: village/constants.py:50 village/constants.py:57
+msgid "Illustration colors"
+msgstr "Couleurs illustratives"
+
+#: village/constants.py:56
+msgid "System colors"
+msgstr "Couleurs système"
+
+#: village/models.py:20
+msgid "Language"
+msgstr "Langue"
+
+#: village/models.py:23
+msgid "Only one configuration is allowed per language"
+msgstr "Une seule configuration autorisée par langue"
+
+#: village/models.py:29
+msgid "fully"
+msgstr "totalement"
+
+#: village/models.py:30
+msgid "partially"
+msgstr "partiellement"
+
+#: village/models.py:31
+msgid "not"
+msgstr "non"
+
+#: village/models.py:36
+msgid "Site title"
+msgstr "Titre du site"
+
+#: village/models.py:39
+msgid "Site tagline"
+msgstr "Sous-titre du site"
+
+#: village/models.py:42
+msgid "Important notice"
+msgstr "Bandeau d’information importante"
+
+#: village/models.py:46
+msgid ""
+"The important notice banner should only be used for essential and temporary "
+"information.             (Excessive or continuous use risks “drowning” the "
+"message.)"
+msgstr ""
+"Le bandeau d’information importante doit être utilisé uniquement pour une "
+"information primordiale et temporaire.  (Une utilisation excessive ou "
+"continue risque de “noyer” le message)"
+
+#: village/models.py:53
+msgid "Institution (header)"
+msgstr "Institution (en-tête)"
+
+#: village/models.py:59
+msgid "Institution with line break (header)"
+msgstr "Institution avec césure (en-tête)"
+
+#: village/models.py:64
+msgid "Show the BETA tag next to the title"
+msgstr "Afficher la mention BETA à côté du titre"
+
+#: village/models.py:68
+msgid "Institution (footer)"
+msgstr "Institution (pied"
+
+#: village/models.py:74
+msgid "Institution with line break (footer)"
+msgstr "Institution avec césure (pied)"
+
+#: village/models.py:79
+msgid "Description"
+msgstr "Description"
+
+#: village/models.py:82
+msgid "Newsletter description"
+msgstr "Description de la lettre d’information"
+
+#: village/models.py:86
+msgid "Newsletter registration URL"
+msgstr "URL d‘inscription à la lettre d’information"
+
+#: village/models.py:93
+msgid "Operator logo"
+msgstr "Logo opérateur"
+
+#: village/models.py:100
+msgid "Logo alt text"
+msgstr "Alternative textuelle du logo"
+
+#: village/models.py:103
+msgid "Must contain the text present in the image."
+msgstr "Doit impérativement contenir le texte présent dans l’image."
+
+#: village/models.py:106
+msgid "Width (em)"
+msgstr "Largeur (em)"
+
+#: village/models.py:112
+msgid ""
+"To be adjusted according to the width of the logo.            Example for a "
+"vertical logo: 3.5, Example for a horizontal logo: 8."
+msgstr ""
+"À ajuster en fonction de la largeur du logo.  Exemple pour un logo vertical: "
+"3.5, Exemple pour un logo horizontal: 8."
+
+#: village/models.py:118
+msgid "Mourning"
+msgstr "Mise en berne"
+
+#: village/models.py:121
+msgid "Accessibility compliance status"
+msgstr "Statut de conformité de l’accessibilité"
+
+#: village/models.py:128
+msgid "Configuration"
+msgstr "Configuration"
+
+#: village/models.py:131
+msgid "Site config:"
+msgstr "Configuration du site :"
+
+#: village/models.py:139
+msgid "Title"
+msgstr "Titre"
+
+#: village/models.py:142
+msgid "URL"
+msgstr "URL"
+
+#: village/models.py:147
+msgid "Icon class"
+msgstr "Classe d’icône"
+
+#: village/models.py:154
+msgid "Social media"
+msgstr "Réseau social"
+
+#: village/models.py:155
+msgid "Social medias"
+msgstr "Réseaux sociaux"
+
+#: village/templates/village/alert.html:2 village/templates/village/notice.html:2
+msgid "Hide message"
+msgstr "Masquer le message"
+
+#: village/templates/village/breadcrumb.html:2
+msgid "you are here:"
+msgstr "vous êtes ici :"
+
+#: village/templates/village/breadcrumb.html:10
+msgid "See breadcrumb"
+msgstr "Voir le fil d’Ariane"
+
+#: village/templates/village/breadcrumb.html:15 village/templates/village/header.html:10
+msgid "Home page"
+msgstr "Accueil"
+
+#: village/templates/village/card.html:2 village/templates/village/follow.html:2
+#: village/templates/village/footer.html:2 village/templates/village/france_connect.html:9
+#: village/templates/village/link.html:7 village/templates/village/quote.html:2
+msgid "Opens a new window"
+msgstr "Ouvre une nouvelle fenêtre"
+
+#: village/templates/village/consent.html:13
+msgid "Allow all cookies"
+msgstr "Autoriser tous les cookies"
+
+#: village/templates/village/consent.html:17
+msgid "Accept all"
+msgstr "Tout accepter"
+
+#: village/templates/village/consent.html:21
+msgid "Reject all cookies"
+msgstr "Refuser tous les cookies"
+
+#: village/templates/village/consent.html:25
+msgid "Reject all"
+msgstr "Tout refuser"
+
+#: village/templates/village/consent.html:29
+msgid "Customize cookies"
+msgstr "Personnaliser les cookies"
+
+#: village/templates/village/consent.html:35
+msgid "Customize"
+msgstr "Personnaliser"
+
+#: village/templates/village/follow.html:11
+msgctxt "Section title"
+msgid "Subscribe to our newsletter"
+msgstr "Abonnez-vous à notre lettre d’information"
+
+#: village/templates/village/follow.html:18
+msgctxt "Button title"
+msgid "Subscribe to our newsletter"
+msgstr "S'abonner à notre lettre d’information"
+
+#: village/templates/village/follow.html:24
+msgid "Subscribe"
+msgstr "S’abonner"
+
+#: village/templates/village/follow.html:34
+msgid "Follow us <br /> on social media"
+msgstr "Suivez-nous <br /> sur les réseaux sociaux"
+
+#: village/templates/village/footer.html:9
+msgid "Back to home page"
+msgstr "Retour à l’accueil du site"
+
+#: village/templates/village/footer.html:93
+msgid "Sitemap"
+msgstr "Plan du site"
+
+#: village/templates/village/footer.html:98
+#, python-format
+msgid "Accessibility: %(accessibility_status)s compliant"
+msgstr "Accessibilité : %(accessibility_status)s conforme"
+
+#: village/templates/village/footer.html:103
+msgid "Legal notice"
+msgstr "Mentions légales"
+
+#: village/templates/village/footer.html:106
+msgid "Personal data"
+msgstr "Données personnelles"
+
+#: village/templates/village/footer.html:109
+msgid "Cookie management"
+msgstr "Gestion des cookies"
+
+#: village/templates/village/footer.html:115
+msgid "etalab-2.0 license"
+msgstr "licence etalab-2.0"
+
+#: village/templates/village/footer.html:116
+msgid ""
+"Unless explicit mention of intellectual property held by third parties, the "
+"contents of this site are offered under"
+msgstr ""
+"Sauf mention explicite de propriété intellectuelle détenue par des tiers, "
+"les contenus de ce site sont proposés sous"
+
+#: village/templates/village/formset_base.html:27
+msgid "Delete this item"
+msgstr "Supprimer cet élément"
+
+#: village/templates/village/formset_base.html:37
+msgid "Add an item"
+msgstr "Ajouter un élément"
+
+#: village/templates/village/france_connect.html:5
+msgid "Login with"
+msgstr "S’identifier avec"
+
+#: village/templates/village/france_connect.html:10
+msgid "What is FranceConnect+?"
+msgstr "Qu’est-ce que FranceConnect+ ?"
+
+#: village/templates/village/france_connect.html:11
+msgid "What is FranceConnect?"
+msgstr "Qu’est-ce que FranceConnect ?"
+
+#: village/templates/village/header.html:29
+msgid "Menu"
+msgstr "Menu"
+
+#: village/templates/village/header.html:87 village/templates/village/theme_modale.html:13
+#: village/templates/village/transcription.html:30
+msgid "Close"
+msgstr "Fermer"
+
+#: village/templates/village/header.html:91
+msgid "Main menu"
+msgstr "Menu principal"
+
+#: village/templates/village/pagination.html:2
+msgid "Pagination"
+msgstr "Pagination"
+
+#: village/templates/village/pagination.html:9
+msgid "First page"
+msgstr "Première page"
+
+#: village/templates/village/pagination.html:14
+msgid "Previous page"
+msgstr "Page précédente"
+
+#: village/templates/village/pagination.html:25
+msgid "Page"
+msgstr "Page"
+
+#: village/templates/village/pagination.html:46
+msgid "Next page"
+msgstr "Page suivante"
+
+#: village/templates/village/pagination.html:52
+msgid "Last page"
+msgstr "Dernière page"
+
+#: village/templates/village/sidemenu.html:2
+msgid "Side menu"
+msgstr "Menu latéral"
+
+#: village/templates/village/sidemenu.html:11
+msgid "In this section"
+msgstr "Dans cette rubrique"
+
+#: village/templates/village/skiplinks.html:2
+msgid "Skip links"
+msgstr "Accès rapide"
+
+#: village/templates/village/stepper.html:6
+#, python-format
+msgid "Step %(current_step_id)s of %(total_steps)s"
+msgstr "Étape %(current_step_id)s sur %(total_steps)s"
+
+#: village/templates/village/stepper.html:17
+msgid "Next step:"
+msgstr "Étape suivante :"
+
+#: village/templates/village/summary.html:6
+msgid "Summary"
+msgstr "Sommaire"
+
+#: village/templates/village/tag.html:3
+msgid "Remove filter"
+msgstr "Retirer le filtre"
+
+#: village/templates/village/theme_modale.html:18
+msgid "Display settings"
+msgstr "Paramètres d’affichage"
+
+#: village/templates/village/theme_modale.html:24
+msgid "Choose a theme to customize the appearance of the site."
+msgstr "Choisissez un thème pour personnaliser l’apparence du site."
+
+#: village/templates/village/theme_modale.html:33
+msgid "Light theme"
+msgstr "Thème clair"
+
+#: village/templates/village/theme_modale.html:46
+msgid "Dark theme"
+msgstr "Thème sombre"
+
+#: village/templates/village/theme_modale.html:59
+msgid "System"
+msgstr "Système"
+
+#: village/templates/village/theme_modale.html:60
+msgid "Uses system settings."
+msgstr "Utilise les paramètres système."
+
+#: village/templates/village/toggle.html:2
+msgid "Checked"
+msgstr "Activé"
+
+#: village/templates/village/toggle.html:3
+msgid "Unchecked"
+msgstr "Désactivé"
+
+#: village/templates/village/tooltip.html:6
+msgid "Contextual information"
+msgstr "Information contextuelle"
+
+#: village/templates/village/transcription.html:2
+msgid "Transcript"
+msgstr "Transcription"
+
+#: village/templates/village/transcription.html:12
+msgid "Enlarge"
+msgstr "Agrandir"

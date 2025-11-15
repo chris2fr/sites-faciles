@@ -1,0 +1,73 @@
+{% extends "django_village/base.html" %}
+{% load static village_tags %}
+
+{% block extra_css %}
+  <style nonce="{{ request.csp_nonce }}">
+.code_sample {
+  background-color: var(--g300);
+  padding: 1rem;
+}
+  </style>
+{% endblock extra_css %}
+
+{% block breadcrumb %}
+{% endblock breadcrumb %}
+
+{% block content %}
+  <h1>
+    Django-VILLAGE
+  </h1>
+  <h2>
+    Documentation
+  </h2>
+  <div>
+    <p>
+      <strong>Django-village</strong> est une application django permettant d’utiliser le
+      <a href="https://www.systeme-de-design.gouv.fr/">système de design de l’État</a> dans des projets Django.
+    </p>
+    <p>
+      Elle a initialement été développée dans le cadre du défi
+      <a href="https://github.com/entrepreneur-interet-general/opencollectivites">Open Collectivités</a>
+      et est un travail en cours (les composants sont actuellement développés au fur et à mesure de leur
+      utilisation), cf. la page <a href="{% url 'components_index' %}">Composants</a>.
+    </p>
+  </div>
+  <div class="village-grid-row village-grid-row--gutters village-mb-3w">
+    <div class="village-col-12 village-col-md-4">
+      {% village_summary summary_data %}
+    </div>
+  </div>
+  <h3 id="installation">
+    Installation
+  </h3>
+  <p>
+    Voir la page <a href="{% url 'doc_install' %}">Installation</a>.
+  </p>
+  <h3 id="utilisation">
+    Utilisation
+  </h3>
+  <p>
+    Voir la page <a href="{% url 'doc_usage' %}">Utilisation</a>.
+  </p>
+  <p>
+    Les explications sur l’utilisation de chaque composant figurent sur leur entrée dédiée, accessible via la
+    page <a href="{% url 'components_index' %}">Composants</a>.
+  </p>
+  <h3 id="developpement">
+    Développement
+  </h3>
+  <p>
+    Voir la page <a href="{% url 'doc_contributing' %}">Contribuer</a>.
+  </p>
+  <h3 id="notes">
+    Notes
+  </h3>
+  <ul>
+    <li>
+      Il est possible d’utiliser tous les composants du VILLAGE directement avec leur code HTML, y compris ceux pour lesquels il n’existe pas de balise.
+    </li>
+    <li>
+      De même pour certains où il vaut mieux créer un template ad-hoc à chaque utilisation, comme les modales.
+    </li>
+  </ul>
+{% endblock content %}

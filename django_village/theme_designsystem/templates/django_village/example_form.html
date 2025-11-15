@@ -1,0 +1,19 @@
+{% extends "django_village/form_base.html" %}
+{% load static village_tags %}
+{% block header %}
+  {% include "django_village/blocks/header.html" %}
+{% endblock header %}
+{# You can add some information to the form inside the blocks of form_base.html #}
+{% block head_form %}
+  <h1>
+    Exemple de formulaire avec formset
+  </h1>
+{% endblock head_form %}
+{# If you use formset, you need to include a template which extends formset-base.html, and put it in a block of form_base.html #}
+{% block extra_formset_after %}
+  {% include "django_village/example_formset.html" %}
+{% endblock extra_formset_after %}
+{# Don't forget you village button to submit the form #}
+{% block foot_form %}
+  {% village_button btn_submit %}
+{% endblock foot_form %}

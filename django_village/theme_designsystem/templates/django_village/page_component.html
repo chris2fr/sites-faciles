@@ -1,0 +1,199 @@
+{% extends "django_village/base.html" %}
+{% load static village_tags %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/village-code.css' %}">
+  <style>
+    .example-textarea {
+      background: var(--background-alt-grey);
+      border: 1px solid var(--border-default-grey);
+      color: var(--text-default-grey);
+      padding: 1rem;
+      margin: 2rem 0;
+      font-family: monospace;
+      font-size: 1rem;
+    }
+p code, li code {
+  background: var(--background-alt-grey);
+  padding: 0.2em;
+}
+  </style>
+{% endblock extra_css %}
+
+{% block content %}
+  <div class="village-grid-row village-grid-row--gutters village-b__two-col">
+    <div class="village-col-12 village-col-md-4">
+      {% village_sidemenu side_menu extra_classes="" %}
+    </div>
+    <div class="village-col-12 village-col-md-8 village-py-2w">
+      <h1>
+        {{ title }}
+      </h1>
+      <ul>
+        {% if doc_url %}
+          <li>
+            {% village_link url=doc_url label="Voir la page de documentation du composant sur le Système de Design de l’État" is_external=True extra_classes="village-link--lg" %}
+          </li>
+        {% endif %}
+        {% if example_url %}
+          <li>
+            {% village_link url=example_url label="Voir la page d’exemple du Système de Design de l’État" is_external=True extra_classes="village-link--lg" %}
+          </li>
+        {% endif %}
+      </ul>
+      <h2>
+        Documentation du tag
+      </h2>
+      {{ tag_comment|safe }}
+      {% if sample_data %}
+        <h2>
+          Exemples
+        </h2>
+        {% for sample_data_item in sample_data %}
+          <h3 class="village-mt-3w">
+            Données
+          </h3>
+          <div class="village-my-2w">
+            {# djlint:off #}
+            {% with sample_data_item|pprint as raw_sample_code %}
+              {# djlint:off #}
+              {% with '<pre class="village-code">'|concatenate:raw_sample_code|concatenate:"</pre>" as sample_data_code %}
+                {% village_accordion title="Données d’exemple" content=sample_data_code %}
+              {% endwith %}
+            {% endwith %}
+            {# djlint:on #}
+          </div>
+          <h3>
+            Résultat
+          </h3>
+          {% if tag_name == "accordion" %}
+            {% village_accordion sample_data_item %}
+          {% elif tag_name == "accordion_group" %}
+            {% village_accordion_group sample_data_item %}
+          {% elif tag_name == "alert" %}
+            {% village_alert sample_data_item %}
+          {% elif tag_name == "badge" %}
+            {% village_badge sample_data_item %}
+          {% elif tag_name == "badge_group" %}
+            {% village_badge_group sample_data_item %}
+          {% elif tag_name == "button" %}
+            {% village_button sample_data_item %}
+          {% elif tag_name == "button_group" %}
+            {% village_button_group sample_data_item %}
+          {% elif tag_name == "callout" %}
+            {% village_callout sample_data_item %}
+          {% elif tag_name == "card" %}
+            {% if not "horizontal" in sample_data_item.extra_classes %}
+              <div class="village-grid-row village-grid-row--gutters">
+                <div class="village-col-12 village-col-md-4">
+                  {% village_card sample_data_item %}
+                </div>
+              </div>
+            {% else %}
+              <div class="village-grid-row village-grid-row--gutters">
+                {% village_card sample_data_item %}
+              </div>
+            {% endif %}
+          {% elif tag_name == "consent" %}
+            <p>
+              Voir en bas de votre écran.
+            </p>
+            {% village_consent sample_data_item %}
+          {% elif tag_name == "content" %}
+            {% village_content sample_data_item %}
+          {% elif tag_name == "django_messages" %}
+            {% village_django_messages sample_data_item %}
+          {% elif tag_name == "france_connect" %}
+            {% village_france_connect sample_data_item %}
+          {% elif tag_name == "highlight" %}
+            {% village_highlight sample_data_item %}
+          {% elif tag_name == "input" %}
+            {% village_input sample_data_item %}
+          {% elif tag_name == "link" %}
+            {% village_link sample_data_item %}
+          {% elif tag_name == "notice" %}
+            {% village_notice sample_data_item %}
+          {% elif tag_name == "quote" %}
+            {% village_quote sample_data_item %}
+          {% elif tag_name == "select" %}
+            {% village_select sample_data_item %}
+          {% elif tag_name == "sidemenu" %}
+            {% village_sidemenu sample_data_item %}
+          {% elif tag_name == "skiplinks" %}
+            {% village_skiplinks sample_data_item %}
+          {% elif tag_name == "stepper" %}
+            {% village_stepper sample_data_item %}
+          {% elif tag_name == "summary" %}
+            {% village_summary sample_data_item %}
+          {% elif tag_name == "table" %}
+            {% village_table sample_data_item %}
+          {% elif tag_name == "tag" %}
+            {% village_tag sample_data_item %}
+          {% elif tag_name == "tile" %}
+            <div class="village-grid-row village-grid-row--gutters">
+              <div class="village-col-12">
+                {% village_tile sample_data_item %}
+              </div>
+            </div>
+          {% elif tag_name == "toggle" %}
+            {% village_toggle sample_data_item %}
+          {% elif tag_name == "tooltip" %}
+            {% village_tooltip sample_data_item %}
+          {% elif tag_name == "transcription" %}
+            {% village_transcription sample_data_item %}
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        <h2>
+          Résultat
+        </h2>
+        {% if tag_name == "breadcrumb" %}
+          {% village_breadcrumb %}
+        {% elif tag_name == "css" %}
+          <label for="example-textarea">
+            Code source :
+          </label>
+          <textarea id="example-textarea"
+                    readonly
+                    rows="8"
+                    cols="90"
+                    class="example-textarea">{% village_css %}</textarea>
+          <br />
+        {% elif tag_name == "favicon" %}
+          <label for="example-textarea">
+            Code source :
+          </label>
+          <textarea id="example-textarea"
+                    readonly
+                    rows="14"
+                    cols="90"
+                    class="example-textarea">{% village_favicon %}</textarea>
+          <br />
+        {% elif tag_name == "js" %}
+          <label for="example-textarea">
+            Code source :
+          </label>
+          <textarea id="example-textarea"
+                    readonly
+                    rows="6"
+                    cols="90"
+                    class="example-textarea">{% village_js %}</textarea>
+          <br />
+        {% elif tag_name == "pagination" %}
+          {% village_pagination page_obj %}
+        {% elif tag_name == "theme_modale" %}
+          <label for="example-textarea">
+            Code source :
+          </label>
+          <textarea id="example-textarea"
+                    readonly
+                    rows="62"
+                    cols="120"
+                    class="example-textarea">{% village_theme_modale %}</textarea>
+          <br />
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+  <br />
+{% endblock content %}

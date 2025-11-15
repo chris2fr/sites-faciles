@@ -1,6 +1,5 @@
 {% load i18n wagtailsettings_tags wagtailcore_tags %}
 {% get_settings use_default_site=True %}
-{% if page %}
 <nav role="navigation" class="village-translate village-nav">
   {% get_current_language as LANGUAGE_CODE %}
   {% get_available_languages as LANGUAGES %}
@@ -16,6 +15,7 @@
     <div class="village-collapse village-translate__menu village-menu" id="translate-menu">
       <ul class="village-menu__list">
         {% for translation in page.get_translations.live %}
+        {% if page %}
           <li>
             <a class="village-translate__language village-nav__link"
                hreflang="{{ translation.locale.language_code|lower }}"
@@ -23,9 +23,17 @@
                href="{% pageurl translation %}"
                {% if translation.locale.language_code == LANGUAGE_CODE %}aria-current="true"{% endif %}>{{ translation.locale.language_code|upper }} - {{ translation.locale.language_name_local }}</a>
           </li>
+          {% else %}
+          <li>
+            <a class="village-translate__language village-nav__link"
+               hreflang="{{ translation.locale.language_code|lower }}"
+               lang="{{ translation.locale.language_code|lower }}"
+               href="/{{ translation.locale.language_code|lower }}/"
+               {% if translation.locale.language_code == LANGUAGE_CODE %}aria-current="true"{% endif %}>{{ translation.locale.language_code|upper }} - {{ translation.locale.language_name_local }}</a>
+          </li>
+          {% endif %}
         {% endfor %}
       </ul>
     </div>
   </div>
 </nav>
-{% endif %}

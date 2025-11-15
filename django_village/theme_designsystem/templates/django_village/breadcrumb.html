@@ -1,0 +1,30 @@
+{% load i18n %}
+{% translate "you are here:" as you_are_here %}
+<nav role="navigation"
+     class="village-breadcrumb"
+     aria-label="{{ you_are_here }}"
+     id="village-navigation"
+     data-village-js-navigation="true">
+  <button type="button"
+          class="village-breadcrumb__button"
+          aria-expanded="false"
+          aria-controls="breadcrumb-1">
+    {% translate "See breadcrumb" %}
+  </button>
+  <div class="village-collapse" id="breadcrumb-1">
+    <ol class="village-breadcrumb__list">
+      <li>
+        <a class="village-breadcrumb__link"
+           href="{{ self.root_dir | default:'/' }}">{% translate "Home page" %}</a>
+      </li>
+      {% for link in self.links %}
+        <li>
+          <a class="village-breadcrumb__link" href="{{ link.url }}">{{ link.title }}</a>
+        </li>
+      {% endfor %}
+      <li>
+        <a class="village-breadcrumb__link" aria-current="page">{{ self.current }}</a>
+      </li>
+    </ol>
+  </div>
+</nav>

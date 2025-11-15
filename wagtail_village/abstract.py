@@ -1,7 +1,5 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from django_village.constants import COLOR_CHOICES
-from django_village.models import DjangoVillageConfig
 from modelcluster.models import ClusterableModel
 from wagtail.admin.panels import FieldPanel, InlinePanel, MultiFieldPanel, ObjectList, TabbedInterface
 from wagtail.api import APIField
@@ -11,6 +9,8 @@ from wagtail.images import get_image_model_string
 from wagtail.models import Page
 from wagtail.search import index
 
+from django_village.constants import COLOR_CHOICES
+from django_village.models import DjangoVillageConfig
 from wagtail_village.blocks import STREAMFIELD_COMMON_BLOCKS
 from wagtail_village.constants import LIMITED_RICHTEXTFIELD_FEATURES
 from wagtail_village.utils import StreamSerializer, get_streamfield_raw_text
@@ -192,8 +192,14 @@ class SitesFacilesBasePage(Page):
         blank=True,
     )
 
+    exclude_from_search = models.BooleanField(default=False)
+
     content_panels = Page.content_panels + [
         FieldPanel("body", heading=_("Body")),
+    ]
+
+    settings_panels = Page.settings_panels + [
+        FieldPanel("exclude_from_search"),
     ]
 
     panels = Page.content_panels + [
@@ -231,6 +237,7 @@ class SitesFacilesBasePage(Page):
 
     search_fields = Page.search_fields + [
         index.SearchField("body"),
+        # index.FilterField("exclude_from_search"),
     ]
 
     def get_absolute_url(self):
@@ -257,6 +264,11 @@ class SitesFacilesBasePage(Page):
         if hasattr(context["page"], "search_description") and context["page"].search_description:
             context["search_description"] = context["page"].search_description
         return context
+
+    def get_indexed_instance(self):
+        if self.exclude_from_search:
+            return None  # not added to index
+        return self
 
     class Meta:
         abstract = True

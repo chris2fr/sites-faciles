@@ -138,10 +138,7 @@ if DEBUG_TOOLBAR:
     INSTALLED_APPS += [
         "debug_toolbar",
     ]
-    INTERNAL_IPS = [
-        "127.0.0.1",
-        "0.0.0.0",
-    ]
+    INTERNAL_IPS = ["127.0.0.1", "0.0.0.0", "127.0.0.1:8000", "localhost"]
 
 MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",

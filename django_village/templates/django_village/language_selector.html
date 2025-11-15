@@ -1,0 +1,28 @@
+{% load i18n %}
+<nav role="navigation" class="village-translate village-nav">
+  {% get_current_language as LANGUAGE_CODE %}
+  {% get_available_languages as LANGUAGES %}
+  {% get_language_info_list for LANGUAGES as languages %}
+  <div class="village-nav__item">
+    <button class="village-translate__btn village-btn village-btn--tertiary"
+            aria-controls="translate-menu"
+            aria-expanded="false"
+            title="{% translate 'Select language' %}">
+      {% get_language_info for LANGUAGE_CODE as current_lang %}{{ current_lang.code|upper }}
+      <span class="village-hidden-lg"> - {{ current_lang.name_local |title }}</span>
+    </button>
+    <div class="village-collapse village-translate__menu village-menu" id="translate-menu">
+      <ul class="village-menu__list">
+        {% for language in languages %}
+          <li>
+            <a class="village-translate__language village-nav__link"
+               hreflang="{{ language.code|lower }}"
+               lang="{{ language.code|lower }}"
+               href="/{{ language.code|lower }}/"
+               {% if language.code == LANGUAGE_CODE %}aria-current="true"{% endif %}>{{ language.code|upper }} - {{ language.name_local }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>

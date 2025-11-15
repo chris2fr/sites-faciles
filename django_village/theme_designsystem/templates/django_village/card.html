@@ -1,0 +1,95 @@
+{% load village_tags i18n %}
+{% translate "Opens a new window" as new_window_label %}
+<div class="village-card{% if self.enlarge_link %} village-enlarge-link{% endif %}{% if self.extra_classes %} {{ self.extra_classes }}{% endif %}"
+     {% if self.id %}id="{{ self.id }}"{% endif %}>
+  <div class="village-card__body">
+    <div class="village-card__content">
+      <{{ self.heading_tag | default:"p" }} class="village-card__title">
+      {% if self.link %}
+        <a href="{{ self.link }}"
+           target="{% if self.new_tab %}_blank{% else %}_self{% endif %}"
+           {% if self.new_tab %}rel="noopener noreferrer" title="{{ self.title }} - {{ new_window_label }}"{% endif %}>
+          {{ self.title |truncatechars:100 }}
+        </a>
+      {% else %}
+        {{ self.title |truncatechars:100 }}
+      {% endif %}
+      </{{ self.heading_tag | default:"p" }}>
+      <p class="village-card__desc">
+        {{ self.description |truncatechars:200 }}
+      </p>
+      {% if self.top_detail %}
+        <div class="village-card__start">
+          {% if self.top_detail.tags %}
+            <ul class="village-tags-group">
+              {% for tag in self.top_detail.tags %}
+                <li>
+                  {% village_tag tag %}
+                </li>
+              {% endfor %}
+            </ul>
+          {% elif self.top_detail.badges %}
+            <ul class="village-badges-group">
+              {% for badge in self.top_detail.badges %}
+                <li>
+                  {% village_badge badge %}
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+          {% if self.top_detail.detail %}
+            <p class="village-card__detail{% if self.top_detail.detail.icon_class %} self.top_detail.detail.icon_class{% endif %}">
+              {{ self.top_detail.detail.text }}
+            </p>
+          {% endif %}
+        </div>
+      {% endif %}
+      {% if self.bottom_detail %}
+        <div class="village-card__end">
+          <p class="village-card__detail{% if self.bottom_detail.icon_class %} self.bottom_detail.icon_class{% endif %}">
+            {{ self.bottom_detail.text }}
+          </p>
+        </div>
+      {% endif %}
+    </div>
+    {% if self.call_to_action and not self.bottom_detail %}
+      <div class="village-card__footer">
+        {% if self.call_to_action.buttons %}
+          <ul class="village-btns-group village-btns-group--inline-reverse village-btns-group--inline-lg">
+            {% for button in self.call_to_action.buttons %}
+              <li>
+                {% village_button button %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% elif self.call_to_action.links %}
+          <ul class="village-links-group">
+            {% for link in self.call_to_action.links %}
+              <li>
+                {% village_link link %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+  <div class="village-card__header">
+    {% if self.image_url %}
+      <div class="village-card__img">
+        <img class="village-responsive-img"
+             src="{{ self.image_url }}"
+             alt="{{ self.image_alt }}" />
+      </div>
+      {% if self.media_badges %}
+        <ul class="village-badges-group">
+          {% for badge in self.media_badges %}
+            <li>
+              {% village_badge badge %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endif %}
+  </div>
+</div>

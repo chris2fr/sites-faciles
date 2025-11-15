@@ -1,0 +1,19 @@
+{% extends "django_village/base.html" %}
+{% load static village_tags %}
+{% block content %}
+  <h1>
+    Exemple de formulaire
+  </h1>
+  <form action="{% url 'page_form' %}" method="post">
+    {% csrf_token %}
+    {% village_form %}
+    <div class="village-input-group village-my-4w">
+      <button type="submit" class="village-btn" title="Valider">
+        Valider ce formulaire
+      </button>
+      <button type="" class="village-btn village-btn--secondary" title="Annuler">
+        Annuler
+      </button>
+    </div>
+  </form>
+{% endblock content %}

@@ -1,0 +1,18 @@
+{% extends "django_village/base.html" %}
+{% load static village_tags %}
+{% block content %}
+  <h1>
+    {{ title }}
+  </h1>
+  <div class="village-grid-row village-grid-row--gutters village-mb-3w">
+    <div class="village-col-12 village-col-md-4">
+      {% if summary_data %}
+        {% village_summary summary_data %}
+      {% endif %}
+    </div>
+  </div>
+  {{ documentation|safe }}
+{% endblock content %}
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/village-code.css' %}">
+{% endblock extra_css %}

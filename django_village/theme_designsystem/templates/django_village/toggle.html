@@ -1,0 +1,21 @@
+{% load i18n %}
+{% translate "Checked" as checked_label %}
+{% translate "Unchecked" as unchecked_label %}
+<div class="village-toggle{% if self.extra_classes %} {{ self.extra_classes }}{% endif %}">
+  <input type="checkbox"
+         {% if self.is_disabled %}disabled{% endif %}
+         class="village-toggle__input"
+         aria-describedby="{{ self.id }}-hint-text"
+         id="{{ self.id }}">
+  <label class="village-toggle__label"
+         for="{{ self.id }}"
+         data-village-checked-label="{{ checked_label }}"
+         data-village-unchecked-label="{{ unchecked_label }}">
+    {{ self.label }}
+  </label>
+  {% if self.help_text %}
+    <p class="village-hint-text" id="{{ self.id }}-hint-text">
+      {{ self.help_text }}
+    </p>
+  {% endif %}
+</div>

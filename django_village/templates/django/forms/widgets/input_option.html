@@ -1,0 +1,19 @@
+{% if widget.type and widget.type == 'radio' %}
+  <div class="village-radio-group">
+  {% endif %}
+  {% include "django/forms/widgets/input.html" %}
+  {% if widget.wrap_label %}
+    <label class="village-label"
+           {% if widget.attrs.id %}for="{{ widget.attrs.id }}"{% endif %}>
+      {% if widget.label.label %}
+        {{ widget.label.label }}
+        <span class="village-hint-text">{{ widget.label.help_text }}</span>
+      {% else %}
+        {{ widget.label }}
+        <span class="village-hint-text">{{ widget.label.help_text }}</span>
+      {% endif %}
+    </label>
+  {% endif %}
+  {% if widget.type and widget.type == 'radio' %}
+  </div>
+{% endif %}

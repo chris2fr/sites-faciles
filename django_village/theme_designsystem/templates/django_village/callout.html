@@ -1,0 +1,18 @@
+{% load village_tags %}
+<div class="village-callout {% if self.icon_class %}{{ self.icon_class }}{% endif %}{% if self.extra_classes %} {{ self.extra_classes }}{% endif %}">
+  {% if self.title %}
+    <{{ self.heading_tag | default:"p" }} class="village-callout__title">
+    {{ self.title }}
+    </{{ self.heading_tag | default:"p" }}>
+  {% endif %}
+  <p class="village-callout__text">
+    {{ self.text }}
+  </p>
+  {% if self.button %}
+    {% if self.button.onclick %}
+      {% village_button self.button %}
+    {% elif self.button.url %}
+      <a href="{{ self.button.url }}" class="village-btn">{{ self.button.label }}</a>
+    {% endif %}
+  {% endif %}
+</div>

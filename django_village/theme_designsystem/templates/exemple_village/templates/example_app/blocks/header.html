@@ -1,0 +1,95 @@
+{% extends "django_village/header.html" %}
+{% load i18n static %}
+{% url 'index' as home_url %}
+
+{% block brand %}
+  {% translate "Home page" as home_page %}
+  <a href="{{ home_url }}"
+     title="{{ home_page }} — {{ SITE_CONFIG.site_title }}">
+     <img src="{% static 'django_village/dist/artwork/logo/logo.svg' %}" class="village-logo" alt="logo" />
+    </a>
+{% endblock brand %}
+
+{% block service_title %}
+  <a href="{{ home_url }}" title="Accueil — {{ SITE_CONFIG.site_title }}">
+    <p class="village-header__service-title">
+      {{ SITE_CONFIG.site_title }}
+      {% if SITE_CONFIG.beta_tag %}
+        <span class="village-badge village-badge--sm village-badge--green-emeraude">BETA</span>
+      {% endif %}
+    </p>
+  </a>
+{% endblock service_title %}
+
+{% block header_tools %}
+  <li>
+    <button class="village-btn--display village-btn"
+            aria-controls="village-theme-modal"
+            data-village-opened="false">
+      {% translate "Display settings" %}
+    </button>
+  </li>
+  {% if "127.0.0.1" in request.get_host %}
+    <li>
+      {% include "django_village/blocks/language_selector.html" %}
+    </li>
+  {% endif %}
+{% endblock header_tools %}
+
+
+  <div class="village-header__navbar">
+    {# Leave burger_menu and main_menu blocks empty if the main menu is not used #}
+    {% block burger_menu %}
+      {% translate "Search" as search_label %}
+    <button class="village-btn--search village-btn"
+            data-village-opened="false"
+            aria-controls="modal-search"
+            id="village-btn-search-mobile"
+            title="{{ search_label }}"
+            data-village-js-modal-button="true">
+      {{ search_label }}
+    </button>
+    {% translate "Menu" as menu_label %}
+    <button class="village-btn--menu village-btn"
+            data-village-opened="false"
+            aria-controls="village-menu-mobile"
+            id="village-btn-menu-mobile"
+            title="{{ menu_label }}"
+            data-village-js-modal-button="true">
+      {{ menu_label }}
+    </button>
+    {% endblock burger_menu %}
+  </div>
+
+{% block main_menu %}
+  {% include "django_village/blocks/main_menu.html" %}
+{% endblock main_menu %}
+
+{% block header_search %}
+  {% translate "Search" as search_label %}
+  <div class="village-header__search village-modal" id="modal-search">
+    <div class="village-container village-container-lg--fluid">
+      {% translate "Close" as close_label %}
+      <button class="village-btn--close village-btn"
+              aria-controls="modal-search"
+              title="{{ close_label }}">
+        {{ close_label }}
+      </button>
+      <form action="{% url 'wagtail_village_search' %}" method="get">
+        <div class="village-search-bar" id="search-bar" role="search">
+          <label class="village-label" for="search-bar-input">
+            {{ search_label }}
+          </label>
+          <input class="village-input"
+                 placeholder="{{ search_label }}"
+                 type="search"
+                 id="search-bar-input"
+                 name="q">
+          <button class="village-btn" title="{{ search_label }}">
+            {{ search_label }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock header_search %}

@@ -1,0 +1,60 @@
+.errorlist {
+  margin-top: 1rem;
+}
+
+.errorlist .village-error-text {
+  margin-top: 0;
+}
+
+.errorlist.nonfield {
+  padding: 1rem;
+}
+
+.village-header .village-header__menu .village-container {
+  grid-template-areas: "l m t" "h h s";
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto;
+}
+
+div.village-header__service {
+  grid-area: h;
+}
+div.village-header__search {
+  grid-area: s;
+}
+
+#village-menu-close-btn {
+  align-items: flex-start;
+  grid-area: c;
+}
+
+div.village-header__menu-links {
+  grid-area: t;
+}
+
+.village-nav {
+  grid-area: m;
+}
+
+@media (max-width: 62em) {
+  .village-header .village-header__menu .village-container  {
+    grid-template-areas: "c c" "m m" "t t" "l l" "h h";
+  }
+}
+
+.village-menu {
+  top: 50%;
+}
+
+.village-header__menu village-modal {
+  width: inherit;
+}
+
+header {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/* .village-header .village-modal:not([role=dialog]) {
+  width: 100%;
+} */

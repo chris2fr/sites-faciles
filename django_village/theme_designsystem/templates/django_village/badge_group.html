@@ -1,0 +1,8 @@
+{% load village_tags %}
+<ul class="village-badge-group">
+  {% for item in self.items %}
+    <li>
+      {% village_badge item %}
+    </li>
+  {% endfor %}
+</ul>
