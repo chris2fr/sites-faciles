@@ -33,9 +33,9 @@ urlpatterns = [
     # path("wagtail-transfer/", include(wagtailtransfer_urls)),  # Pour Wagtail Transfer
     path("htmlmenu", lesgv_views.htmlmenu),  # Ajouté
     path("api/", include(grapple_urls)),  # ajouté
-    path("search/", search_views.search, name="search"),
-    path("fr/search/", search_views.search, name="search"),
-    path("en/search/", search_views.search, name="search"),
+    # path("search/", search_views.search, name="search"),
+    # path("fr/search/", search_views.search, name="search"),
+    # path("en/search/", search_views.search, name="search"),
 ]
 
 if settings.BOOL_WAGTAIL_API:
@@ -68,14 +68,15 @@ if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     # urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
-urlpatterns = urlpatterns + i18n_patterns(
+urlpatterns += i18n_patterns(
+    # path("search", include("search.urls")),
+    path("search/", search_views.search, name="search"),
+    path("signup/", lesgrandsvoisins_views.signup_view, name="signup_view"),
+    path("signup", lesgrandsvoisins_views.signup_view, name="signup_view"),
     path("", include(wagtail_urls)),
     # Pour l'internationalisation de Wagtail_Village et Wagtail_Village_Blog
     path("", include("wagtail_village.urls")),
     path("", include("wagtail_village_blog.urls", namespace="wagtail_village_blog")),
-    path("signup/", lesgrandsvoisins_views.signup_view, name="signup_view"),
-    path("signup", lesgrandsvoisins_views.signup_view, name="signup_view"),
-    # path("search/", search_views.search, name="search"),
     prefix_default_language=True,
     # path("search/", search_views.search, name="search"),
     # path("search/", include("search.urls")),

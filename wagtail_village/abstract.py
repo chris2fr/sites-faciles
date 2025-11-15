@@ -192,15 +192,13 @@ class SitesFacilesBasePage(Page):
         blank=True,
     )
 
-    exclude_from_search = models.BooleanField(default=False)
+    # exclude_from_search = models.BooleanField(default=False)
 
     content_panels = Page.content_panels + [
         FieldPanel("body", heading=_("Body")),
     ]
 
-    settings_panels = Page.settings_panels + [
-        FieldPanel("exclude_from_search"),
-    ]
+    settings_panels = Page.settings_panels + []
 
     panels = Page.content_panels + [
         FieldPanel("body", heading=_("Body")),
@@ -258,17 +256,23 @@ class SitesFacilesBasePage(Page):
         # if settings.mourning:
         #     context["data_village_mourning"] = "data-village-mourning"
         # context["full_title"] = settings.site_title
-        if context["page"].title:
-            context["full_title"] = context["page"].title + " - "  # + context["full_site_title"]
+        if context["page"].seo_title:
+            context["full_title"] = context["page"].seo_title
+        elif context["page"].title:
+            context["full_title"] = context["page"].title
+        else:
+            context["full_title"] = context["full_site_title"]
+        # context["site_title"] = pate.get
+
         # context["search_description"] = False
         if hasattr(context["page"], "search_description") and context["page"].search_description:
             context["search_description"] = context["page"].search_description
         return context
 
-    def get_indexed_instance(self):
-        if self.exclude_from_search:
-            return None  # not added to index
-        return self
+    # def get_indexed_instance(self):
+    #     if self.exclude_from_search:
+    #         return None  # not added to index
+    #     return self
 
     class Meta:
         abstract = True

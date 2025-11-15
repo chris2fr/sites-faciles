@@ -19,7 +19,13 @@ def search(request):
 
     # Search
     if search_query:
-        search_results = Page.objects.filter(locale=locale).live().search(search_query)
+        # search_results1 =
+        # ContentPage.objects.filter(locale=locale).exclude(exclude_from_search=True).live().search(search_query)
+        # search_results2 = FaireMainPage.objects.filter(locale=locale).live().search(search_query)
+        # search_results = search_results1 | search_results2
+        search_results = (
+            Page.objects.filter(locale=locale).live().exclude(title__endswith=" PROPOSITION").search(search_query)
+        )
 
         # To log this query for use with the "Promoted search results" module:
 
@@ -44,5 +50,6 @@ def search(request):
         {
             "search_query": search_query,
             "search_results": search_results,
+            "locale": locale,
         },
     )
