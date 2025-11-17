@@ -1,0 +1,49 @@
+{% load static wagtailcore_tags wagtailuserbar wagtailsettings_tags i18n gdvoisins_menu_tags %}
+{% get_settings use_default_site=True %}
+{% get_current_language as LANGUAGE_CODE %}
+<dialog id="modal_languages" class="modal modal-bottom modal-end">
+  <div class="modal-box">
+    <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+    </form>
+    <ul tabindex="-1"
+        class="dropdown-content bg-base-300 rounded-box z-1 w-52 p-2 shadow-2xl">
+      {% if page %}
+        <li>
+          <a class="w-full btn btn-sm btn-block btn-ghost justify-start"
+             hreflang="{{ current_lang.code|lower }}"
+             lang="{{ current_lang.code|lower }}"
+             href="{% pageurl page %}"
+             aria-current="true">{{ current_lang.code|upper }}</a>
+        </li>
+        {% for translation in page.get_translations.live %}
+          <li>
+            <a class="w-full btn btn-sm btn-block btn-ghost justify-start"
+               hreflang="{{ translation.locale.language_code|lower }}"
+               lang="{{ translation.locale.language_code|lower }}"
+               href="{% pageurl translation %}"
+               {% if translation.locale.language_code == LANGUAGE_CODE %}aria-current="true"{% endif %}>{{ translation.locale.language_code|upper }} - {{ translation.locale.language_name_local }}</a>
+          </li>
+        {% endfor %}
+      {% else %}
+        <li>
+          <a class="w-full btn btn-sm btn-block btn-ghost justify-start"
+             hreflang="fr"
+             lang="Français"
+             href="/fr/"
+             {% if translation.locale.language_code == "FR" %}aria-current="true"{% endif %}>FR - Français</a>
+        </li>
+        <li>
+          <a class="w-full btn btn-sm btn-block btn-ghost justify-start"
+             hreflang="en"
+             lang="English"
+             href="/en/"
+             {% if translation.locale.language_code == "EN" %}aria-current="true"{% endif %}>EN - English</a>
+        </li>
+      {% endif %}
+    </ul>
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>

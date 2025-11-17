@@ -1,0 +1,10 @@
+
+<ul class="{{ class_name }}" tabindex="{{ tabindex }}">
+{% for item in menu_items_up %}
+{% if item.url %}
+<li>
+<a href="{{ item.url }}">{{ item.title }}</a>
+</li>
+{% endif %}
+{% endfor %}
+</ul>

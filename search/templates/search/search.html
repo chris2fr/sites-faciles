@@ -1,4 +1,5 @@
-{% extends "wagtail_village/content_page.html" %}
+{% extends "gdvoisins/gd_voisins_page.html" %}
+{% comment %} {% extends "wagtail_village/content_page.html" %} {% endcomment %}
 {% load static wagtailcore_tags i18n %}
 
 {% block body_class %}template-searchresults{% endblock body_class %}
@@ -6,7 +7,7 @@
 {% block title %}{% translate "Search" %}{% endblock title %}
 
 {% block content %}
-<h1>{% translate "Search" %}</h1>
+{% comment %} <h1>{% translate "Search" %}</h1> {% endcomment %}
 
 
                 <form name="search_form" class="search_form" method="get" action="{% url 'search' %}">

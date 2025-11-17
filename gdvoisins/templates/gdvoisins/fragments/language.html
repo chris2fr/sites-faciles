@@ -1,0 +1,39 @@
+{% load i18n wagtailsettings_tags wagtailcore_tags %}
+{% get_settings use_default_site=True %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+<div class="dropdown dropdown-end">
+  <div tabindex="0" role="button" class="btn m-1">
+    {% get_language_info for LANGUAGE_CODE as current_lang %}{{ current_lang.code|upper }}
+  </div>
+  <ul tabindex="-1"
+      class="dropdown-content bg-base-300 rounded-box z-1 w-52 p-2 shadow-2xl">
+    {% if page %}
+      {% for translation in page.get_translations.live %}
+        <li>
+          <a class="w-full btn btn-sm btn-block btn-ghost justify-start"
+             hreflang="{{ translation.locale.language_code|lower }}"
+             lang="{{ translation.locale.language_code|lower }}"
+             href="{% pageurl translation %}"
+             {% if translation.locale.language_code == LANGUAGE_CODE %}aria-current="true"{% endif %}>{{ translation.locale.language_code|upper }} - {{ translation.locale.language_name_local }}</a>
+        </li>
+      {% endfor %}
+    {% else %}
+      <li>
+        <a class="w-full btn btn-sm btn-block btn-ghost justify-start"
+           hreflang="fr"
+           lang="Français"
+           href="/fr/"
+           {% if translation.locale.language_code == "FR" %}aria-current="true"{% endif %}>FR - Français</a>
+      </li>
+      <li>
+        <a class="w-full btn btn-sm btn-block btn-ghost justify-start"
+           hreflang="en"
+           lang="English"
+           href="/en/"
+           {% if translation.locale.language_code == "EN" %}aria-current="true"{% endif %}>EN - English</a>
+      </li>
+    {% endif %}
+  </ul>
+</div>

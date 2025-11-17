@@ -1,0 +1,305 @@
+{% load static wagtailcore_tags i18n %}
+{% comment %} <div class="dropdown dropdown-end"> {% endcomment %}
+{% comment %} <div tabindex="0" role="button" class="btn m-1"> {% endcomment %}
+<dialog id="themes_modal" class="modal modal-bottom modal-end">
+  <div class="modal-box">
+    <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost right-2 top-2 text-xl sticky float-right">✕</button>
+    </form>
+    {% translate "Theme" %}
+    <svg width="12px"
+         height="12px"
+         class="inline-block h-2 w-2 fill-current opacity-60"
+         xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 2048 2048">
+      <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
+    </svg>
+    {% comment %} </div> {% endcomment %}
+    <ul tabindex="-1"
+        class="dropdown-content bg-base-300 rounded-box z-1 w-52 p-2 shadow-2xl">
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Light"
+               id="data-set-theme-light"
+               value="light" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Dark"
+               id="data-set-theme-dark"
+               value="dark" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Cupcake"
+               id="data-set-theme-cupcake"
+               value="cupcake" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Bumblebee"
+               id="data-set-theme-bumblebee"
+               value="bumblebee" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Emerald"
+               id="data-set-theme-emerald"
+               value="emerald" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Corporate"
+               id="data-set-theme-corporate"
+               value="corporate" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Synthwave"
+               id="data-set-theme-synthwave"
+               value="synthwave" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Retro"
+               id="data-set-theme-retro"
+               value="retro" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Cyberpunk"
+               id="data-set-theme-cyberpunk"
+               value="cyberpunk" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Valentine"
+               id="data-set-theme-valentine"
+               value="valentine" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Halloween"
+               id="data-set-theme-halloween"
+               value="halloween" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Garden"
+               id="data-set-theme-garden"
+               value="garden" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Forest"
+               id="data-set-theme-forest"
+               value="forest" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Aqua"
+               id="data-set-theme-aqua"
+               value="aqua" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Lofi"
+               id="data-set-theme-lofi"
+               value="lofi" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Pastel"
+               id="data-set-theme-pastel"
+               value="pastel" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Fantasy"
+               id="data-set-theme-fantasy"
+               value="fantasy" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Wireframe"
+               id="data-set-theme-wireframe"
+               value="wireframe" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Black"
+               id="data-set-theme-black"
+               value="black" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Luxury"
+               id="data-set-theme-luxury"
+               value="luxury" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Dracula"
+               id="data-set-theme-dracula"
+               value="dracula" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Cmyk"
+               id="data-set-theme-cmyk"
+               value="cmyk" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Autumn"
+               id="data-set-theme-autumn"
+               value="autumn" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Business"
+               id="data-set-theme-business"
+               value="business" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Acid"
+               id="data-set-theme-acid"
+               value="acid" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Lemonade"
+               id="data-set-theme-lemonade"
+               value="lemonade" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Night"
+               id="data-set-theme-night"
+               value="night" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Coffee"
+               id="data-set-theme-coffee"
+               value="coffee" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Winter"
+               id="data-set-theme-winter"
+               value="winter" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Dim"
+               id="data-set-theme-dim"
+               value="dim" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Nord"
+               id="data-set-theme-nord"
+               value="nord" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Sunset"
+               id="data-set-theme-sunset"
+               value="sunset" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Caramellatte"
+               id="data-set-theme-caramellatte"
+               value="caramellatte" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Abyss"
+               id="data-set-theme-abyss"
+               value="abyss" />
+      </li>
+      <li>
+        <input type="radio"
+               name="data-set-theme"
+               class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+               aria-label="Silk"
+               id="data-set-theme-silk"
+               value="silk" />
+      </li>
+    </ul>
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>

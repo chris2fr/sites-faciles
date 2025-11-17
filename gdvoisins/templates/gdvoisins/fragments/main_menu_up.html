@@ -1,0 +1,17 @@
+{% load static wagtailcore_tags wagtailuserbar wagtailsettings_tags i18n gdvoisins_menu_tags %}
+<div class="dropdown">
+  <div tabindex="0" role="button" class="btn h-16 w-16 p-0">
+    <img src="{% static "assets/images/logo/gdvoisins/gdvoisins.svg" %}"
+         class="h-16 w-16"
+         alt="{% translate "Les Grands Voisins" %}">
+  </div>
+  {% if page %}
+    {% main_menu_up self tabindex="-1" class_name="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm flex-col-reverse" %}
+  {% else %}
+    <ul class="dropdown-content  menu bg-base-100 rounded-box z-1 w-52 p-2">
+      <li>
+        <a href="/">/</a>
+      </li>
+    </ul>
+  {% endif %}
+</div>

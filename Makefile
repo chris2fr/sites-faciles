@@ -88,6 +88,13 @@ tailwind-install-bin-linux:
 	mv tailwindcss-linux-x64 venv/bin/tailwindcss
 	chmod +x venv/bin/tailwindcss
 
+daisyui-install-linux:
+	curl -sL daisyui.com/fast | bash
+
+daisyui-install-windows:
+	powershell -c "irm daisyui.com/fast.ps1 | iex"
+
+
 .PHONY: test
 # From https://tailwindcss.com/docs/installation/tailwind-cli
 tailwind-install:

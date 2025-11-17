@@ -1,5 +1,6 @@
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.template.response import TemplateResponse
+from django.utils.translation import gettext_lazy as _
 from wagtail.models import Locale, Page
 
 
@@ -49,10 +50,12 @@ def search(request):
 
     return TemplateResponse(
         request,
-        "search/search.html",
+        "gdvoisins/search/search.html",
         {
             "search_query": search_query,
             "search_results": search_results,
             "locale": locale,
+            "full_title": _("Search"),
+            "page.title": _("Search"),
         },
     )

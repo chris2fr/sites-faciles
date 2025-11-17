@@ -1,77 +1,59 @@
-{% load static wagtailcore_tags wagtailuserbar i18n %}
+{% load static wagtailcore_tags wagtailuserbar wagtailsettings_tags i18n gdvoisins_menu_tags %}
+{% get_settings use_default_site=True %}
+{% get_current_language as LANGUAGE_CODE %}
 <!DOCTYPE html>
 <html class="no-js" lang="{{ page.locale.language_code }}">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ full_title }}</title>
-    <link rel="stylesheet" href="{% static 'assets/fonts/inter/web/inter.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/fonts/grotesk/fonts/_web/font.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="{% static 'assets/css/appmenu.css' %}">
-    {% if page.search_description %}<meta name="description"
-          content="{{ page.search_description }}">{% endif %}
-    <meta property="og:title"
-          content="{% if page.seo_title %}{{ page.seo_title }}{% else %}{{ full_title }}{% endif %}">
-    {% comment %} <meta property="og:type" content=""> {% endcomment %}
-    <meta property="og:url" content="{{ page.url }}">
-    <meta property="og:image" content="{{ page_image_url }}">
-    <meta property="og:image:alt" content="{{ page_image_alt }}">
-    {% if page.search_description %}<meta name="description" content="{{ page.search_description }}" />{% endif %}
-    {# Force all links in the live preview panel to be opened in a new tab #}
-    {% if request.in_preview_panel %}<base target="_blank">{% endif %}
-    <meta property="og:type" content="website">
-    <link rel="icon"
-          href="{% static 'assets/images/logo/gdvoisins/favicon_io/favicon.ico' %}"
-          sizes="any">
-    <link rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="{% static 'assets/images/logo/gdvoisins/favicon_io/favicon-32x32.png' %}">
-    <link rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="{% static 'assets/images/logo/gdvoisins/favicon_io/favicon-16x16.png' %}">
-    <link rel="icon"
-          href="{% static 'assets/images/logo/gdvoisins/logo-gd-voisins-800-800.svg' %}"
-          type="image/svg+xml">
-    <link rel="apple-touch-icon"
-          sizes="180x180"
-          href="{% static 'assets/images/logo/gdvoisins/favicon_io/apple-touch-icon.png' %}">
-    <script src="./assets/js/appdata.js"></script>
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="preload"
-          as="image"
-          href="{% static 'assets/images/logo/lesgrandsvoisins/logo-lesgrandsvoisins-600-72.png' %}"
-          width="600"
-          height="72">
-    <meta http-equiv="Cache-Control"
-          content="no-cache, must-revalidate, post-check=0, pre-check=0, max-age=0">
-    <meta http-equiv="Expires" content="0">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta name="theme-color" content="#fafafa">
-    {% block extra_css %}
-        {# Override this in templates to add extra stylesheets #}
-    {% endblock extra_css %}
-    {% block extra_head %}
-    {% endblock extra_head %}
-  </head>
-  <body class="{% block body_class %}gdvoisins{% endblock body_class %} darkmode">
-        {% wagtailuserbar %}
-        {% block header %}
-        <h1>{{ page.title }}</h1>
-        {% endblock header %}
-        {% block content %}
-        {% endblock content %}
-        {% block footer %}
-        {% endblock footer %}
-        {# Global javascript #}
-        <script src="./assets/js/app.js"></script><script src="./assets/js/loadapps.js"></script>
-        <script src="./assets/js/lightdark.js"></script>
-        {% block extra_js %}
-            {# Override this in templates to add extra javascript #}
-        {% endblock extra_js %}
-  </body>
+      <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            {% include "gdvoisins/fragments/head.html" %}
+      </head>
+      <body class="{% block body_class %}gdvoisins{% endblock body_class %}">
+            {% wagtailuserbar %}
+            {% block header %}
+                  <div class="navbar bg-base-100 shadow-sm w-full justify-between">
+                        <div class="navbar-start w-min">
+                              {% include "gdvoisins/fragments/main_menu_up.html" %}
+                              <h1 class="text-3xl font-bold ml-6 text-ellipsis">
+                                    {% if page %}
+                                          {{ page.title }}
+                                    {% else %}
+                                          {{ full_title }}
+                                    {% endif %}
+                              </h1>
+                        </div>
+                        <div class="navbar-center xl:w-10/12 lg:w-9/12 md:w-8/12 bg-base-100 shadow-sm">
+                              {% if page %}
+                                    {% main_menu_down self tabindex="-1" class_name="hidden md:flex menu menu-horizontal bg-base-100 rounded-box m-auto w-full justify-center" %}
+                              {% endif %}
+                        </div>
+                        <div class="navbar-end pr-4 w-min">
+                              {% include "gdvoisins/fragments/main_menu_down.html" %}
+                              {% include "gdvoisins/fragments/navbar_end.html" %}
+                        </div>
+                  </div>
+                  {% include "gdvoisins/fragments/main_menu_fab.html" %}
+                  {% include "gdvoisins/fragments/search.html" %}
+                  {% include "gdvoisins/fragments/theme.html" %}
+                  {% include "gdvoisins/fragments/main_menu_lang.html" %}
+                  {% include "gdvoisins/fragments/app-menu.html" %}
+            {% endblock header %}
+            {% block logo %}
+            {% endblock logo %}
+            {% block page_title %}
+            {% endblock page_title %}
+            <main class="{% block main_class %}prose m-auto{% endblock main_class %}">
+                  {% block content %}
+                        {% include "gdvoisins/fragments/test-content.html" %}
+                  {% endblock content %}
+            </main>
+            {% block footer %}
+            {% endblock footer %}
+            {# Global javascript #}
+            <script type="text/javascript" src="{% static 'assets/js/theme-change.js' %}"></script>
+            {% block extra_js %}
+                  {# Override this in templates to add extra javascript #}
+            {% endblock extra_js %}
+      </body>
 </html>

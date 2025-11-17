@@ -1,0 +1,16 @@
+{
+    "short_name": "G D Voisins",
+    "name": "G D Voisins : l'informatique des Grands Voisins",
+    "icons": [{
+        "src": "./assets/images/logo/gdvoisins/favicon_io/android-chrome-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+    }, {
+        "src": "./assets/images/logo/gdvoisins/favicon_io/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+    }],
+    "start_url": "/",
+    "background_color": "#fafafa",
+    "theme_color": "#fafafa"
+}

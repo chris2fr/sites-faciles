@@ -1,0 +1,54 @@
+{% load static wagtailcore_tags wagtailuserbar wagtailsettings_tags i18n gdvoisins_menu_tags %}
+<div class="fab fab-flower mb-16">
+  <!-- a focusable div with tabindex is necessary to work on all browsers. role="button" is necessary for accessibility -->
+  <div tabindex="0" role="button" class="btn btn-circle btn-lg btn-accent">
+    {% include "gdvoisins/fragments/svg-pirate-map.html" %}
+  </div>
+  <div class="fab-close">
+    {% translate "Close" %} <span class="btn btn-circle btn-lg btn-error">✕</span>
+  </div>
+  <!-- buttons that show up when FAB is open -->
+  <div class="tooltip tooltip-left"
+       data-tip="Applications des Grands Voisins">
+    <button class="btn btn-lg btn-circle" onclick="apps_modal.showModal()">
+      {% include "gdvoisins/fragments/icon-tools.html" %}
+      <svg width="12px"
+           height="12px"
+           class="inline-block h-2 w-2 fill-current opacity-60"
+           xmlns="http://www.w3.org/2000/svg"
+           viewBox="0 0 2048 2048">
+        <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
+      </svg>
+    </button>
+  </div>
+  <div class="tooltip tooltip-left" data-tip="{% translate "Languages" %}">
+    <button class="btn btn-lg btn-circle" onclick="modal_languages.showModal()">
+      {% get_language_info for LANGUAGE_CODE as current_lang %}{{ current_lang.code|upper }}
+    </button>
+  </div>
+  <div class="tooltip tooltip-left"
+       data-tip="{% translate "Jeux de couleurs" %}">
+    <button class="btn btn-lg btn-circle"  onclick="themes_modal.showModal()">
+      {% include "gdvoisins/fragments/svg-colors.html" %}
+    </button>
+  </div>
+  <div class="tooltip tooltip-left"
+       data-tip="{% translate "Rechercher sur ce site" %}">
+    <button class="btn btn-lg btn-circle" onclick="search_modal.showModal()">
+      <svg xmlns="http://www.w3.org/2000/svg"
+           class="icon icon-tabler icon-tabler-search"
+           width="24"
+           height="24"
+           viewBox="0 0 24 24"
+           stroke-width="2"
+           stroke="currentColor"
+           fill="none"
+           stroke-linecap="round"
+           stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <circle cx="10" cy="10" r="7"></circle>
+        <line x1="21" y1="21" x2="15" y2="15"></line>
+      </svg>
+    </button>
+  </div>
+</div>

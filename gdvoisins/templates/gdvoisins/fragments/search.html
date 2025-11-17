@@ -1,0 +1,24 @@
+{% load static wagtailcore_tags i18n %}
+<dialog id="search_modal" class="modal modal-bottom modal-end">
+  <div class="modal-box">
+    <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost right-2 top-2 text-xl sticky float-right">✕</button>
+    </form>
+    <form name="search_form"
+          class="search_form menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
+          method="get"
+          action="{% url 'search' %}">
+      <input type="search"
+             name="query"
+             class="border h-8 p-1 italic"
+             placeholder="{% translate "votre recherche ici" %}"
+             {% if search_query %}value="{{ search_query }}"{% endif %}>
+      <button class="btn btn-default mt-4" type="submit">
+        <i class="fa fa-search"></i>{% translate "Search" %}
+      </button>
+    </form>
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>

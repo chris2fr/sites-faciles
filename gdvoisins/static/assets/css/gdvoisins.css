@@ -1,0 +1,157 @@
+:root {
+    --main-fg-color: midnightblue;
+    --main-bg-color: #ccc;
+    --main-hl-color: #884400;
+    --reverse-bg-color: midnightblue;
+    --reverse-fg-color: wheat;
+    --reverse-hl-color: lightblue;
+}
+
+[data-theme="light"] {
+    --main-fg-color: midnightblue;
+    --main-bg-color: #ccc;
+    --main-hl-color: #884400;
+    --reverse-bg-color: midnightblue;
+    --reverse-fg-color: wheat;
+    --reverse-hl-color: lightblue;
+}
+
+[data-theme="dark"] {
+    --main-bg-color: midnightblue;
+    --main-fg-color: wheat;
+    --main-hl-color: lightblue;
+    --reverse-fg-color: midnightblue;
+    --reverse-bg-color: #ccc;
+    --reverse-hl-color: #884400;
+}
+
+
+body {
+    font-family: "intervariable";
+    /* font-family: "fengardo"; */
+    margin: 0 5rem;
+    background-color: var(--main-bg-color);
+}
+
+div.l14s-outil {
+    --main-fg-color: var(--reverse-fg-color);
+    --main-bg-color: var(--reverse-bg-color);
+    --main-hl-color: var(--reverse-hl-color);
+}
+
+#l14s-banner:hover {
+    content: url('./assets/images/logo/lesgrandsvoisins/logo-lesgrandsvoisins-600-72.png');
+}
+
+p,
+ul,
+li,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--main-fg-color);
+}
+
+a {
+    color: var(--main-hl-color);
+}
+
+p.subtitle {
+    text-align: center;
+    font-style: italic;
+    font-size: large;
+}
+
+h1,
+h2 {
+    text-align: center;
+    font-family: "grotesk";
+}
+
+ul.outil li:not(:last-child) {
+    margin-bottom: 0.75rem;
+}
+
+a,
+.word-wrap {
+    /* Warning: Needed for oldIE support, but words are broken up letter-by-letter */
+    -ms-word-break: break-all;
+    word-break: break-all;
+    /* Non standard for webkit */
+    word-break: break-word;
+
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+div.l14s-outils {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+div.l14s-outil {
+    width: 29rem;
+    border-style: solid;
+    border-radius: 1rem;
+    padding: 0 1rem;
+    border-width: 1px;
+    margin: 0 auto;
+    background-color: var(--main-bg-color);
+}
+
+div.l14s-banner {
+    max-width: 100%;
+    height: auto;
+    text-align: center;
+    overflow: visible;
+}
+
+div.l14s-banner>a>img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* div.l14s-outil li a {
+    font-size: larger;
+} */
+button.l14s-theme {
+    /* position: absolute; */
+    top: 0.25rem;
+    right: 0.25rem;
+}
+
+
+@media (max-width: 106rem) {
+    body {
+        margin: 0 2rem;
+    }
+
+    div.l14s-outils {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+
+@media screen and (max-width: 66rem) {
+    body {
+        margin: 0 1rem;
+    }
+
+    div.l14s-outils {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 33rem) {
+    div.l14s-outil {
+        width: unset;
+    }
+}

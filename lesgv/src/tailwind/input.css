@@ -3,7 +3,8 @@
 module.exports= {
     theme: {
         fontFamily: {
-            sans: ['fengardoneue', 'sans-serif'] serif: ['fengardoneue', 'sans-serif']
+            sans: ['fengardoneue', 'sans-serif'];
+            serif: ['fengardoneue', 'sans-serif'];
         }
     }
 }
@@ -41,5 +42,13 @@ img.logolgv {
 }
 
 a {
-    @apply underline text-blue-600 hover: text-blue-800 visited:text-purple-600
+    @apply underline text-blue-600;
+}
+
+a::hover {
+    @apply text-blue-800;
+}
+
+a::visited {
+    @apply text-purple-600;
 }
