@@ -1,5 +1,5 @@
 tailwind-compile:
-	npx @tailwindcss/cli -i ./include/tailwind.css -o ./static/assets/css/tailwind.css 
+	npx @tailwindcss/cli -i ./include/tailwind.css -o ./static/assets/css/gdvoisins-tailwind.css 
 
 .PHONY: messages
 messages:
