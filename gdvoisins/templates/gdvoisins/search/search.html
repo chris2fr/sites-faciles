@@ -34,7 +34,7 @@
     <h3 class="card-title text-4xl font-bold text-ellipsis text-center m-auto mt-4">
       {% translate "Résultats de la recherche" %}
     </h3>
-      <hr class="divider my-3" />
+      {% comment %} <hr /> {% endcomment %}
     {% for result in search_results %}
       {% comment %} <div class="card bg-base-100 w-96 shadow-sm"> {% endcomment %}
         {% comment %} <figure>
@@ -47,7 +47,7 @@
           {% if result.search_description %}{{ result.search_description }}{% endif %}
         {% comment %} </div> {% endcomment %}
       </div>
-      <hr class="divider my-3" />
+      {% comment %} <hr  /> {% endcomment %}
     {% endfor %}
     {% if search_results.has_previous %}
       <a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.previous_page_number }}">{% translate "Previous" %}</a>
