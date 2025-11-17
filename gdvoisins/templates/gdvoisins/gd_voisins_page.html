@@ -11,7 +11,7 @@
       </head>
       <body class="{% block body_class %}gdvoisins{% endblock body_class %}">
             {% wagtailuserbar %}
-            {% block header %}
+            {% block nav %}
                   <div class="navbar bg-base-100 shadow-sm w-full justify-between">
                         <div class="navbar-start w-min">
                               {% include "gdvoisins/fragments/main_menu_up.html" %}
@@ -23,7 +23,7 @@
                                     {% endif %}
                               </h1>
                         </div>
-                        <div class="navbar-center xl:w-10/12 lg:w-9/12 md:w-8/12 bg-base-100 shadow-sm">
+                        <div class="navbar-center lg:w-9/12 md:w-8/12 bg-base-100 shadow-sm">
                               {% if page %}
                                     {% main_menu_down self tabindex="-1" class_name="hidden md:flex menu menu-horizontal bg-base-100 rounded-box m-auto w-full justify-center" %}
                               {% endif %}
@@ -38,11 +38,9 @@
                   {% include "gdvoisins/fragments/theme.html" %}
                   {% include "gdvoisins/fragments/main_menu_lang.html" %}
                   {% include "gdvoisins/fragments/app-menu.html" %}
+            {% endblock nav %}
+            {% block header %}
             {% endblock header %}
-            {% block logo %}
-            {% endblock logo %}
-            {% block page_title %}
-            {% endblock page_title %}
             <main class="{% block main_class %}prose m-auto{% endblock main_class %}">
                   {% block content %}
                         {% include "gdvoisins/fragments/test-content.html" %}

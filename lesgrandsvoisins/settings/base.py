@@ -169,6 +169,7 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
+            os.path.join(BASE_DIR, "gdvoisins/templates"),
             os.path.join(BASE_DIR, "django_village/templates"),  # Pour Django_Village
             os.path.join(PROJECT_DIR, "templates"),
             os.path.join(BASE_DIR, "wagtail_village_blog/templates"),  # Pour wagtail_village_

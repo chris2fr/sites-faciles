@@ -1,0 +1,43 @@
+{% if self.get_ancestors|length > 1 %}
+<div class="breadcrumbs text-sm">
+  <ul>
+                {% for p in self.get_ancestors %}
+                    {% if p.is_site_root %}
+                        <li>
+                            <a href="{{ p.url }}">Accueil</a>
+                        </li>
+                    {% elif p.is_root == False %}
+                        <li>
+                            <a href="{{ p.url }}">{{ p.title }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+                <li>
+                    <a>{{ self.title }}</a>
+                </li>
+  </ul>
+</div>
+    {% comment %} <nav role="navigation" class="village-breadcrumb" aria-label="vous êtes ici :">
+        <button class="village-breadcrumb__button"
+                aria-expanded="false"
+                aria-controls="page-breadcrumb">Voir le fil d’Ariane</button>
+        <div class="village-collapse" id="page-breadcrumb">
+            <ol class="village-breadcrumb__list">
+                {% for p in self.get_ancestors %}
+                    {% if p.is_site_root %}
+                        <li>
+                            <a class="village-breadcrumb__link" href="{{ p.url }}">Accueil</a>
+                        </li>
+                    {% elif p.is_root == False %}
+                        <li>
+                            <a class="village-breadcrumb__link" href="{{ p.url }}">{{ p.title }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+                <li>
+                    <a class="village-breadcrumb__link" aria-current="page">{{ self.title }}</a>
+                </li>
+            </ol>
+        </div>
+    </nav> {% endcomment %}
+{% endif %}
