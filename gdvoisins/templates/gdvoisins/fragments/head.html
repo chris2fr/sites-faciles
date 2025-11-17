@@ -6,7 +6,6 @@
 <link rel="stylesheet"
       href="{% static 'assets/fonts/grotesk/fonts/_web/font.css' %}">
 <link rel="stylesheet" href="{% static 'assets/css/appmenu.css' %}">
-<link rel="stylesheet" href="{% static 'assets/css/gdvoisins-tailwind.css' %}">
 {% if page.search_description %}<meta name="description" content="{{ page.search_description }}">{% endif %}
 <meta property="og:title"
       content="{% if page.seo_title %}{{ page.seo_title }}{% else %}{{ full_title }}{% endif %}">
@@ -46,5 +45,7 @@
 {% block extra_css %}
   {# Override this in templates to add extra stylesheets #}
 {% endblock extra_css %}
+<link rel="stylesheet" href="{% static 'assets/css/gdvoisins-tailwind.css' %}">
+
 {% block extra_head %}
 {% endblock extra_head %}
