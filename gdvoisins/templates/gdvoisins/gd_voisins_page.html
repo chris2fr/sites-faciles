@@ -12,9 +12,11 @@
       <body class="{% block body_class %}gdvoisins{% endblock body_class %}">
             {% wagtailuserbar %}
             {% block nav %}
-                  <div class="navbar bg-base-100 shadow-sm w-full justify-between">
-                        <div class="navbar-start w-min">
+                  <div class="navbar bg-base-100 shadow-sm w-full mw-full justify-between">
+                        <div class="navbar-start w-2/12 overflow-hidden">
                               {% include "gdvoisins/fragments/main_menu_up.html" %}
+                        </div>
+                        <div class="navbar-center w-8/12 bg-base-100 shadow-sm">
                               <h1 class="text-3xl font-bold ml-6 text-ellipsis">
                                     {% if page %}
                                           {{ page.title }}
@@ -22,13 +24,11 @@
                                           {{ full_title }}
                                     {% endif %}
                               </h1>
-                        </div>
-                        <div class="navbar-center lg:w-9/12 md:w-8/12 bg-base-100 shadow-sm">
                               {% if page %}
                                     {% main_menu_down self tabindex="-1" class_name="hidden md:flex menu menu-horizontal bg-base-100 rounded-box m-auto w-full justify-center" %}
                               {% endif %}
                         </div>
-                        <div class="navbar-end pr-4 w-min">
+                        <div class="navbar-end pr-4 w-2/12 overflow-hidden">
                               {% include "gdvoisins/fragments/main_menu_down.html" %}
                               {% include "gdvoisins/fragments/navbar_end.html" %}
                         </div>

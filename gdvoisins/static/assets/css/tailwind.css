@@ -3152,6 +3152,9 @@
   .w-2 {
     width: calc(var(--spacing) * 2);
   }
+  .w-2\/12 {
+    width: calc(2/12 * 100%);
+  }
   .w-3\/4 {
     width: calc(3/4 * 100%);
   }
@@ -3160,6 +3163,9 @@
   }
   .w-6 {
     width: calc(var(--spacing) * 6);
+  }
+  .w-8\/12 {
+    width: calc(8/12 * 100%);
   }
   .w-16 {
     width: calc(var(--spacing) * 16);
@@ -3242,6 +3248,9 @@
   }
   .overflow-auto {
     overflow: auto;
+  }
+  .overflow-hidden {
+    overflow: hidden;
   }
   .overflow-x-hidden {
     overflow-x: hidden;
@@ -3947,16 +3956,6 @@
   .md\:hidden {
     @media (width >= 48rem) {
       display: none;
-    }
-  }
-  .md\:w-8\/12 {
-    @media (width >= 48rem) {
-      width: calc(8/12 * 100%);
-    }
-  }
-  .lg\:w-9\/12 {
-    @media (width >= 64rem) {
-      width: calc(9/12 * 100%);
     }
   }
   .xl\:max-w-5xl {
