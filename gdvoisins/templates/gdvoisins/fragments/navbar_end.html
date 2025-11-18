@@ -4,9 +4,9 @@
   <summary class="btn btn-circle btn-lg btn-accent">
     {% include "gdvoisins/fragments/svg-pirate-map.html" %}
   </summary>
-  <div class="menu dropdown-content">
+  <ul class="menu dropdown-content">
     <!-- buttons that show up when FAB is open -->
-    <div class="tooltip tooltip-left"
+    <li class="tooltip tooltip-left"
          data-tip="Applications des Grands Voisins">
       <button class="btn btn-lg btn-circle" onclick="apps_modal.showModal()">
         {% include "gdvoisins/fragments/icon-tools.html" %}
@@ -18,19 +18,19 @@
           <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
         </svg>
       </button>
-    </div>
-    <div class="tooltip tooltip-left" data-tip="{% translate "Languages" %}">
+    </li>
+    <li class="tooltip tooltip-left" data-tip="{% translate "Languages" %}">
       <button class="btn btn-lg btn-circle" onclick="modal_languages.showModal()">
         {% get_language_info for LANGUAGE_CODE as current_lang %}{{ current_lang.code|upper }}
       </button>
-    </div>
-    <div class="tooltip tooltip-left"
+    </li>
+    <li class="tooltip tooltip-left"
          data-tip="{% translate "Jeux de couleurs" %}">
       <button class="btn btn-lg btn-circle"  onclick="themes_modal.showModal()">
         {% include "gdvoisins/fragments/svg-colors.html" %}
       </button>
-    </div>
-    <div class="tooltip tooltip-left"
+    </li>
+    <li class="tooltip tooltip-left"
          data-tip="{% translate "Rechercher sur ce site" %}">
       <button class="btn btn-lg btn-circle" onclick="search_modal.showModal()">
         <svg xmlns="http://www.w3.org/2000/svg"
@@ -48,6 +48,6 @@
           <line x1="21" y1="21" x2="15" y2="15"></line>
         </svg>
       </button>
-    </div>
-  </div>
+    </li>
+  </ul>
 </details>

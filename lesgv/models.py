@@ -261,6 +261,7 @@ class FaireMainPage(Page):
 
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
+        context["has_drop_down_menu"] = self.get_children().live().in_menu().exists()
         context["website_settings"] = WebsiteSettings.for_request(request=request)
         context["wagtail_settings"] = WagtailSettings.load(request_or_site=request)
 

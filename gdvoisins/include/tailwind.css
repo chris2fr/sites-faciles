@@ -1,5 +1,5 @@
-@import "../static/assets/fonts/grotesk/fonts/_web/font.css";
-@import "../static/assets/fonts/inter/web/inter.css";
+@import "./static/assets/fonts/grotesk/fonts/_web/font.css";
+@import "./static/assets/fonts/inter/web/inter.css";
 @import "tailwindcss";
 
 @plugin "@tailwindcss/typography";

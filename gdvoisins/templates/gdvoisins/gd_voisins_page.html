@@ -13,7 +13,7 @@
             {% wagtailuserbar %}
             {% block nav %}
                   <div class="navbar bg-base-100 shadow-sm w-full mw-full justify-between">
-                        <div class="navbar-start w-2/12 overflow-hidden">
+                        <div class="navbar-start w-2/12">
                               {% include "gdvoisins/fragments/main_menu_up.html" %}
                         </div>
                         <div class="navbar-center w-8/12 bg-base-100 shadow-sm">
@@ -24,12 +24,14 @@
                                           {{ full_title }}
                                     {% endif %}
                               </h1>
-                              {% if page %}
+                              {% if page and has_drop_down_menu %}
                                     {% main_menu_down self tabindex="-1" class_name="hidden md:flex menu menu-horizontal bg-base-100 rounded-box m-auto w-full justify-center" %}
                               {% endif %}
                         </div>
-                        <div class="navbar-end pr-4 w-2/12 overflow-hidden">
-                              {% include "gdvoisins/fragments/main_menu_down.html" %}
+                        <div class="navbar-end pr-4 w-2/12">
+                              {% if page and has_drop_down_menu %}
+                                    {% include "gdvoisins/fragments/main_menu_down.html" %}
+                              {% endif %}
                               {% include "gdvoisins/fragments/navbar_end.html" %}
                         </div>
                   </div>

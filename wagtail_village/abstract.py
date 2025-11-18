@@ -256,6 +256,7 @@ class SitesFacilesBasePage(Page):
         # if settings.mourning:
         #     context["data_village_mourning"] = "data-village-mourning"
         # context["full_title"] = settings.site_title
+        context["has_drop_down_menu"] = self.get_children().live().in_menu().exists()
         if context["page"].seo_title:
             context["full_title"] = context["page"].seo_title
         elif context["page"].title:
