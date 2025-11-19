@@ -1,0 +1,54 @@
+{% load gdvoisins_menu_tags i18n %}
+{% translate "Pagination" as pagination_label %}
+
+
+
+  <div class=" flex flex-wrap lg:join">
+    <button class="join-item btn">
+      <a class=""
+         {% if page_obj.has_previous %} href="?{% url_remplace_params page=1 %}" {% endif %}>{% translate "First page" %}</a>
+    </button>
+    <button class="join-item btn">
+      <a class=""
+         {% if page_obj.has_previous %} href="?{% url_remplace_params page=page_obj.previous_page_number %}" {% endif %}>
+        {% translate "Previous page" %}
+      </a>
+    </button>
+    {% if page_obj.pages_list %}
+      {% for item in page_obj.pages_list %}
+        {% if item == "…" %}
+          <button class="join-item btn">
+            <a class="">…</a>
+          </button>
+        {% else %}
+          <button class="join-item btn {% if item == page_obj.number %}btn-active{% endif %}">
+            {% translate "Page" as page_label %}
+            <a class=""
+               title="{{ page_label }} {{ item }}"
+               href="?{% url_remplace_params page=item %}">{{ item }}</a>
+          </button>
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      <button class="join-item btn">
+        <a class=""
+           aria-current="page"
+           title="{{ page_label }} {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}"
+           href="?{% url_remplace_params page=page_obj.number %}">
+          {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}
+        </a>
+      </button>
+    {% endif %}
+    <button class="join-item btn">
+      <a class=""
+         {% if page_obj.has_next %} href="?{% url_remplace_params page=page_obj.next_page_number %}" {% endif %}>
+        {% translate "Next page" %}
+      </a>
+    </button>
+    <button class="join-item btn">
+      <a class=""
+         {% if page_obj.has_next %} href="?{% url_remplace_params page=page_obj.paginator.num_pages %}" {% endif %}>
+        {% translate "Last page" %}
+      </a>
+    </button>
+  </div>
