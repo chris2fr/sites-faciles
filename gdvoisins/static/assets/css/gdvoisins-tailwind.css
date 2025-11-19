@@ -2763,6 +2763,9 @@
   .max-h-\[calc\(100svh-3\.5rem\)\] {
     max-height: calc(100svh - 3.5rem);
   }
+  .min-h-0 {
+    min-height: calc(var(--spacing) * 0);
+  }
   .btn-block {
     @layer daisyui.l1.l2 {
       width: 100%;
@@ -3074,6 +3077,9 @@
   }
   .px-6 {
     padding-inline: calc(var(--spacing) * 6);
+  }
+  .py-0 {
+    padding-block: calc(var(--spacing) * 0);
   }
   .py-1\.25 {
     padding-block: calc(var(--spacing) * 1.25);

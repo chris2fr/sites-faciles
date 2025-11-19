@@ -4,11 +4,11 @@
     m-auto
 {% endblock main_class %}
 {% block content %}
-<div class="ml-10">
+<div class="navbar py-0 min-h-0">
 {% include "gdvoisins/fragments/breadcrumbs.html" %}
 </div>
     {% include "wagtail_village/messages.html" %}
-    <div class="flex flex-wrap justify-center gap-4">
+    <div class="flex flex-wrap justify-start gap-4">
         {% for post in posts %}
             <div class="card bg-base-100 w-64 lg:w-96 shadow-md items-center">
                 {% if post.header_image %}

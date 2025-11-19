@@ -33,7 +33,7 @@ User = get_user_model()
 
 class BlogIndexPage(ContentPage):
     posts_per_page = models.PositiveSmallIntegerField(
-        default=10,
+        default=12,
         validators=[MaxValueValidator(100), MinValueValidator(1)],
         verbose_name=_("Posts per page"),
     )
