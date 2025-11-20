@@ -11,10 +11,10 @@
       {% if page %}
         <li>
           <a class="w-full btn btn-sm btn-block btn-ghost justify-start"
-             hreflang="{{ current_lang.code|lower }}"
-             lang="{{ current_lang.code|lower }}"
+             hreflang="{{ LANGUAGE_CODE|lower }}"
+             lang="{{ LANGUAGE_CODE|lower }}"
              href="{% pageurl page %}"
-             aria-current="true">{{ current_lang.code|upper }}</a>
+             aria-current="true">{{ LANGUAGE_CODE|upper }}</a>
         </li>
         {% for translation in page.get_translations.live %}
           <li>
