@@ -21,9 +21,5 @@ class GDVoisinsAnnuairePage(GDVoisinsPage):
     def get_context(self, request, tag=None, category=None, author=None, year=None, *args, **kwargs):  # NOSONAR
         # context = super(BlogIndexPage, self).get_context(request, *args, **kwargs)
         context = super().get_context(request, *args, **kwargs)
-        context.update(
-            self.annuaire_page.process_posts(
-                request, self.annuaire_page.posts, tag=None, category=None, author=None, year=None
-            )
-        )
+        context.update(self.annuaire_page.process_posts(request, tag=None, category=None, author=None, year=None))
         return context
