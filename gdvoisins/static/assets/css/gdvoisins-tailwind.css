@@ -3243,6 +3243,9 @@
   .text-gray-700 {
     color: var(--color-gray-700);
   }
+  .text-gray-800 {
+    color: var(--color-gray-800);
+  }
   .text-gray-900 {
     color: var(--color-gray-900);
   }
@@ -3398,6 +3401,12 @@
     @layer daisyui.l1.l2.l3 {
       --btn-color: var(--color-error);
       --btn-fg: var(--color-error-content);
+    }
+  }
+  .btn-neutral {
+    @layer daisyui.l1.l2.l3 {
+      --btn-color: var(--color-neutral);
+      --btn-fg: var(--color-neutral-content);
     }
   }
   .btn-primary {

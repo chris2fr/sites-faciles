@@ -28,19 +28,21 @@
                                     {% main_menu_down self tabindex="-1" class_name="hidden md:flex menu menu-horizontal bg-base-100 rounded-box m-auto w-full justify-center" %}
                               {% endif %}
                         </div>
-                        <div class="navbar-end pr-4 w-2/12">
+                        <div class="navbar-end pr-4 w-2/12 ">
                               {% if page and has_drop_down_menu %}
                                     {% include "gdvoisins/fragments/main_menu_down.html" %}
                               {% endif %}
                               {% include "gdvoisins/fragments/navbar_end.html" %}
                         </div>
                   </div>
+            {% endblock nav %}
+            {% block modals %}
                   {% include "gdvoisins/fragments/main_menu_fab.html" %}
                   {% include "gdvoisins/fragments/search.html" %}
                   {% include "gdvoisins/fragments/theme.html" %}
                   {% include "gdvoisins/fragments/main_menu_lang.html" %}
                   {% include "gdvoisins/fragments/app-menu.html" %}
-            {% endblock nav %}
+            {% endblock modals %}
             {% block header %}
             {% endblock header %}
             <main class="{% block main_class %}prose m-auto{% endblock main_class %}">

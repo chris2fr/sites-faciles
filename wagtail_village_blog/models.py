@@ -64,15 +64,10 @@ class BlogIndexPage(ContentPage):
         )
         return posts
 
-    def get_context(self, request, tag=None, category=None, author=None, year=None, *args, **kwargs):  # NOSONAR
-        # context = super(BlogIndexPage, self).get_context(request, *args, **kwargs)
-        context = super().get_context(request, *args, **kwargs)
-
+    def process_posts(self, request, tag=None, category=None, author=None, year=None):
         posts = self.posts
         locale = Locale.objects.get(language_code=get_language())
-
         breadcrumb = None
-
         if tag is None:
             tag = request.GET.get("tag")
         if tag:
@@ -139,17 +134,40 @@ class BlogIndexPage(ContentPage):
         except EmptyPage:
             posts = paginator.page(paginator.num_pages)
 
-        context["posts"] = posts
+        process_posts = {
+            "posts": posts,
+            "category": None,
+            "category_description": None,
+            "tag": tag,
+            "author": author,
+            "year": year,
+            "paginator": paginator,
+            "breadcrumb": breadcrumb,
+        }
         if category is not None:
-            context["category"] = category.name
-            context["category_description"] = category.description
-        context["tag"] = tag
-        context["author"] = author
-        context["year"] = year
-        context["paginator"] = paginator
-
+            process_posts["category"] = category.name
+            process_posts["category_description"] = category.description
         if breadcrumb:
-            context["breadcrumb"] = breadcrumb
+            process_posts["breadcrumb"] = breadcrumb
+        return process_posts
+
+    def get_context(self, request, tag=None, category=None, author=None, year=None, *args, **kwargs):  # NOSONAR
+        # context = super(BlogIndexPage, self).get_context(request, *args, **kwargs)
+        context = super().get_context(request, *args, **kwargs)
+
+        context.update(self.process_posts(request, tag=None, category=None, author=None, year=None))
+
+        # context["posts"] = posts
+        # if category is not None:
+        #     context["category"] = category.name
+        #     context["category_description"] = category.description
+        # context["tag"] = tag
+        # context["author"] = author
+        # context["year"] = year
+        # context["paginator"] = paginator
+
+        # if breadcrumb:
+        #     context["breadcrumb"] = breadcrumb
 
         return context
 
@@ -239,10 +257,6 @@ class BlogEntryPage(ContentPage):
 
     class Meta:
         verbose_name = _("Blog page")
-
-
-# class ContentOrBlogPage(ContentPage, BlogEntryPage):
-#     pass
 
 
 @register_snippet

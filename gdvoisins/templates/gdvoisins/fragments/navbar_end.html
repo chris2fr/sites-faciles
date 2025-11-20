@@ -1,38 +1,8 @@
 {% load static wagtailcore_tags wagtailuserbar wagtailsettings_tags i18n gdvoisins_menu_tags %}
-<details class="dropdown">
-  <!-- a focusable div with tabindex is necessary to work on all browsers. role="button" is necessary for accessibility -->
-  <summary class="btn btn-circle btn-lg btn-accent">
-    {% include "gdvoisins/fragments/svg-pirate-map.html" %}
-  </summary>
-  <ul class="menu dropdown-content">
-    <!-- buttons that show up when FAB is open -->
-    <li class="tooltip tooltip-left"
-         data-tip="Applications des Grands Voisins">
-      <button class="btn btn-lg btn-circle" onclick="apps_modal.showModal()">
-        {% include "gdvoisins/fragments/icon-tools.html" %}
-        <svg width="12px"
-             height="12px"
-             class="inline-block h-2 w-2 fill-current opacity-60"
-             xmlns="http://www.w3.org/2000/svg"
-             viewBox="0 0 2048 2048">
-          <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
-        </svg>
+      <button class="btn btn-circle btn-lg btn-accent" onclick="apps_modal.showModal()">
+        {% include "gdvoisins/svg/svg-icon-tools.html" %}
       </button>
-    </li>
-    <li class="tooltip tooltip-left" data-tip="{% translate "Languages" %}">
-      <button class="btn btn-lg btn-circle" onclick="modal_languages.showModal()">
-        {% get_language_info for LANGUAGE_CODE as current_lang %}{{ current_lang.code|upper }}
-      </button>
-    </li>
-    <li class="tooltip tooltip-left"
-         data-tip="{% translate "Jeux de couleurs" %}">
-      <button class="btn btn-lg btn-circle"  onclick="themes_modal.showModal()">
-        {% include "gdvoisins/fragments/svg-colors.html" %}
-      </button>
-    </li>
-    <li class="tooltip tooltip-left"
-         data-tip="{% translate "Rechercher sur ce site" %}">
-      <button class="btn btn-lg btn-circle" onclick="search_modal.showModal()">
+      <button class="btn btn-circle btn-lg btn-accent" onclick="search_modal.showModal()">
         <svg xmlns="http://www.w3.org/2000/svg"
              class="icon icon-tabler icon-tabler-search"
              width="24"
@@ -47,6 +17,23 @@
           <circle cx="10" cy="10" r="7"></circle>
           <line x1="21" y1="21" x2="15" y2="15"></line>
         </svg>
+      </button>
+<details class="dropdown">
+  <!-- a focusable div with tabindex is necessary to work on all browsers. role="button" is necessary for accessibility -->
+  <summary class="btn btn-circle btn-lg btn-accent">
+    {% include "gdvoisins/svg/svg-user-settings-outline.html" %}
+  </summary>
+  <ul class="menu dropdown-content">
+    <!-- buttons that show up when FAB is open -->
+    <li class="tooltip tooltip-left" data-tip="{% translate "Languages" %}">
+      <button class="btn btn-lg btn-circle" onclick="modal_languages.showModal()">
+        {% get_language_info for LANGUAGE_CODE as current_lang %}{{ current_lang.code|upper }}
+      </button>
+    </li>
+    <li class="tooltip tooltip-left"
+         data-tip="{% translate "Jeux de couleurs" %}">
+      <button class="btn btn-lg btn-circle"  onclick="themes_modal.showModal()">
+        {% include "gdvoisins/svg/svg-colors.html" %}
       </button>
     </li>
   </ul>
