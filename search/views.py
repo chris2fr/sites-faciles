@@ -1,7 +1,7 @@
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.template.response import TemplateResponse
 from django.utils.translation import gettext_lazy as _
-from wagtail.models import Locale, Page, Site
+from wagtail.models import Locale, Page  # , Site
 
 
 # from django.contrib.sites.models import Site
@@ -22,18 +22,22 @@ def search(request):
 
     # Search
     if search_query:
-        site = Site.find_for_request(request)
+        # site = Site.find_for_request(request)
         # search_results1 =
         # ContentPage.objects.filter(locale=locale).exclude(exclude_from_search=True).live().search(search_query)
         # search_results2 = FaireMainPage.objects.filter(locale=locale).live().search(search_query)
         # search_results = search_results1 | search_results2
         if search_query[-2:] == " *":
             search_results = (
-                Page.objects.filter(sites_rooted_here=site, locale=locale).live().search(search_query[:-2])
+                # Page.objects.filter(sites_rooted_here=site, locale=locale).live().search(search_query[:-2])
+                Page.objects.filter(locale=locale)
+                .live()
+                .search(search_query[:-2])
             )
         else:
             search_results = (
-                Page.objects.filter(sites_rooted_here=site, locale=locale)
+                # Page.objects.filter(sites_rooted_here=site, locale=locale)
+                Page.objects.filter(locale=locale)
                 .live()
                 .exclude(title__endswith=" *")
                 .search(search_query)
