@@ -47,7 +47,11 @@
             {% endblock header %}
             <main class="{% block main_class %}prose m-auto{% endblock main_class %}">
                   {% block content %}
-                        {% include "gdvoisins/fragments/test-content.html" %}
+                        {% if page.body %}
+                              {{ page.body | richtext }}
+                        {% else %}
+                              {% include "gdvoisins/fragments/test-content.html" %}
+                        {% endif %}
                   {% endblock content %}
             </main>
             {% block footer %}

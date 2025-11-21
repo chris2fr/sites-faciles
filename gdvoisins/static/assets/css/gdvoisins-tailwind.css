@@ -2922,9 +2922,6 @@
   .gap-10 {
     gap: calc(var(--spacing) * 10);
   }
-  .justify-self-center {
-    justify-self: center;
-  }
   .overflow-auto {
     overflow: auto;
   }

@@ -70,6 +70,7 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.messages",
     "django.contrib.sessions",
+    # "django.contrib.sites",
     "django.contrib.staticfiles",
     "modelcluster",
     "sass_processor",

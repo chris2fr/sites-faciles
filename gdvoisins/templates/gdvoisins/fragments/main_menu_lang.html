@@ -22,6 +22,7 @@
                hreflang="{{ translation.locale.language_code|lower }}"
                lang="{{ translation.locale.language_code|lower }}"
                href="{% pageurl translation %}"
+               {% comment %} href="{% if pageurl translation %}{% if pageurl translation %}{% else %}/{{ translation.locale.language_code|lower }}/{% endif %}" {% endcomment %}
                {% if translation.locale.language_code == LANGUAGE_CODE %}aria-current="true"{% endif %}>{{ translation.locale.language_code|upper }} - {{ translation.locale.language_name_local }}</a>
           </li>
         {% endfor %}
