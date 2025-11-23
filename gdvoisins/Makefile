@@ -1,7 +1,7 @@
-version := $(shell cat include/VERSION)
+version := $(shell date +"%Y-%m-%d-%Hh%Mm%Ss")
 
 tailwind-compile:
-	date +"%Y-%m-%d-%Hh%Mm%Ss" > include/VERSION
+	@echo ${version} > include/VERSION
 	../venv/bin/python ./include/replace-tailwind-version.py
 	-rm ./static/assets/css/gdvoisins-tailwind-*.css
 	npx @tailwindcss/cli -i ./include/gdvoisins-tailwind-input.css -o ./static/assets/css/gdvoisins-tailwind-${version}.css 

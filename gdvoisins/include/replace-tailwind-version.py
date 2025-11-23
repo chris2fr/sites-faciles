@@ -7,9 +7,9 @@ output_file = "./templates/gdvoisins/fragments/head.out.html"
 replacement_file = "./include/VERSION"
 
 # Regex pattern and replacement text
-pattern = r"css/gdvoisins-tailwind-?[0-9:a-zA-Z_]*.css"
+pattern = r"assets/css/gdvoisins-tailwind[-0-9:a-zA-Z_]*.css"
 with open(replacement_file, "r", encoding="utf-8") as f:
-    replacement = "css/gdvoisins-tailwind-%s.css" % f.read().rstrip()
+    replacement = "assets/css/gdvoisins-tailwind-%s.css" % f.read().rstrip()
     print(replacement)
 # ----------------------
 
