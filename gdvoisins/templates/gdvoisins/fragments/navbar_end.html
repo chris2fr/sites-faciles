@@ -1,26 +1,26 @@
 {% load static wagtailcore_tags wagtailuserbar wagtailsettings_tags i18n gdvoisins_menu_tags %}
-      <button class="btn btn-circle btn-lg btn-accent" onclick="apps_modal.showModal()">
-        {% include "gdvoisins/svg/svg-icon-tools.html" %}
-      </button>
-      <button class="btn btn-circle btn-lg btn-accent" onclick="search_modal.showModal()">
-        <svg xmlns="http://www.w3.org/2000/svg"
-             class="icon icon-tabler icon-tabler-search"
-             width="24"
-             height="24"
-             viewBox="0 0 24 24"
-             stroke-width="2"
-             stroke="currentColor"
-             fill="none"
-             stroke-linecap="round"
-             stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <circle cx="10" cy="10" r="7"></circle>
-          <line x1="21" y1="21" x2="15" y2="15"></line>
-        </svg>
-      </button>
+<button class="btn btn-circle btn-lg btn-accent mx-1"
+        onclick="apps_modal.showModal()">{% include "gdvoisins/svg/svg-icon-tools.html" %}</button>
+<button class="btn btn-circle btn-lg btn-accent  mx-1"
+        onclick="search_modal.showModal()">
+  <svg xmlns="http://www.w3.org/2000/svg"
+       class="icon icon-tabler icon-tabler-search"
+       width="24"
+       height="24"
+       viewBox="0 0 24 24"
+       stroke-width="2"
+       stroke="currentColor"
+       fill="none"
+       stroke-linecap="round"
+       stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <circle cx="10" cy="10" r="7"></circle>
+    <line x1="21" y1="21" x2="15" y2="15"></line>
+  </svg>
+</button>
 <details class="dropdown">
   <!-- a focusable div with tabindex is necessary to work on all browsers. role="button" is necessary for accessibility -->
-  <summary class="btn btn-circle btn-lg btn-accent">
+  <summary class="btn btn-circle btn-lg btn-accent  mx-1">
     {% include "gdvoisins/svg/svg-user-settings-outline.html" %}
   </summary>
   <ul class="menu dropdown-content">
@@ -31,7 +31,7 @@
       </button>
     </li>
     <li class="tooltip tooltip-left"
-         data-tip="{% translate "Jeux de couleurs" %}">
+        data-tip="{% translate "Jeux de couleurs" %}">
       <button class="btn btn-lg btn-circle"  onclick="themes_modal.showModal()">
         {% include "gdvoisins/svg/svg-colors.html" %}
       </button>

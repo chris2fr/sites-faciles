@@ -1,5 +1,10 @@
+version := $(shell cat include/VERSION)
+
 tailwind-compile:
-	npx @tailwindcss/cli -i ./static/assets/css/gdvoisins-tailwind-input.css -o ./static/assets/css/gdvoisins-tailwind.css 
+	date +"%Y-%m-%d-%Hh%Mm%Ss" > include/VERSION
+	../venv/bin/python ./include/replace-tailwind-version.py
+	-rm ./static/assets/css/gdvoisins-tailwind-*.css
+	npx @tailwindcss/cli -i ./include/gdvoisins-tailwind-input.css -o ./static/assets/css/gdvoisins-tailwind-${version}.css 
 
 .PHONY: messages
 messages:
