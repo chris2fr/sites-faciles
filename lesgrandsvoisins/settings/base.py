@@ -440,7 +440,7 @@ SOCIALACCOUNT_PROVIDERS = {
         "APPS": [
             {
                 "provider_id": "key-lesgrandsvoisins-com",
-                "name": "key.lesgrandsvoisins.com",
+                "name": "key.gv.je",
                 "client_id": os.getenv("OPENID_NAME"),
                 "secret": os.getenv("OPENID_SECRET"),
                 "settings": {

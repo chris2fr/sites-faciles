@@ -110,7 +110,7 @@ const appsData = {
                     "appName": "Compte Keycloak",
                     "icon": "🪪",
                     "color": "#36c6e9",
-                    "url": "https://key.lesgrandsvoisins.com/realms/master/account",
+                    "url": "https://key.gv.je/realms/master/account",
                     "description": "Interface de mon administration pour moi"
                 },
                 {
@@ -246,7 +246,7 @@ const appsData = {
                     "appName": "Admin Keycloak",
                     "icon": "⚙️",
                     "color": "#008888",
-                    "url": "https://key.lesgrandsvoisins.com/admin",
+                    "url": "https://key.gv.je/admin",
                     "description": "Administration du serveur Keycloak"
                 },
                 {
