@@ -1,4 +1,4 @@
-const menuBtn = document.getElementById('menuBtn');
+// const menuBtn = document.getElementById('menuBtn');
 const appMenu = document.getElementById('appMenu');
 const overlay = document.getElementById('overlay');
 const appGrid = document.getElementById('appGrid');
@@ -118,10 +118,10 @@ function loadApps() {
     });
 }
 
-function toggleMenu() {
-    appMenu.classList.toggle('active');
-    overlay.classList.toggle('active');
-}
+// function toggleMenu() {
+//     appMenu.classList.toggle('active');
+//     overlay.classList.toggle('active');
+// }
 
-menuBtn.addEventListener('click', toggleMenu);
-overlay.addEventListener('click', toggleMenu);
+// menuBtn.addEventListener('click', toggleMenu);
+// overlay.addEventListener('click', toggleMenu);

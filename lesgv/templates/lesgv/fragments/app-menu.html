@@ -6,14 +6,17 @@
           aria-label="jour / nuit">jout / nuit</button> 
   {% endcomment %}
   <a href="{% url 'wagtail_village_search' %}">🔎</a>
-  <button class="app-menu-menu-button" id="menuBtn">
+  <a class="app-menu-menu-button" id="menuBtn" href="https://www.gv.je">
+  {% comment %} <button class="app-menu-menu-button" id="menuBtn"> {% endcomment %}
     <div class="app-menu-menu-icon">
       <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
     </div>
-  </button>
+  {% comment %} </button> {% endcomment %}
+  </a>
   <div class="app-menu-avatar">A</div>
 </div>
 <div class="app-menu-menu-overlay" id="overlay"></div>
+{% comment %}
 <div class="app-menu" id="appMenu">
   <div class="app-grid" id="appGrid">
     <a href="https://www.lesgrandsvoisins.com"
@@ -434,6 +437,7 @@
     <!-- <div class="group-label">Administration</div> -->
   </div>
 </div>
+{% endcomment %}
 </a>
 <div class="app-flex-break"></div>
 </div>
