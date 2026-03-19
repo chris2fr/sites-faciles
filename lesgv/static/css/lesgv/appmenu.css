@@ -399,6 +399,11 @@ div.app-back>a {
     .app-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .app-menu-header-right {
+        right: unset;
+        position: unset;
+    }
 }
 
 @media screen and (max-width: 40rem) {
