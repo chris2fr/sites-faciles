@@ -7,6 +7,9 @@
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                    <link rel="stylesheet"
+              type="text/css"
+              href="https://public.gv.je/static/web/gvbtn/gvbtn.css" />
             {% include "gdvoisins/fragments/head.html" %}
       </head>
       <body class="{% block body_class %}gdvoisins{% endblock body_class %}">
@@ -57,6 +60,11 @@
             {% block footer %}
             {% endblock footer %}
             {# Global javascript #}
+                    <!-- Uniform top-right button -->
+<a href="https://www.gv.je"
+   class="site-action-button"
+   aria-label="Open action">
+  <img src="https://public.gv.je/static/web/gvbtn/gv-logo-512x512.png" class="site-action-button-img">
             <script type="text/javascript" src="{% static 'assets/js/theme-change.js' %}"></script>
             {% block extra_js %}
                   {# Override this in templates to add extra javascript #}
