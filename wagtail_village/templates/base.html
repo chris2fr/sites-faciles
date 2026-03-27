@@ -37,9 +37,7 @@
 
     {% block opengraph %}
     {% endblock opengraph %}
-        <link rel="stylesheet"
-              type="text/css"
-              href="https://public.gv.je/static/web/gvbtn/gvbtn.css" />
+
   </head>
 
   <body>
@@ -87,11 +85,7 @@
 
     {% village_js nonce=request.csp_nonce %}
 
-        <!-- Uniform top-right button -->
-<a href="https://www.gv.je"
-   class="site-action-button"
-   aria-label="Open action">
-  <img src="https://public.gv.je/static/web/gvbtn/gv-logo-512x512.png" class="site-action-button-img">
+
 
     {% block extra_js %}
     {% endblock extra_js %}
