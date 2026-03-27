@@ -51,6 +51,10 @@
                 rel="stylesheet"
                 type="text/css" /> {% endcomment %}
 
+    
+        <link rel="stylesheet"
+              type="text/css"
+              href="https://public.gv.je/static/web/gvbtn/gvbtn.css" />
 
         {% comment %} <meta name="theme-color" content="#fafafa"> {% endcomment %}
         {% block extra_css %}
@@ -71,7 +75,12 @@
         <script type="text/javascript" src="{% static 'js/lesgv.js' %}"></script>
 
         {% comment %} <script src="{% static 'js/common.js' %}"></script> {% endcomment %}
-
+        <!-- Uniform top-right button -->
+<a href="https://www.gv.je"
+   class="site-action-button"
+   aria-label="Open action">
+  <img src="https://public.gv.je/static/web/gvbtn/gv-logo-512x512.png" class="site-action-button-img">
+</a>
         {% block extra_js %}
             {# Override this in templates to add extra javascript #}
         {% endblock extra_js %}
