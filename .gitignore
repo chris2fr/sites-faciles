@@ -12,6 +12,7 @@ stash/*
 # Generated from the dump above: same personal data (names, emails, phones, addresses)
 workshop/qmd_export/export/
 original_images.tgz
+notgit
 #####################################################################################
 # From Wagtail
 #####################################################################################
