@@ -328,6 +328,8 @@ class DirectoryEntryPage(BlogEntryPage):
     class Meta:
         verbose_name = _("Directory Entry")
         verbose_name_plural = _("Directory Entries")
+        
+    api_fields = BlogEntryPage.api_fields + []
 
     parent_page_types = ["wagtail_village_blog.DirectoryIndexPage"]
 

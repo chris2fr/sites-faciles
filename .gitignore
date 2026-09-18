@@ -7,6 +7,11 @@ venv
 medias/*
 # stash is for temporary stuff
 stash/*
+/workshop/dump*
+/workshop/qmd_export/export*
+# Generated from the dump above: same personal data (names, emails, phones, addresses)
+workshop/qmd_export/export/
+original_images.tgz
 #####################################################################################
 # From Wagtail
 #####################################################################################
