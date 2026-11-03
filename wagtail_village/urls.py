@@ -3,6 +3,7 @@ from django.urls import include, path
 # from django.utils.translation import gettext_lazy as _
 from wagtail import urls as wagtail_urls
 
+from django_village import views as django_village_views
 from wagtail_village.views import SearchResultsView, TagsListView, TagView
 
 
@@ -19,4 +20,5 @@ urlpatterns = [
     path("tags/<str:tag>/", TagView.as_view(), name="global_tag"),
     path("tags/", TagsListView.as_view(), name="global_tags_list"),
     path("", include(wagtail_urls)),
+    path("", django_village_views.index, name="index"),
 ]

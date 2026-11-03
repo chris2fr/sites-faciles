@@ -1,6 +1,56 @@
 @import "tailwindcss";
+@import "./tailwind.config.css";
 
-@source not "./tailwindcss";
-@source not "./daisyui{,*}.mjs";
+/* Scan the project sources for utility classes. */
+@source ".";
+@source not "./node_modules";
+@source not "./.venv";
+@source not "./output.css";
+@source not "./daisyui.mjs";
+@source not "./daisyui-theme.mjs";
+@source not "./input.css";
+@source not "./tailwind.config.css";
+@source not "./lesgv/static/css/lesgv/tailwind.css";
 
-@plugin "./daisyui.mjs";
+div.card-body img {
+    margin: 1rem auto;
+}
+
+div.list-inside ul {
+    list-style-position: inside;
+}
+
+div.list-inside ul li {
+    list-style-type: disc;
+}
+
+div.home-section-3 h2 {
+    text-align: center;
+}
+
+div.home-section-blog h2 {
+    font-size: var(--text-xl);
+    line-height: var(--text-xl--line-height);
+}
+
+div.home-section-blog h3 {
+    font-size: var(--text-lg);
+    line-height: var(--text-lg--line-height);
+}
+
+img.logolgv {
+    width: 800px;
+    margin: 0 auto;
+}
+
+a {
+    @apply underline text-blue-600;
+}
+
+a:hover {
+    @apply text-blue-800;
+}
+
+a:visited {
+    @apply text-purple-600;
+}

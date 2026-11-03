@@ -3,6 +3,13 @@
 #####################################################################################
 # I put the virtual environment in a subfolder ./venv
 venv
+# direnv (Nix flake dev shell)
+.direnv/
+# nix build output symlink
+/result
+# local dev PostgreSQL cluster (make db-start)
+/.pgdata
+/.pgdata/
 # Media contents are instance-specific
 medias/*
 # stash is for temporary stuff

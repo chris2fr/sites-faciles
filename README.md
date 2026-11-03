@@ -124,8 +124,41 @@ Le contenu des pages générées par le CMS est partiellement conforme selon la 
 
 ## Prérequis
 
-- Python 3.10
+- Python 3.10 (3.11 recommandé avec le flake Nix)
 - Postgreql 14.x.
+
+## Nix (flake) — option recommandée
+
+Un [flake Nix](flake.nix) est fourni qui installe toute la chaîne d'outils de façon reproductible : Python 3.11 + Poetry, Node.js (Tailwind/daisyui), PostgreSQL 16, et les outils de compilation.
+
+### Avec direnv (recommandé)
+
+```sh
+# installer direnv, puis dans le dépôt :
+direnv allow
+```
+
+L'environnement se charge automatiquement : il crée `.env` depuis l'exemple, installe les dépendances Python via Poetry (`.venv`) et les dépendances Node (`node_modules`).
+
+### Sans direnv
+
+```sh
+nix develop
+```
+
+Le shell configure automatiquement `.env`, `.venv` et `node_modules` au premier lancement.
+
+### Note sur la base de données
+
+Le flake fournit `postgresql` mais ne crée pas de cluster. Pour démarrer une base locale :
+
+```sh
+nix develop -c make db-start
+```
+
+Cette cible initialise un cluster dans `./.pgdata` (ignoré par git), le démarre sur `DATABASE_PORT`, crée la base `DATABASE_NAME` si besoin, et utilise les variables `DATABASE_*` de `.env`. Arrêt : `make db-stop`.
+
+Le shell du flake s'assure aussi que `DATABASE_URL` dans `.env` est concret (il développe les `${...}` du gabarit le `sample.env`) et génère une `SECRET_KEY` si elle est vide. Les variables requises restantes sont signalées à l'entrée du shell.
 
 ## Installer les pre-commit hooks
 

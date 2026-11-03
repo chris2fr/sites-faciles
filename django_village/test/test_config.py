@@ -1,4 +1,3 @@
-from django.db import IntegrityError
 from django.test import Client, TestCase
 from django.urls import reverse
 
@@ -13,9 +12,11 @@ class DjangoVillageConfigTestCase(TestCase):
         test_item = DjangoVillageConfig.objects.first()
         self.assertEqual(test_item.site_title, "Titre du site")
 
-    def test_config_is_unique_per_language(self) -> None:
-        with self.assertRaises(IntegrityError):
-            DjangoVillageConfig.objects.create(language="fr")
+    def test_config_is_not_unique_per_language(self) -> None:
+        # The uniqueness on ``language`` was dropped so that the multi-table
+        # inheritance model (``WagtailVillageConfig``) can share the same table.
+        DjangoVillageConfig.objects.create(language="fr", site_title="Autre titre")
+        self.assertEqual(DjangoVillageConfig.objects.filter(language="fr").count(), 2)
 
 
 class ContextProcessorTestCase(TestCase):
@@ -36,10 +37,10 @@ class ContextProcessorTestCase(TestCase):
         DjangoVillageConfig.objects.create(language="fr", site_title="Titre du site")
         DjangoVillageConfig.objects.create(language="en", site_title="Site title")
 
-        response = self.client.get(reverse("index"), headers={"accept-language": "fr"})
+        response = self.client.get("/fr/")
         self.assertEqual(response.context["SITE_CONFIG"].site_title, "Titre du site")
 
-        response = self.client.get(reverse("index"), headers={"accept-language": "en"})
+        response = self.client.get("/en/")
         self.assertEqual(response.context["SITE_CONFIG"].site_title, "Site title")
 
     def test_config_fallbacks_to_first_if_language_is_not_set(self) -> None:

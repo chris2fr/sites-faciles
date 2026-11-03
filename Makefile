@@ -37,6 +37,7 @@ compilemessages:
 	$(MAKE) -C wagtail_village compilemessages
 	$(MAKE) -C wagtail_village_blog compilemessages
 	$(MAKE) -C search compilemessages
+	$(MAKE) -C django_village compilemessages
 # 	$(EXEC_CMD) poetry run django-admin makemessages -l fr -l en --ignore=manage.py --ignore=medias --ignore=setup.py --ignore=staticfiles --ignore=workshop
 
 
@@ -57,11 +58,14 @@ fix:
 	$(EXEC_CMD) poetry run isort --skip-glob="**/migrations" --extend-skip-glob="venv" .
 
 
+migrate:
+	$(EXEC_CMD) poetry run python manage.py migrate
+
 .PHONY: init
 init:
 	$(EXEC_CMD) poetry install
 	$(EXEC_CMD) poetry run pre-commit install
-	$(EXEC_CMD) poetry run python manage.py migrate
+	make migrate
 	make collectstatic
 	$(EXEC_CMD) poetry run python manage.py set_config
 	$(EXEC_CMD) poetry run python manage.py create_starter_pages
@@ -73,7 +77,7 @@ demo:
 
 .PHONY: runserver
 runserver:
-	$(EXEC_CMD) poetry run python manage.py runserver 
+	$(EXEC_CMD) poetry run python manage.py runserver
 	# $(EXEC_CMD) poetry run python manage.py runserver $(HOST_URL):$(HOST_PORT)
 
 
@@ -84,7 +88,7 @@ test:
 .PHONY: test
 # From https://tailwindcss.com/docs/installation/tailwind-cli
 tailwind-install-bin-linux:
-	wget https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-linux-x64 
+	wget https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-linux-x64
 	mv tailwindcss-linux-x64 venv/bin/tailwindcss
 	chmod +x venv/bin/tailwindcss
 
@@ -103,15 +107,29 @@ tailwind-install:
 .PHONY: test
 # From https://tailwindcss.com/docs/installation/tailwind-cli
 tailwind-compile:
-	npx @tailwindcss/cli -i ./lesgv/src/tailwind/input.css -o ./lesgv/static/css/lesgv/tailwind.css -m
+	npx @tailwindcss/cli -i ./input.css -o ./lesgv/static/css/lesgv/tailwind.css -m
 
-.PHONY: test
 tailwind-compilemax:
-	npx @tailwindcss/cli -i ./lesgv/src/tailwind/input.css -o ./lesgv/static/css/lesgv/tailwind.css 
+	npx @tailwindcss/cli -i ./input.css -o ./lesgv/static/css/lesgv/tailwind.css
 
-.PHONY: test
 tailwind-watch:
-	npx @tailwindcss/cli -i ./lesgv/src/tailwind/input.css -o ./lesgv/static/css/lesgv/tailwind.css --watch
+	npx @tailwindcss/cli -i ./input.css -o ./lesgv/static/css/lesgv/tailwind.css --watch
+
+.PHONY: db-start db-stop
+# Local PostgreSQL for development (run inside `nix develop`).
+# Uses the DATABASE_* variables from .env; initializes a cluster in ./.pgdata.
+db-start:
+	@if [ ! -d ./.pgdata ]; then \
+		echo "→ initializing PostgreSQL cluster in ./.pgdata"; \
+		initdb -D ./.pgdata --username=$(DATABASE_USER) --auth=trust --locale=C --encoding=UTF8 >/dev/null; \
+	fi
+	@pg_ctl -D ./.pgdata -l ./.pgdata/postgres.log -o "-p $(DATABASE_PORT) -k /tmp" start >/dev/null || true
+	@psql -h $(DATABASE_HOST) -p $(DATABASE_PORT) -U $(DATABASE_USER) -d postgres -tAc "SELECT 1 FROM pg_database WHERE datname='$(DATABASE_NAME)'" | grep -q 1 \
+		|| createdb -h $(DATABASE_HOST) -p $(DATABASE_PORT) -U $(DATABASE_USER) $(DATABASE_NAME)
+	@echo "✔ PostgreSQL ready: $(DATABASE_HOST):$(DATABASE_PORT) db=$(DATABASE_NAME) user=$(DATABASE_USER)"
+
+db-stop:
+	@pg_ctl -D ./.pgdata stop >/dev/null 2>&1 || echo "PostgreSQL not running"
 
 fixtures-dump-test-init:
 	mkdir -p fixtures
@@ -121,7 +139,7 @@ fixtures-dump-test-init:
 	./venv/bin/python manage.py dumpdata --natural-foreign auth.user > fixtures-2-auth-user.json
 	./venv/bin/python manage.py dumpdata --natural-foreign wagtailcore.collection > fixtures-3-wagtailcore-collection.json
 	./venv/bin/python manage.py dumpdata --natural-foreign taggit > fixtures-4-taggit.json
-	./venv/bin/python manage.py dumpdata --natural-foreign wagtailcore.Locale wagtailcore.Revision wagtailcore.Page wagtailcore.Site wagtailimages.Image  wagtaildocs.Document django_village lesgv wagtail_village_blog wagtail_village_forms wagtail_village_lesgrandsvoisins wagtail_village wagtailmenus wagtailsnippets wagtailusers socialaccount > fixtures-init.json 
+	./venv/bin/python manage.py dumpdata --natural-foreign wagtailcore.Locale wagtailcore.Revision wagtailcore.Page wagtailcore.Site wagtailimages.Image  wagtaildocs.Document django_village lesgv wagtail_village_blog wagtail_village_forms wagtail_village_lesgrandsvoisins wagtail_village wagtailmenus wagtailsnippets wagtailusers socialaccount > fixtures-init.json
 	mkdir -p fixtures/medias/{orpip install --upgrade pipiginal_,}images
 	mkdir -p medias/{original_,}images
 	touch fixtures/medias/{original_,}images/not.txt
@@ -138,12 +156,12 @@ fixtures-load-test-init:
 
 fixtures-building-dump:
 	rm fixtures-init.json
-	./venv/bin/python manage.py dumpdata --natural-foreign wagtailcore.Locale wagtailcore.Revision wagtailcore.Page wagtailcore.Collection wagtailcore.Site wagtailimages.Image  wagtaildocs.Document django_village lesgv wagtail_village_blog wagtail_village_forms wagtail_village_lesgrandsvoisins wagtail_village wagtailmenus  wagtailsnippets allauth auth wagtailusers socialaccount > fixtures-init.json 
+	./venv/bin/python manage.py dumpdata --natural-foreign wagtailcore.Locale wagtailcore.Revision wagtailcore.Page wagtailcore.Collection wagtailcore.Site wagtailimages.Image  wagtaildocs.Document django_village lesgv wagtail_village_blog wagtail_village_forms wagtail_village_lesgrandsvoisins wagtail_village wagtailmenus  wagtailsnippets allauth auth wagtailusers socialaccount > fixtures-init.json
 	ls -la fixtures-init.json
 	mv fixtures-init.json /tmp
 
 fixtures-building-load:
-	./venv/bin/python manage.py loaddata -e auth.Permission fixtures/fixtures-init.json 
+	./venv/bin/python manage.py loaddata -e auth.Permission fixtures/fixtures-init.json
 
 help:
 	find . -type f -name Makefile
@@ -181,7 +199,7 @@ fixtures-dump:
 	wagtailusers \
 	socialaccount \
 	wagtailcore.revision > dump.json
-#	grep 'revision":' dump.json | sed 's/[^0-9]//g' | uniq | sort -h - | awk '/^[0-9]+$/' ORS=',' | sed 's/,$//' > dump-revisions.txt 
+#	grep 'revision":' dump.json | sed 's/[^0-9]//g' | uniq | sort -h - | awk '/^[0-9]+$/' ORS=',' | sed 's/,$//' > dump-revisions.txt
 #	./venv/bin/python manage.py dumpdata --pks `cat dump-revisions.txt` wagtailcore.Revision > dump-revisions.json
 
 fixtures-dump-context:
@@ -230,4 +248,4 @@ fixtures-dump-content:
 	wagtailcore.revision > dump-content.json
 
 requirements:
-	./venv/bin/pip install -r requirements.txt 
+	./venv/bin/pip install -r requirements.txt

@@ -25,7 +25,7 @@ class DashboardTestCase(WagtailPageTestCase):
         response = self.client.get(url)
         self.assertNotContains(
             response,
-            '<svg class="icon icon-edit w-userbar-icon" aria-hidden="true"><use href="#icon-edit"></use></svg>',
+            '<svg class="icon icon-edit w-action-icon" aria-hidden="true"><use href="#icon-edit"></use></svg>',
             html=True,
         )
 
@@ -33,6 +33,6 @@ class DashboardTestCase(WagtailPageTestCase):
         response = self.client.get(url)
         self.assertContains(
             response,
-            '<svg class="icon icon-edit w-userbar-icon" aria-hidden="true"><use href="#icon-edit"></use></svg>',
+            '<svg class="icon icon-edit w-action-icon" aria-hidden="true"><use href="#icon-edit"></use></svg>',
             html=True,
         )

@@ -21,7 +21,7 @@ class VillageCssTagTest(SimpleTestCase):
         template_to_render = Template("{% load village_tags %} {% village_css %}")
         rendered_template = template_to_render.render(context)
         self.assertInHTML(
-            f'<link rel="stylesheet" href="/static/village/dist/village/village.min.css"  integrity="{ INTEGRITY_CSS }">',  # noqa
+            f'<link rel="stylesheet" href="/static/django_village/dist/village.min.css"  notintegrity="{ INTEGRITY_CSS }">',  # noqa
             rendered_template,
         )
 
@@ -33,8 +33,8 @@ class VillageJsTagTest(SimpleTestCase):
         rendered_template = template_to_render.render(context)
         self.assertInHTML(
             f"""
-            <script type="module" src="/static/village/dist/village/village.module.min.js" integrity="{ INTEGRITY_JS_MODULE }"></script>
-            <script nomodule src="/static/village/dist/village/village.nomodule.min.js" integrity="{ INTEGRITY_JS_NOMODULE }"></script>
+            <script type="module" src="/static/django_village/dist/village/village.module.min.js" nonce></script>
+            <script nomodule src="/static/django_village/dist/village/village.nomodule.min.js" nonce></script>
             """,  # noqa
             rendered_template,
         )
@@ -47,8 +47,8 @@ class VillageJsTagWithNonceTest(SimpleTestCase):
         rendered_template = template_to_render.render(context)
         self.assertInHTML(
             f"""
-            <script type="module" src="/static/village/dist/village/village.module.min.js" integrity="{ INTEGRITY_JS_MODULE }" nonce="random-nonce"></script>
-            <script nomodule src="/static/village/dist/village/village.nomodule.min.js" integrity="{ INTEGRITY_JS_NOMODULE }" nonce="random-nonce"></script>
+            <script type="module" src="/static/django_village/dist/village/village.module.min.js" nonce></script>
+            <script nomodule src="/static/django_village/dist/village/village.nomodule.min.js" nonce></script>
             """,  # noqa
             rendered_template,
         )
@@ -61,11 +61,11 @@ class VillageFaviconTagTest(SimpleTestCase):
         rendered_template = template_to_render.render(context)
         self.assertInHTML(
             f"""
-            <link rel="apple-touch-icon" href="/static/village/dist/favicon/apple-touch-icon.png" integrity="{ INTEGRITY_FAVICON_APPLE }" /><!-- 180×180 -->
-            <link rel="icon" href="/static/village/dist/favicon/favicon.svg" type="image/svg+xml" integrity="{ INTEGRITY_FAVICON_SVG }" />
-            <link rel="shortcut icon" href="/static/village/dist/favicon/favicon.ico" type="image/x-icon" integrity="{ INTEGRITY_FAVICON_ICO }" />
+            <link rel="apple-touch-icon" href="/static/django_village/dist/favicon/apple-touch-icon.png" integrity="{ INTEGRITY_FAVICON_APPLE }" /><!-- 180×180 -->
+            <link rel="icon" href="/static/django_village/dist/favicon/favicon.svg" type="image/svg+xml" integrity="{ INTEGRITY_FAVICON_SVG }" />
+            <link rel="shortcut icon" href="/static/django_village/dist/favicon/favicon.ico" type="image/x-icon" integrity="{ INTEGRITY_FAVICON_ICO }" />
             <!-- 32×32 -->
-            <link rel="manifest" href="/static/village/dist/favicon/manifest.webmanifest"
+            <link rel="manifest" href="/static/django_village/dist/favicon/manifest.webmanifest"
             crossorigin="use-credentials" integrity="{ INTEGRITY_FAVICON_MANIFEST }" />
             """,  # noqa
             rendered_template,
@@ -79,7 +79,7 @@ class VillageThemeModaleTagTest(SimpleTestCase):
         rendered_template = template_to_render.render(context)
         self.assertInHTML(
             """
-            <h1 id="village-theme-modal-title" class="modal__title">
+            <h1 id="village-theme-modal-title" class="village-modal__title">
                 Paramètres d’affichage
             </h1>
             """,
@@ -278,7 +278,7 @@ class VillageButtonGroupTagTest(SimpleTestCase):
         rendered_template = self.template_to_render.render(self.context)
         self.assertInHTML(
             """
-            <ul class="btns-group btns-group--equisized">
+            <ul class="village-btns-group btns-group--equisized">
                 <li>
                     <button class="village-btn"
                         onclick="alert(&#x27;test button action&#x27;)"
@@ -440,7 +440,7 @@ class VillageConsentTagTest(SimpleTestCase):
                     sur les cookies que vous souhaitez activer.
                 </p>
             </div>
-            <ul class="village-consent-banner__buttons btns-group btns-group--right btns-group--inline-reverse btns-group--inline-sm">
+            <ul class="village-consent-banner__buttons village-btns-group village-btns-group--right village-btns-group--inline-reverse village-btns-group--inline-sm">
                 <li>
                 <button class="village-btn"
                         id="consent-accept-all"
@@ -1063,14 +1063,14 @@ class VillageTranscriptionTagTest(SimpleTestCase):
                         </div>
                     </div>
                     <dialog id="village-transcription-modal-transcription-test"
-                            class="modal"
+                            class="village-modal"
                             role="dialog"
                             aria-labelledby="village-transcription-modal-transcription-test-title">
                         <div class="village-container village-container--fluid facile-container-md">
                             <div class="village-grid-row village-grid-row--center">
                                 <div class="village-col-12 village-col-md-10 village-col-lg-8">
-                                    <div class="modal__body">
-                                        <div class="modal__header">
+                                    <div class="village-modal__body">
+                                        <div class="village-modal__header">
 
                                             <button class="village-btn--close village-btn"
                                                     aria-controls="village-transcription-modal-transcription-test"
@@ -1078,9 +1078,9 @@ class VillageTranscriptionTagTest(SimpleTestCase):
                                                 Fermer
                                             </button>
                                         </div>
-                                        <div class="modal__content">
+                                        <div class="village-modal__content">
                                             <h1 id="village-transcription-modal-transcription-test-title"
-                                                class="modal__title">
+                                                class="village-modal__title">
                                                 Transcription
                                             </h1>
                                             <div><p>Courte transcription basique</p></div>

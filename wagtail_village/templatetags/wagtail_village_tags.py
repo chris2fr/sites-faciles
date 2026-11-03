@@ -7,7 +7,7 @@ from wagtail_village.models import MegaMenu
 register = template.Library()
 
 
-@register.inclusion_tag("wagtail_village/menus/mega_menu.html", takes_context=True)
+@register.inclusion_tag("menus/mega_menu.html", takes_context=True)
 def mega_menu(context: Context, parent_menu_id: int) -> dict:
     """
     Returns a mega_menu item. Takes the parent menu id as parameter,

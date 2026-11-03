@@ -31,9 +31,9 @@ class ContentPageTestCase(WagtailPageTestCase):
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
-        self.assertContains(
-            response,
-            "<title>Page de contenu — Titre du site</title>",
+        self.assertInHTML(
+            "<title>Page de contenu</title>",
+            response.content.decode(),
         )
 
 
@@ -60,7 +60,7 @@ class ConfigTestCase(WagtailPageTestCase):
                 "header_brand_html": "République<br />française",
                 "footer_brand": "République française",
                 "footer_brand_html": "République<br />française",
-                "footer_description": "Site <b>description</b>.",
+                "footer_description_wagtail": "Site <b>description</b>.",
             },
         )
         self.config.save()
@@ -70,10 +70,12 @@ class ConfigTestCase(WagtailPageTestCase):
         response = self.client.get(url)
 
         self.assertInHTML(
-            """<a href="/"
-                title="Accueil — République française">
-                <p class="village-logo">République<br />française</p>
-            </a>""",
+            """<div class="village-header__operator">
+                <img class="village-responsive-img"
+                     src="/static/img/lesgv/logo-lesgrandsvoisins-800-400-white.png"
+                     alt="Village Les Grands Voisins"
+                     style="max-width:16rem;">
+            </div>""",
             response.content.decode(),
         )
 
@@ -85,7 +87,7 @@ class ConfigTestCase(WagtailPageTestCase):
             """<div class="village-footer__brand village-enlarge-link">
                 <a id="footer-operator" href="/"
                     title="Retour à l’accueil du site - Site title - République française">
-                    <p class="village-logo">
+                    <p class="gv-logo">
                         République<br />française
                     </p>
                 </a>
@@ -99,7 +101,7 @@ class ConfigTestCase(WagtailPageTestCase):
 
         self.assertInHTML(
             """<div class="village-header__service">
-                <a href="/" title="Accueil — Site title">
+                <a href="/fr/" title="Accueil — Site title">
                     <p class="village-header__service-title">Site title</p>
                 </a>
                 <p class="village-header__service-tagline">Site tagline</p>
@@ -204,7 +206,7 @@ class MenusTestCase(WagtailPageTestCase):
 
         # Selected menu item : home page
         self.assertInHTML(
-            '<a class="village-nav__link" href="/" aria-current="page" target="_self">Accueil</a>',
+            '<a class="village-nav__link" href="/fr/" aria-current="page" target="_self">Accueil</a>',
             response.content.decode(),
         )
 
@@ -218,14 +220,14 @@ class MenusTestCase(WagtailPageTestCase):
         )
 
         self.assertInHTML(
-            '<a class="village-nav__link" href="/publications/publication-1/" target="_self">Publication 1</a>',
+            '<a class="village-nav__link" href="/fr/publications/publication-1/" target="_self">Publication 1</a>',
             response.content.decode(),
         )
 
         # Selected menu item : publication 1
         response = self.client.get(self.example_publication_page.url)
         self.assertInHTML(
-            '<a class="village-nav__link" href="/" target="_self">Accueil</a>',
+            '<a class="village-nav__link" href="/fr/" target="_self">Accueil</a>',
             response.content.decode(),
         )
 
@@ -242,7 +244,7 @@ class MenusTestCase(WagtailPageTestCase):
         self.assertInHTML(
             """<a class="village-nav__link"
                 aria-current="page"
-                href="/publications/publication-1/"
+                href="/fr/publications/publication-1/"
                 target="_self">
                 Publication 1
             </a>""",
@@ -289,7 +291,7 @@ class MenusTestCase(WagtailPageTestCase):
         self.assertInHTML(
             """<a class="village-nav__link"
                 aria-current="page"
-                href="/publications/publication-1/"
+                href="/fr/publications/publication-1/"
                 target="_self">
                     Publication 1
                 </a>""",

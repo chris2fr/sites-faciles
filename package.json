@@ -3,7 +3,9 @@
     "@tailwindcss/cli": "^4.0.8",
     "@tailwindcss/typography": "^0.5.19",
     "daisyui": "^5.5.5",
-    "tailwindcss": "^4.1.17",
-    "tailwindcss-cli": "^0.1.2"
+    "tailwindcss": "^4.1.17"
+  },
+  "overrides": {
+    "postcss-selector-parser": "6.1.5"
   }
 }
