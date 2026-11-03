@@ -370,3 +370,4 @@ cron.json
 medias/
 
 cache-blog.*
+.zed/
