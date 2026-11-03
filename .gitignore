@@ -378,3 +378,22 @@ medias/
 
 cache-blog.*
 .zed/
+
+
+# Redundant root-level mirrors — real copies are tracked under app static dirs
+/css/lesgrandsvoisins.css
+/css/lesgv/appmenu.css
+/css/lesgv/home.css
+/js/app-menu.js
+/js/lesgrandsvoisins.js
+/js/lightdark.js
+/fav/
+/img/gv/
+/img/lesgv/
+
+# Unincorporated / stray copies not served by the codebase
+/assets/
+/wagtailadmin/
+/graphene_django/
+/fonts/grotesk/
+/fonts/fengardo/
